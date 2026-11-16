@@ -140,9 +140,9 @@ svg.i{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke
 .search svg{position:absolute;right:13px;top:14px;color:var(--muted)}
 
 /* ---------- editor ---------- */
-.ed-head{display:flex;gap:10px;align-items:center;margin-bottom:12px}
+.ed-head{display:flex;gap:8px 10px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
 .ed-head .tag{font-weight:800;font-size:18px}
-.ed-head input{width:auto;flex:1;max-width:190px;margin-inline-start:auto}
+.ed-head input{width:auto;flex:1 1 140px;min-width:0;max-width:190px;margin-inline-start:auto}
 .party-box{position:relative}
 .sugg{position:absolute;top:100%;right:0;left:0;background:#fff;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.12);z-index:5;overflow:hidden;margin-top:4px}
 .sugg button{display:flex;width:100%;justify-content:space-between;border:0;background:#fff;padding:12px 14px;border-bottom:1px solid var(--line);cursor:pointer;text-align:right}
@@ -172,7 +172,7 @@ svg.i{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke
 
 /* ---------- invoice view ---------- */
 .inv-img{width:100%;border-radius:12px;box-shadow:var(--shadow);background:#fff;display:block;min-height:200px}
-.status-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px}
+.status-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;flex-wrap:wrap}
 
 /* ---------- modal / sheet ---------- */
 #modal-root .bd{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:81;animation:fade .15s}
@@ -331,6 +331,38 @@ details.card summary{cursor:pointer;list-style:none} details.card summary::-webk
 .lang-seg button{font-size:14px;min-height:40px;padding:8px 6px}
 .row.pk .t{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.35}
 @media (max-width:380px){.pk-q button{width:36px;height:38px}.pk-q b{min-width:28px}.row.pk{gap:9px;padding:12px}}
+/* ---------- 1.3: الجملة، الباركود، الملصقات، الفتح بدون رمز ---------- */
+.mode-card{padding:12px 14px}
+.mode-card .lbl{margin-bottom:6px}
+.mode-card .seg{margin-bottom:0}
+.mode-card .seg button{display:inline-flex;align-items:center;justify-content:center;gap:5px}
+.seg button.locked{color:#94A3B8}
+.seg button.locked .i{width:15px;height:15px}
+.seg button .badge.pro{font-size:10.5px;padding:1px 6px}
+.line-sug{display:flex;align-items:center;gap:8px;margin-top:8px;padding:8px 10px;background:#FFF7ED;border-radius:12px;border:1px dashed #FDBA74}
+.line-sug span{font-size:12.5px;color:#9A3412;font-weight:700;flex:1;line-height:1.3}
+.line-sug input{width:104px;min-height:40px;padding:6px 8px;text-align:center;flex:none;background:#fff}
+.line-sug small{font-size:11.5px;flex:none}
+.wh-tag{color:#9A3412;font-weight:700}
+.inp-btn{display:flex;gap:6px;align-items:stretch}
+.inp-btn input{flex:1;min-width:0}
+.inp-btn .btn{width:auto;flex:none;display:inline-flex;padding:6px 12px;min-height:48px;white-space:nowrap}
+.inp-btn .btn .i{width:17px;height:17px}
+.bc-card .bc-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.bc-card .bc-h b{display:inline-flex;align-items:center;gap:6px;font-size:16px}
+.bc-card .bc-h .link{margin:0}
+.bc-box{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:14px 16px 10px;text-align:center;margin-bottom:12px}
+.bc-svg{width:100%;max-width:260px;height:64px;display:block;margin:0 auto}
+.bc-num{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:16px;letter-spacing:2px;margin-top:6px;font-weight:600}
+.lbl-prev{background:repeating-conic-gradient(#F1F5F9 0 25%,#fff 0 50%) 0 0/16px 16px;border-radius:14px;padding:14px;display:grid;place-items:center;border:1.5px solid var(--line)}
+.lbl-prev img{max-width:100%;width:280px;height:auto;image-rendering:pixelated;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.14);border-radius:6px}
+.copies{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-weight:700}
+.row-line{display:flex;align-items:center;gap:10px}
+#crSplash{position:fixed;inset:0;z-index:300;background:linear-gradient(160deg,var(--pri) 0%,var(--pri-d) 100%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;transition:opacity .35s}
+#crSplash img{width:88px;height:88px;border-radius:24px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+#crSplash h2{margin:14px 0 6px;font-size:26px}
+#crSplash .cs-mid{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#crSplash.out{opacity:0;pointer-events:none}
 
 #splash{position:fixed;inset:0;display:grid;place-items:center;background:#0F766E;z-index:99}
 #splash img{width:96px;height:96px;border-radius:26px}
@@ -355,7 +387,7 @@ const FW_DEMO = false;
 const APP = {
   name: 'فواتيري',
   nameEn: 'Fawateeri',
-  version: '1.2.0',
+  version: '1.3.0',
   devName: 'ABDULAZIZ ALSHAFAI',   // المصمّم
   sponsor: 'شركة توابل صحار',      // الجهة الداعمة (تظهر في شاشة الرمز السري)
   devWhatsApp: '96877437749',      // رقم واتساب الدعم الفني بالصيغة الدولية
@@ -477,6 +509,23 @@ const Vault = {
   meta: null, raw: null, key: null, chain: Promise.resolve(),
   async load() { this.meta = await Store.get('meta'); return this.meta; },
   ready() { return !!(this.meta && this.meta.wrapPin); },
+  /* الفتح بدون رمز سري: نسخة ثالثة من مفتاح البيانات مغلّفة بمفتاح جهاز غير قابل للاستخراج (IndexedDB) */
+  auto() { return !!(this.meta && this.meta.wrapAuto); },
+  async enableAuto() {
+    let k;
+    if (Store.mode === 'idb') { k = await crypto.subtle.generateKey({ name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']); await Store.set('autoKey', k); }
+    else { const r = rand(32); k = await crypto.subtle.importKey('raw', r, 'AES-GCM', false, ['encrypt', 'decrypt']); await Store.set('autoKey', B64.enc(r)); }
+    this.meta.wrapAuto = await aesEnc(k, this.raw); await Store.set('meta', this.meta);
+  },
+  async disableAuto() { if (this.meta) { delete this.meta.wrapAuto; await Store.set('meta', this.meta); } await Store.del('autoKey'); },
+  async tryAuto() {
+    try {
+      if (!this.auto()) return null;
+      let k = await Store.get('autoKey'); if (!k) return null;
+      if (typeof k === 'string') k = await crypto.subtle.importKey('raw', B64.dec(k), 'AES-GCM', false, ['decrypt']);
+      return await aesDec(k, this.meta.wrapAuto);
+    } catch (e) { console.warn('auto unlock', e); return null; }
+  },
   unlocked() { return !!this.key; },
   async setRaw(raw) { this.raw = raw; this.key = await crypto.subtle.importKey('raw', raw, 'AES-GCM', false, ['encrypt', 'decrypt']); },
   async create(pin, recovery, data) {
@@ -586,7 +635,8 @@ function newDB(biz = {}) {
       currency: 'ر.ع.', decimals: 3, vatOn: false, vatRate: 5, vatInclusive: false,
       footer: 'شكراً لتعاملكم معنا', salePrefix: 'S-', purchasePrefix: 'P-',
       bilingual: false, footerEn: 'Thank you for your business', addressEn: '',
-      lockMinutes: 3, lowStock: 3
+      lockMinutes: 3, lowStock: 3, autoTr: false,
+      label: { w: 40, h: 30, gap: 2, lang: 'tspl', shop: true, price: true, en: false, inv: false, dev: null }
     }, biz),
     counters: { sale: 0, purchase: 0 },
     items: [], parties: [], invoices: [],
@@ -619,6 +669,23 @@ function statusOf(inv) {
 }
 const STATUS_TXT = { paid: 'مدفوعة', partial: 'مدفوعة جزئياً', unpaid: 'غير مدفوعة', void: 'ملغاة' };
 const TYPE_TXT = { sale: 'فاتورة بيع', purchase: 'فاتورة شراء' };
+const isWhole = inv => !!(inv && inv.type === 'sale' && inv.mode === 'whole');
+function invTitle(inv) { return isWhole(inv) ? 'فاتورة بيع بالجملة' : TYPE_TXT[inv.type]; }
+/* سعر الصنف حسب نوع الفاتورة: المفرد = سعر البيع، الجملة = سعر الجملة (أو سعر البيع إن لم يُحدد) */
+function itemPrice(it, type, whole) { return type === 'sale' ? (whole ? (num(it.whole) || num(it.sale)) : num(it.sale)) : num(it.cost); }
+
+/* ---------- الباركود ---------- */
+function ean13Check(d12) { let s = 0; for (let i = 0; i < 12; i++) s += (+d12[i]) * (i % 2 ? 3 : 1); return String((10 - s % 10) % 10); }
+function isEan13(c) { return /^\d{13}$/.test(c) && ean13Check(c.slice(0, 12)) === c[12]; }
+/* باركود داخلي للمحل (يبدأ بـ 20 حسب نطاق GS1 للاستخدام الداخلي) */
+function newBarcode() {
+  const used = new Set(DB.items.map(i => i.barcode).filter(Boolean));
+  let n = DB.counters.bc || 0, c;
+  do { n++; const d = '20' + String(n).padStart(10, '0'); c = d + ean13Check(d); } while (used.has(c));
+  DB.counters.bc = n; return c;
+}
+function normBarcode(s) { return toEnDigits(String(s || '')).trim().replace(/\s+/g, ''); }
+function itemByBarcode(c) { c = normBarcode(c); return c ? DB.items.find(i => !i.archived && i.barcode === c) : null; }
 const PAY_TXT = { cash: 'نقداً', transfer: 'تحويل بنكي', card: 'بطاقة' };
 
 function nextNo(type) {
@@ -717,15 +784,16 @@ function csv(rows) { return '﻿' + rows.map(r => r.map(v => { v = String(v ?? '
 /* price/priceY: بالريال العماني لأكواد التفعيل (واتساب). usd/usdY: أسعار Google Play المقترحة (تُضبط في Play Console) */
 const PLANS = {
   free: { id: 'free', name: 'المجانية', price: 0, priceY: 0, limit: 20, ads: true, feats: [] },
-  basic: { id: 'basic', name: 'الأساسية', price: 0.750, priceY: 7.000, usd: 1.99, usdY: 17.99, limit: 0, ads: false, feats: ['unlimited', 'noads', 'pdf', 'print', 'logo'] },
-  advanced: { id: 'advanced', name: 'المتقدمة', price: 2.300, priceY: 21.000, usd: 5.99, usdY: 54.99, limit: 0, ads: false, feats: ['unlimited', 'noads', 'pdf', 'print', 'logo', 'reports', 'export', 'vat', 'bilingual', 'remind'] }
+  basic: { id: 'basic', name: 'الأساسية', price: 0.750, priceY: 7.000, usd: 1.99, usdY: 17.99, limit: 0, ads: false, feats: ['unlimited', 'noads', 'wholesale', 'pdf', 'print', 'logo'] },
+  advanced: { id: 'advanced', name: 'المتقدمة', price: 2.300, priceY: 21.000, usd: 5.99, usdY: 54.99, limit: 0, ads: false, feats: ['unlimited', 'noads', 'wholesale', 'pdf', 'print', 'logo', 'reports', 'export', 'vat', 'bilingual', 'autotr', 'barcode', 'remind'] }
 };
 const PLAN_RANK = { free: 0, basic: 1, advanced: 2 };
 const FEAT_TXT = {
   unlimited: 'فواتير بلا حد شهري', noads: 'بدون إعلانات', pdf: 'حفظ الفاتورة PDF', print: 'طباعة الفواتير', logo: 'شعار محلك على الفاتورة',
-  reports: 'التقارير والأرباح', export: 'تصدير Excel', vat: 'ضريبة القيمة المضافة', bilingual: 'فاتورة بالعربية والإنجليزية', remind: 'تذكير العملاء بالديون عبر واتساب'
+  reports: 'التقارير والأرباح', export: 'تصدير Excel', vat: 'ضريبة القيمة المضافة', bilingual: 'فاتورة بالعربية والإنجليزية', remind: 'تذكير العملاء بالديون عبر واتساب',
+  wholesale: 'فواتير البيع بالجملة مع السعر المقترح للبيع', autotr: 'ترجمة أسماء الأصناف للإنجليزية تلقائياً', barcode: 'باركود لكل صنف وطباعة الملصقات بالبلوتوث'
 };
-const BASE_FEATS = ['فواتير بيع وشراء', 'المخزون والعملاء والديون', 'صور الأصناف وقائمة اختيار سريعة', 'إرسال الفاتورة صورة عبر واتساب', 'النسخ الاحتياطي المشفّر'];
+const BASE_FEATS = ['فواتير بيع (مفرد) وشراء', 'المخزون والعملاء والديون', 'صور الأصناف وقائمة اختيار سريعة', 'إرسال الفاتورة صورة عبر واتساب', 'النسخ الاحتياطي المشفّر'];
 const PLAY_SKU = { basic: 'fawateeri_basic', advanced: 'fawateeri_advanced' };
 const PLAY_BASE = { m: 'monthly', y: 'yearly' };   // معرّفات الخطط الأساسية في Play Console
 const TRIAL_DAYS = 7;                              // عرض التجربة المجانية على الخطة الشهرية (المعرّف: trial7)
@@ -854,7 +922,7 @@ const Billing = {
 /* ---------- الإحصائيات المجهولة والإعدادات عن بُعد ---------- */
 const ESSENTIAL_EV = new Set(['install', 'buy_start', 'buy_ok', 'buy_fail', 'lic_ok']);
 const Cloud = {
-  iid: '', q: [], cfg: null, on: true, busy: false, saveT: null, lastSync: 0,
+  iid: '', q: [], cfg: null, on: true, busy: false, saveT: null, lastSync: 0, fastT: 0, pushed: false,
   async init() {
     this.iid = await Store.get('iid');
     if (!this.iid) { this.iid = randCode(16); await Store.set('iid', this.iid); }
@@ -865,6 +933,25 @@ const Cloud = {
     setInterval(() => this.sync(), 5 * 60000);
     document.addEventListener('visibilitychange', () => { if (document.hidden) this.sync(); });
     addEventListener('online', () => this.sync());
+  },
+  /* تفعيل مباشر من لوحة التحكم: الكود موقّع رقمياً ومرتبط بهذا الجهاز، فيُتحقق منه هنا كما لو أدخله التاجر */
+  async gotPush(code) {
+    if (typeof code !== 'string' || code.length > 2000 || (License.data && code === (await Store.get('license')))) return;
+    const before = Plan.id, r = await License.activate(code);
+    if (r !== 'ok') { console.warn('push license', r); return; }
+    Plan.compute(); this.ev('lic_ok', { p: License.data.p || 'advanced', s: 'push' });
+    setTimeout(() => this.sync(true), 1500); // تأكيد الاستلام للوحة التحكم
+    if (DB && !Lock.on) {
+      const c = Nav.cur(); if (c && !['editor', 'item', 'partyEdit', 'setBiz', 'setInv', 'labelSet'].includes(c.name)) { const y = scrollY; render(); scrollTo(0, y); }
+      if (typeof toast === 'function') toast(Plan.id !== before ? 'تم تفعيل الباقة ' + Plan.cfg().name + ' 🎉' : 'تم تحديث اشتراكك ✓', 4000);
+    } else this.pushed = true;
+  },
+  /* أثناء انتظار التاجر في شاشة الاشتراك نتحقق كل 12 ثانية ليظهر التفعيل خلال لحظات */
+  fast(on) {
+    clearInterval(this.fastT); this.fastT = 0;
+    if (!on || !API.url || FW_DEMO) return;
+    const until = Date.now() + 15 * 60000;
+    this.fastT = setInterval(() => { if (Date.now() > until || document.hidden) { if (Date.now() > until) this.fast(false); return; } this.sync(true); }, 12000);
   },
   async setOn(v) { this.on = !!v; await Store.set('stats', this.on); if (!v) { this.q = this.q.filter(e => ESSENTIAL_EV.has(e.n)); this.save(); } },
   ev(n, p) {
@@ -908,6 +995,7 @@ const Cloud = {
           this.cfg = j; await Store.set('cfg', j);
           if (j.now) await Plan.tick(j.now);
           if (j.lic === 'revoked' && License.data) { await License.revoke(); Plan.compute(); if (DB && !Lock.on) render(); }
+          if (j.push) await this.gotPush(j.push);
           Ads.refresh();
         }
       }
@@ -989,6 +1077,7 @@ async function invoiceCanvas(inv, opts = {}) {
   const logo = (S.logo && Plan.can('logo')) ? await loadImg(S.logo) : null;
   const rate = num(inv.vatRate);
   const isTax = inv.type === 'sale' && rate > 0;
+  const WH = isWhole(inv); // فاتورة جملة: عمود السعر المقترح للبيع بالمفرد (بدون مجموعه أو الربح)
 
   const pass = (ctx, draw, H) => {
     ctx.direction = 'rtl'; ctx.textBaseline = 'alphabetic';
@@ -1010,8 +1099,8 @@ async function invoiceCanvas(inv, opts = {}) {
 
     if (draw) { ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, W, H); ctx.fillStyle = col; ctx.fillRect(0, 0, W, 16); }
     let y = 76;
-    const title = inv.type === 'sale' ? (isTax ? 'فاتورة ضريبية' : 'فاتورة بيع') : 'فاتورة شراء';
-    const titleEn = inv.type === 'sale' ? (isTax ? 'TAX INVOICE' : 'SALES INVOICE') : 'PURCHASE INVOICE';
+    const title = inv.type === 'sale' ? (isTax ? (WH ? 'فاتورة ضريبية - جملة' : 'فاتورة ضريبية') : (WH ? 'فاتورة بيع بالجملة' : 'فاتورة بيع')) : 'فاتورة شراء';
+    const titleEn = inv.type === 'sale' ? (isTax ? (WH ? 'WHOLESALE TAX INVOICE' : 'TAX INVOICE') : (WH ? 'WHOLESALE INVOICE' : 'SALES INVOICE')) : 'PURCHASE INVOICE';
 
     /* ----- الترويسة: بيانات النشاط (يمين) ----- */
     let nameX = R;
@@ -1084,15 +1173,17 @@ async function invoiceCanvas(inv, opts = {}) {
     y += boxH + 26;
 
     /* ----- جدول الأصناف ----- */
-    const cTot = L + 105, cPrice = L + 305, cQty = L + 475, itemW = R - (L + 550) - 20;
+    const cTot = WH ? L + 85 : L + 105, cSug = L + 250, cPrice = WH ? L + 410 : L + 305, cQty = WH ? L + 545 : L + 475, itemW = R - (L + (WH ? 615 : 550)) - 20;
     const thH = BI ? 84 : 62, thY = BI ? 38 : 40;
     RR(L, y, R - L, thH, 14, col);
-    F(700, 24);
+    F(700, WH ? 22 : 24);
     T('الصنف', R - 22, y + thY, 'right', '#fff'); T('الكمية', cQty, y + thY, 'center', '#fff');
-    T('السعر', cPrice, y + thY, 'center', '#fff'); T('المجموع', cTot, y + thY, 'center', '#fff');
+    T(WH ? 'سعر الجملة' : 'السعر', cPrice, y + thY, 'center', '#fff'); T('المجموع', cTot, y + thY, 'center', '#fff');
+    if (WH) T('السعر المقترح', cSug, y + thY, 'center', '#fff');
     if (BI) {
       F(500, 18); const wc = 'rgba(255,255,255,.82)';
-      TL('Item', R - 22, y + 66, 'right', wc); TL('Qty', cQty, y + 66, 'center', wc); TL('Price', cPrice, y + 66, 'center', wc); TL('Amount', cTot, y + 66, 'center', wc);
+      TL('Item', R - 22, y + 66, 'right', wc); TL('Qty', cQty, y + 66, 'center', wc); TL(WH ? 'Wholesale' : 'Price', cPrice, y + 66, 'center', wc); TL('Amount', cTot, y + 66, 'center', wc);
+      if (WH) TL('Suggested retail', cSug, y + 66, 'center', wc);
     }
     y += thH;
     inv.lines.forEach((l, i) => {
@@ -1109,10 +1200,15 @@ async function invoiceCanvas(inv, opts = {}) {
       F(400, 27);
       T(qtyFmt(l.qty) + (l.unit && l.unit !== 'حبة' && l.unit !== 'خدمة' ? ' ' + l.unit : ''), cQty, y + 44, 'center');
       T(money(l.price), cPrice, y + 44, 'center');
+      if (WH) T(num(l.sug) > 0 ? money(l.sug) : '—', cSug, y + 44, 'center', '#475569');
       F(700, 27); T(money(num(l.qty) * num(l.price)), cTot, y + 44, 'center');
       y += h;
       HL(y, '#EEF2F6');
     });
+    if (WH && inv.lines.some(l => num(l.sug) > 0)) {
+      y += 34; F(400, 20); T('السعر المقترح: سعر بيع الوحدة للمستهلك بالمفرد (استرشادي)', R - 22, y, 'right', '#64748B');
+      if (BI) { y += 28; F(400, 18); TL('Suggested retail: recommended consumer price per unit', R - 22, y, 'right', '#94A3B8'); }
+    }
     y += 26;
 
     /* ----- الإجماليات (يسار) والختم (يمين) ----- */
@@ -1275,6 +1371,233 @@ async function resizeImageFile(file, max = 360) {
 
 'use strict';
 /* =====================================================================
+   مزايا الباقة المتقدمة: الترجمة التلقائية للأصناف، الباركود، ملصقات الطابعة الحرارية
+   ===================================================================== */
+
+/* ---------- الترجمة التلقائية لأسماء الأصناف (عند توفر الإنترنت) ----------
+   تُرسل أسماء الأصناف فقط (بدون أي بيانات أخرى) إلى خدمة MyMemory المجانية للترجمة */
+const TR_URL = 'https://api.mymemory.translated.net/get';
+const Tr = {
+  q: [], busy: false, fails: 0, pauseUntil: 0,
+  on() { return !!(DB && DB.settings.autoTr && Plan.can('autotr')); },
+  need(it) { return it && !it.archived && it.name && (!it.nameEn || (it.trAuto && it.trSrc !== it.name)); },
+  queue(ids, force) {
+    if (!this.on() && !force) return;
+    for (const id of [].concat(ids)) if (id && !this.q.includes(id)) this.q.push(id);
+    this.run();
+  },
+  queueAll() { this.queue(DB.items.filter(i => this.need(i)).map(i => i.id)); },
+  clean(t, src) {
+    t = String(t || '').replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n)).replace(/&(quot|amp|lt|gt|apos);/g, m => ({ '&quot;': '"', '&amp;': '&', '&lt;': '<', '&gt;': '>', '&apos;': "'" }[m]));
+    t = t.replace(/[‎‏"«»]/g, '').replace(/\s+/g, ' ').trim().replace(/[.。]+$/, '');
+    if (!t || /[؀-ۿ]/.test(t) || /MYMEMORY|QUERY LENGTH|INVALID|PLEASE SELECT/i.test(t) || t.length > 120) return '';
+    const small = new Set(['and', 'or', 'of', 'with', 'for', 'the', 'a', 'an', 'in', 'to']);
+    return t.split(' ').map((w, i) => (i && small.has(w.toLowerCase())) ? w.toLowerCase() : /^[a-z]/.test(w) ? w[0].toUpperCase() + w.slice(1) : w).join(' ');
+  },
+  async one(name) {
+    const src = toEnDigits(name).trim();
+    const ctl = window.AbortController ? new AbortController() : null, to = ctl ? setTimeout(() => ctl.abort(), 12000) : 0;
+    try {
+      const r = await fetch(`${TR_URL}?q=${encodeURIComponent(src)}&langpair=ar|en`, { signal: ctl ? ctl.signal : undefined, credentials: 'omit', referrerPolicy: 'no-referrer' });
+      if (!r.ok) throw new Error('http ' + r.status);
+      const j = await r.json();
+      if (j.quotaFinished) { this.pauseUntil = Date.now() + 6 * 3600e3; throw new Error('quota'); }
+      if (String(j.responseStatus) !== '200') throw new Error('status ' + j.responseStatus);
+      return this.clean(j.responseData && j.responseData.translatedText, src);
+    } finally { clearTimeout(to); }
+  },
+  /* ترجمة فورية بطلب التاجر (زر «ترجم» في شاشة الصنف) */
+  async now(name) {
+    if (navigator.onLine === false) throw new Error('offline');
+    return this.one(name);
+  },
+  async run() {
+    if (this.busy || !this.q.length || navigator.onLine === false || Date.now() < this.pauseUntil || !DB) return;
+    this.busy = true; let done = 0;
+    try {
+      while (this.q.length && navigator.onLine !== false && DB) {
+        const id = this.q[0], it = itemById(id);
+        if (!this.need(it)) { this.q.shift(); continue; }
+        let en = '';
+        try { en = await this.one(it.name); this.fails = 0; }
+        catch (e) { if (++this.fails >= 3 || /quota/.test(e.message)) { this.fails = 0; break; } await sleep(1500); continue; }
+        this.q.shift();
+        const cur = itemById(id);
+        if (en && cur && this.need(cur)) { cur.nameEn = en; cur.trAuto = true; cur.trSrc = cur.name; done++; }
+        await sleep(350);
+      }
+    } finally { this.busy = false; }
+    if (done) {
+      await persist(); Cloud.ev('tr_auto', { n: done });
+      if (Draft) Draft.lines.forEach(l => { if (!l.nameEn) { const it = l.itemId && itemById(l.itemId); if (it && it.nameEn) l.nameEn = it.nameEn; } });
+      const c = Nav.cur(); if (c && !Lock.on && ['items', 'invoice'].includes(c.name)) { const y = scrollY; render(); scrollTo(0, y); }
+    }
+  }
+};
+addEventListener('online', () => setTimeout(() => Tr.run(), 1500));
+
+/* ---------- ترميز الباركود: EAN-13 للأكواد الرقمية القياسية، و Code 128 لغيرها ---------- */
+const EAN_L = ['0001101', '0011001', '0010011', '0111101', '0100011', '0110001', '0101111', '0111011', '0110111', '0001011'];
+const EAN_G = ['0100111', '0110011', '0011011', '0100001', '0011101', '0111001', '0000101', '0010001', '0001001', '0010111'];
+const EAN_R = ['1110010', '1100110', '1101100', '1000010', '1011100', '1001110', '1010000', '1000100', '1001000', '1110100'];
+const EAN_PAR = ['LLLLLL', 'LLGLGG', 'LLGGLG', 'LLGGGL', 'LGLLGG', 'LGGLLG', 'LGGGLL', 'LGLGLG', 'LGLGGL', 'LGGLGL'];
+const C128 = ('212222 222122 222221 121223 121322 131222 122213 122312 132212 221213 221312 231212 112232 122132 122231 113222 123122 123221 223211 221132 ' +
+  '221231 213212 223112 312131 311222 321122 321221 312212 322112 322211 212123 212321 232121 111323 131123 131321 112313 132113 132311 211313 ' +
+  '231113 231311 112133 112331 132131 113123 113321 133121 313121 211331 231131 213113 213311 213131 311123 311321 331121 312113 312311 332111 ' +
+  '314111 221411 431111 111224 111422 121124 121421 141122 141221 112214 112412 122114 122411 142112 142211 241211 221114 413111 241112 134111 ' +
+  '111242 121142 121241 114212 124112 124211 411212 421112 421211 212141 214121 412121 111143 111341 131141 114113 114311 411113 411311 113141 ' +
+  '114131 311141 411131 211412 211214 211232 2331112').split(' ');
+const Barcode = {
+  valid(c) { return /^[\x20-\x7E]{1,32}$/.test(c || ''); },
+  /* يعيد سلسلة من 0 و 1 (1 = خط أسود) بدون المنطقة الهادئة */
+  modules(code) {
+    if (isEan13(code)) {
+      const f = +code[0], par = EAN_PAR[f]; let m = '101';
+      for (let i = 1; i <= 6; i++) m += (par[i - 1] === 'L' ? EAN_L : EAN_G)[+code[i]];
+      m += '01010';
+      for (let i = 7; i <= 12; i++) m += EAN_R[+code[i]];
+      return { type: 'ean13', bits: m + '101' };
+    }
+    const vals = [];
+    const digits = /^\d+$/.test(code) && code.length >= 4;
+    if (digits) {
+      vals.push(105);
+      const ev = code.length - (code.length % 2);
+      for (let i = 0; i < ev; i += 2) vals.push(+code.slice(i, i + 2));
+      if (code.length % 2) { vals.push(100); vals.push(code.charCodeAt(code.length - 1) - 32); }
+    } else { vals.push(104); for (const ch of code) vals.push(ch.charCodeAt(0) - 32); }
+    let sum = vals[0]; for (let i = 1; i < vals.length; i++) sum += vals[i] * i;
+    vals.push(sum % 103); vals.push(106);
+    let m = '';
+    for (const v of vals) { const w = C128[v]; for (let i = 0; i < w.length; i++) m += (i % 2 ? '0' : '1').repeat(+w[i]); }
+    return { type: 'code128', bits: m };
+  },
+  /* SVG للعرض داخل التطبيق */
+  svg(code, h = 64) {
+    const { bits, type } = this.modules(code), q = type === 'ean13' ? 9 : 10, W = bits.length + q * 2;
+    let r = '', x = 0;
+    while (x < bits.length) { if (bits[x] === '1') { let w = 1; while (bits[x + w] === '1') w++; r += `<rect x="${x + q}" y="0" width="${w}" height="${h}"/>`; x += w; } else x++; }
+    return `<svg class="bc-svg" viewBox="0 0 ${W} ${h}" preserveAspectRatio="none" aria-label="${esc(code)}"><rect width="${W}" height="${h}" fill="#fff"/><g fill="#000">${r}</g></svg>`;
+  }
+};
+
+/* ---------- الملصق: رسم بالنقاط (203 نقطة/بوصة = 8 نقاط لكل مم) بالأبيض والأسود فقط ---------- */
+const LABEL_SIZES = [[40, 30], [50, 30], [50, 25], [40, 20], [30, 20], [60, 40], [58, 40]];
+function labelCfg() { return Object.assign({ w: 40, h: 30, gap: 2, lang: 'tspl', shop: true, price: true, en: false, inv: false, flip: false, pw: 384, dev: null }, DB.settings.label || {}); }
+async function labelCanvas(it, L = labelCfg()) {
+  await fontsReady();
+  const W = Math.round(L.w * 8), H = Math.round(L.h * 8), m = Math.max(10, Math.round(W * 0.04));
+  const cv = document.createElement('canvas'); cv.width = W; cv.height = H; cv.dir = 'rtl';
+  const ctx = cv.getContext('2d'); ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, W, H); ctx.fillStyle = '#000'; ctx.textAlign = 'center'; ctx.direction = 'rtl'; ctx.textBaseline = 'alphabetic';
+  const F = (w, s) => { ctx.font = `${w} ${s}px ${FONT}`; };
+  const fit = (txt, w, s, min) => { F(w, s); while (s > min && ctx.measureText(txt).width > W - m * 2) { s--; F(w, s); } return s; };
+  const ell = (txt, maxW) => { if (ctx.measureText(txt).width <= maxW) return txt; while (txt.length > 1 && ctx.measureText(txt + '…').width > maxW) txt = txt.slice(0, -1); return txt + '…'; };
+  const code = it.barcode || '';
+  // المحتوى من الأعلى: اسم المحل، اسم الصنف (سطران كحد أقصى)، الاسم الإنجليزي، السعر — ثم الباركود في الأسفل
+  const rows = [];
+  const S = DB.settings;
+  if (L.shop && S.bizName) rows.push({ t: S.bizName, w: 700, s: Math.round(H * 0.075), min: 12 });
+  { const s0 = Math.round(H * 0.12); F(800, s0); let lines = wrapText(ctx, it.name, W - m * 2); let s = s0;
+    while (lines.length > 2 && s > 14) { s--; F(800, s); lines = wrapText(ctx, it.name, W - m * 2); }
+    if (lines.length > 2) lines = [lines[0], ell(lines.slice(1).join(' '), W - m * 2)];
+    lines.forEach(t => rows.push({ t, w: 800, s, min: s, wrapped: true })); }
+  if (L.en && it.nameEn) rows.push({ t: it.nameEn, w: 500, s: Math.round(H * 0.07), min: 11, ltr: true });
+  if (L.price) rows.push({ t: money(it.sale) + ' ' + cur(), w: 800, s: Math.round(H * 0.115), min: 14 });
+  const digitsH = code ? Math.round(H * 0.075) : 0, barMin = code ? Math.round(H * 0.24) : 0;
+  const top = Math.round(H * 0.06), gapR = Math.round(H * 0.015);
+  const desc = r => r.ltr ? Math.round(r.s * 0.12) : Math.round(r.s * 0.24); // مسافة لنقاط الحروف العربية تحت السطر
+  const used = () => rows.reduce((a, r) => a + r.s + desc(r) + gapR, top) + barMin + digitsH + gapR * 3;
+  // إذا ضاق الملصق: نحذف الإنجليزي ثم اسم المحل، ثم نصغّر الخطوط
+  while (used() > H && rows.some(r => r.ltr)) rows.splice(rows.findIndex(r => r.ltr), 1);
+  while (used() > H && rows.length > 1 && L.shop && S.bizName && rows[0].t === S.bizName) rows.shift();
+  let guard = 0; while (used() > H && guard++ < 40) rows.forEach(r => { if (r.s > 12) r.s--; });
+  let y = top;
+  for (const r of rows) {
+    const s = r.wrapped ? r.s : fit(r.t, r.w, r.s, r.min);
+    F(r.w, s); y += s;
+    if (r.ltr) { ctx.direction = 'ltr'; ctx.fillText(ell(r.t, W - m * 2), W / 2, y); ctx.direction = 'rtl'; }
+    else ctx.fillText(ell(r.t, W - m * 2), W / 2, y);
+    y += desc(r) + gapR;
+  }
+  if (code) {
+    const { bits, type } = Barcode.modules(code), q = type === 'ean13' ? 9 : 10;
+    const mw = Math.max(1, Math.floor((W - 4) / (bits.length + q * 2)));
+    const bw = bits.length * mw, x0 = Math.round((W - bw) / 2);
+    const by = y + gapR, bh = Math.max(barMin, H - by - digitsH - gapR * 2);
+    for (let x = 0; x < bits.length; x++) if (bits[x] === '1') ctx.fillRect(x0 + x * mw, by, mw, bh);
+    F(600, digitsH); ctx.direction = 'ltr';
+    const shown = type === 'ean13' ? code[0] + ' ' + code.slice(1, 7) + ' ' + code.slice(7) : code;
+    ctx.fillText(ell(shown, W - 8), W / 2, H - gapR - 2); ctx.direction = 'rtl';
+  }
+  // تحويل إلى أبيض وأسود صرف (كما ستطبعه الطابعة الحرارية)
+  const im = ctx.getImageData(0, 0, W, H), d = im.data;
+  for (let i = 0; i < d.length; i += 4) { const v = (d[i] * 0.3 + d[i + 1] * 0.59 + d[i + 2] * 0.11) < 150 && d[i + 3] > 60 ? 0 : 255; d[i] = d[i + 1] = d[i + 2] = v; d[i + 3] = 255; }
+  ctx.putImageData(im, 0, 0);
+  return cv;
+}
+/* صف من البتات لكل سطر: black1=true يعني أن 1 = أسود */
+function canvasBits(cv, black1, padTo) {
+  const W = cv.width, H = cv.height, outW = Math.max(W, padTo || 0), wb = Math.ceil(outW / 8), off = Math.floor((outW - W) / 2);
+  const d = cv.getContext('2d').getImageData(0, 0, W, H).data, out = new Uint8Array(wb * H);
+  if (!black1) out.fill(0xFF);
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+    if (d[(y * W + x) * 4] >= 128) continue; // أبيض
+    const X = x + off, i = y * wb + (X >> 3), bit = 0x80 >> (X & 7);
+    if (black1) out[i] |= bit; else out[i] &= ~bit;
+  }
+  return { wb, h: H, data: out };
+}
+function concatBytes(parts) { let n = 0; for (const p of parts) n += p.length; const o = new Uint8Array(n); let i = 0; for (const p of parts) { o.set(p, i); i += p.length; } return o; }
+const asc = s => TE.encode(s);
+/* أوامر TSPL لطابعات الملصقات (Xprinter، TSC، HPRT وأمثالها) */
+function tsplJob(pages, L = labelCfg()) {
+  const parts = [asc(`SIZE ${L.w} mm,${L.h} mm\r\nGAP ${num(L.gap)} mm,0 mm\r\nDIRECTION ${L.flip ? 0 : 1},0\r\nREFERENCE 0,0\r\nOFFSET 0 mm\r\nSET TEAR ON\r\n`)];
+  for (const p of pages) {
+    const b = canvasBits(p.cv, !!L.inv);
+    parts.push(asc(`CLS\r\nBITMAP 0,0,${b.wb},${b.h},0,`), b.data, asc(`\r\nPRINT 1,${Math.max(1, Math.min(999, p.copies | 0))}\r\n`));
+  }
+  return concatBytes(parts);
+}
+/* أوامر ESC/POS لطابعات الإيصالات الحرارية (58 أو 80 مم) */
+function escposJob(pages, L = labelCfg()) {
+  const pw = +L.pw || 384, parts = [new Uint8Array([0x1B, 0x40])];
+  for (const p of pages) {
+    const b = canvasBits(p.cv, !L.inv, pw);
+    for (let c = 0; c < Math.max(1, Math.min(999, p.copies | 0)); c++) {
+      for (let y0 = 0; y0 < b.h; y0 += 96) {
+        const h = Math.min(96, b.h - y0);
+        parts.push(new Uint8Array([0x1D, 0x76, 0x30, 0x00, b.wb & 0xFF, b.wb >> 8, h & 0xFF, h >> 8]), b.data.subarray(y0 * b.wb, (y0 + h) * b.wb));
+      }
+      parts.push(new Uint8Array([0x1B, 0x64, 0x03]));
+    }
+  }
+  return concatBytes(parts);
+}
+
+/* ---------- الطابعة عبر البلوتوث (أندرويد: إضافة FwPrinter الأصلية بالاتصال التسلسلي SPP) ---------- */
+const Printer = {
+  plugin() {
+    const C = window.Capacitor; if (!C) return null;
+    if (C.Plugins && C.Plugins.FwPrinter) return C.Plugins.FwPrinter;
+    try { return C.registerPlugin ? C.registerPlugin('FwPrinter') : null; } catch (e) { return null; }
+  },
+  avail() { return isNative() && window.Capacitor.getPlatform && window.Capacitor.getPlatform() === 'android' && !!this.plugin(); },
+  async list() { const r = await this.plugin().list(); return (r && r.devices) || []; },
+  async send(bytes, address) {
+    Lock.grace(120000);
+    return this.plugin().print({ address, data: B64.enc(bytes) });
+  },
+  err(e) {
+    const m = String((e && (e.message || e.code)) || e || '');
+    if (/permission|denied/i.test(m)) return 'يلزم السماح للتطبيق باستخدام البلوتوث (الأجهزة القريبة) من إعدادات الجوال.';
+    if (/disabled|off|not enabled/i.test(m)) return 'البلوتوث مغلق. شغّله من إعدادات الجوال ثم حاول مرة أخرى.';
+    if (/connect|socket|timeout|refused|unavailable/i.test(m)) return 'تعذّر الاتصال بالطابعة. تأكد أنها مشغّلة وقريبة، وأنها مقترنة بالجوال من إعدادات البلوتوث.';
+    return 'تعذّرت الطباعة: ' + m.slice(0, 80);
+  }
+};
+
+'use strict';
+/* =====================================================================
    واجهة المستخدم: الأيقونات، النوافذ، التنقل، القفل، الشاشات
    ===================================================================== */
 
@@ -1320,6 +1643,10 @@ const IC = {
   camera: '<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>',
   image: '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/>',
   minus: '<path d="M5 12h14"/>',
+  barcode: '<path d="M4 5v14M7.5 5v14M10 5v14M13.5 5v14M16 5v14M20 5v14"/>',
+  globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>',
+  bt: '<path d="m7 7 10 10-5 4V3l5 4L7 17"/>',
+  unlock: '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.6-1.7"/>',
   help: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14"/><path d="M12 17.5v.01"/>'
 };
 const ic = (n, cls = '') => `<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true">${IC[n] || ''}</svg>`;
@@ -1480,6 +1807,7 @@ function setupBackTrap() {
 function render() {
   const c = Nav.cur(); if (!c) return;
   const scr = Screens[c.name];
+  if (c.name !== 'plans' && Cloud.fastT) Cloud.fast(false);
   const bare = !!scr.bare;
   $('#topbar').classList.toggle('hide', bare);
   const showTabs = !bare && !scr.noTabs;
@@ -1551,14 +1879,14 @@ const Lock = {
   init() {
     ['pointerdown', 'keydown', 'touchstart'].forEach(ev => addEventListener(ev, () => { this.last = Date.now(); }, { passive: true }));
     setInterval(() => {
-      if (this.on || !Vault.unlocked()) return;
+      if (this.on || !Vault.unlocked() || Vault.auto()) return;
       const m = Math.max(1, this.mins());
       if (Date.now() - this.last > m * 60000 && Date.now() > this.graceUntil) this.lock();
     }, 10000);
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) { this.hiddenAt = Date.now(); if (Vault.unlocked()) document.body.classList.add('privacy'); return; }
       document.body.classList.remove('privacy');
-      if (!Vault.unlocked() || this.on) return;
+      if (!Vault.unlocked() || this.on || Vault.auto()) return;
       if (Date.now() - this.hiddenAt >= this.mins() * 60000 && Date.now() > this.graceUntil) this.lock();
       this.last = Date.now();
     });
@@ -1570,6 +1898,15 @@ function creditsHtml(light = false) {
     <button type="button" class="cr-tel" data-act="contactUs">${ic('wa')} للتواصل والاقتراحات: <span class="ltr">${esc(APP.contactLocal)}</span></button></div>`;
 }
 ACT.contactUs = () => openExternal(waLink(APP.devWhatsApp, `السلام عليكم، لدي اقتراح/استفسار بخصوص تطبيق ${APP.name}`));
+/* عند الفتح بدون رمز سري: تظهر الحقوق لحظة قصيرة بدلاً من شاشة الرمز */
+function creditsSplash() {
+  const d = document.createElement('div'); d.id = 'crSplash';
+  d.innerHTML = `<div class="cs-mid"><img src="${APP_ICON}" alt=""><h2>${esc(APP.name)}</h2></div>${creditsHtml()}`;
+  document.body.appendChild(d);
+  const close = () => { d.classList.add('out'); setTimeout(() => d.remove(), 400); };
+  const t = setTimeout(close, 1800);
+  d.addEventListener('click', e => { if (e.target.closest('[data-act]')) return; clearTimeout(t); close(); });
+}
 let lockTick = 0;
 function showLockScreen() {
   const box = $('#lock'); box.classList.add('on');
@@ -1605,6 +1942,15 @@ async function afterUnlock() {
   if (!Nav.stack.length || Screens[Nav.cur().name].bare) Nav.stack = [{ name: 'home', params: {} }];
   render();
   if (PendingActivation) { Nav.go('plans', { code: PendingActivation }); PendingActivation = null; }
+  if (Cloud.pushed) { Cloud.pushed = false; toast('تم تفعيل الباقة ' + Plan.cfg().name + ' 🎉', 4000); }
+  proMaintain();
+}
+/* المتقدمة: باركود لكل صنف، وترجمة الأصناف غير المترجمة */
+function ensureBarcodes() { let n = 0; for (const it of DB.items) if (!it.archived && !it.barcode) { it.barcode = newBarcode(); n++; } return n; }
+function proMaintain() {
+  if (!DB) return;
+  if (Plan.can('barcode') && ensureBarcodes()) persist();
+  if (Tr.on()) Tr.queueAll();
 }
 function recoveryFlow() {
   Modal.open(`<p class="muted" style="margin-top:0">أدخل رمز الاستعادة الذي حصلت عليه عند إنشاء التطبيق (16 حرفاً ورقماً).</p>
@@ -1634,14 +1980,14 @@ function invRow(inv) {
   const st = statusOf(inv), sale = inv.type === 'sale';
   return `<button class="row" data-act="openInv" data-id="${inv.id}">
     <div class="ico" style="background:${sale ? 'var(--sale-l)' : 'var(--pur-l)'};color:${sale ? 'var(--sale)' : 'var(--pur)'}">${ic(sale ? 'bag' : 'truck')}</div>
-    <div class="grow"><div class="t">${esc(inv.partyName || (sale ? 'عميل نقدي' : 'مورد'))}</div><div class="s"><span class="ltr">${esc(inv.no)}</span> · ${fmtDate(inv.date)}</div></div>
+    <div class="grow"><div class="t">${esc(inv.partyName || (sale ? 'عميل نقدي' : 'مورد'))}</div><div class="s"><span class="ltr">${esc(inv.no)}</span> · ${fmtDate(inv.date)}${isWhole(inv) ? ' · <span class="wh-tag">جملة</span>' : ''}</div></div>
     <div class="end"><div class="amt">${money(inv.total)}</div><span class="badge ${st}">${STATUS_TXT[st]}</span></div></button>`;
 }
 const byNewest = (a, b) => (b.date + String(b.created).padStart(15, '0')).localeCompare(a.date + String(a.created).padStart(15, '0'));
 function emptyBox(icon, text, btn = '') { return `<div class="empty">${ic(icon)}<div>${text}</div>${btn}</div>`; }
 /* بحث عربي مرن: يتجاهل الهمزات والتاء المربوطة والألف المقصورة والتشكيل */
 function normAr(s) { return toEnDigits(String(s || '')).toLowerCase().replace(/[\u064B-\u0652\u0640]/g, '').replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/\s+/g, ' ').trim(); }
-function itemMatch(it, q) { return !q || normAr(it.name).includes(q) || (it.nameEn && it.nameEn.toLowerCase().includes(q)); }
+function itemMatch(it, q) { return !q || normAr(it.name).includes(q) || (it.nameEn && it.nameEn.toLowerCase().includes(q)) || (!!it.barcode && /^[0-9a-z]{3,}$/.test(q) && it.barcode.toLowerCase().includes(q)); }
 const TH_COLORS = ['#0F766E', '#2563EB', '#B45309', '#7C3AED', '#BE185D', '#15803D', '#C2410C', '#0369A1'];
 /* صورة الصنف المصغّرة أو أول حرف من اسمه */
 function thumb(it, cls = '') {
@@ -1660,6 +2006,7 @@ function pickImage(capture) {
 }
 function limitBlocked() { return Plan.limitLeft() <= 0; }
 /* نافذة الترقية عند طلب ميزة غير متاحة في الباقة الحالية */
+ACT.needFeat = el => needPlan(el.dataset.f);
 async function needPlan(feat) {
   if (Plan.can(feat)) return true;
   const p = PLANS[Plan.minFor(feat)];
@@ -1810,6 +2157,7 @@ async function adoptBackup(bk, unlocked) {
   await Vault.chain;
   await Store.set('meta', meta); await Store.set('data', bk.data);
   if (bk.imgs) await Store.set('imgs', bk.imgs); else await Store.del('imgs');
+  await Store.del('autoKey'); // النسخة المستعادة تُفتح بالرمز السري
   Vault.meta = meta; await Vault.setRaw(unlocked.raw);
   setDB(migrate(await Vault.read())); await Imgs.load();
 }
@@ -1835,7 +2183,7 @@ Screens.restore = {
 /* ---------- الرئيسية ---------- */
 Screens.home = {
   title: () => APP.name,
-  actions: () => `<button class="tb-btn" data-act="lockNow" aria-label="قفل">${ic('lock')}</button>`,
+  actions: () => Vault.auto() ? '' : `<button class="tb-btn" data-act="lockNow" aria-label="قفل">${ic('lock')}</button>`,
   render() {
     const S = DB.settings, t = today(), r = report(t, t), recv = totalReceivable(), pay = totalPayable();
     const low = lowStockItems(), recent = [...DB.invoices].sort(byNewest).slice(0, 5);
@@ -1910,16 +2258,28 @@ function initDraft(p) {
     const inv = invById(p.id); const paid = paidOf(inv);
     return {
       key: p.id, id: inv.id, type: inv.type, no: inv.no, date: inv.date, partyId: inv.partyId, partyName: inv.partyName || '', partyPhone: inv.partyPhone || '',
+      mode: isWhole(inv) ? 'whole' : 'retail',
       lines: inv.lines.map(l => ({ ...l })), discount: inv.discount || 0, note: inv.note || '', vatRate: num(inv.vatRate), vatInclusive: !!inv.vatInclusive,
       payMode: paid >= inv.total - 0.0005 ? 'full' : paid > 0 ? 'partial' : 'credit', payAmount: paid, payMethod: inv.method || 'cash', dirty: false
     };
   }
   const party = p.party ? partyById(p.party) : null;
   return {
-    key: 'new', type: p.type, no: '', date: today(), partyId: party ? party.id : null, partyName: party ? party.name : '', partyPhone: party ? party.phone || '' : '',
+    key: 'new', type: p.type, mode: 'retail', no: '', date: today(), partyId: party ? party.id : null, partyName: party ? party.name : '', partyPhone: party ? party.phone || '' : '',
     lines: [], discount: 0, note: '', vatRate: S.vatOn && Plan.can('vat') ? num(S.vatRate) : 0, vatInclusive: !!S.vatInclusive,
     payMode: 'full', payAmount: '', payMethod: 'cash', dirty: false
   };
+}
+const dWhole = () => !!(Draft && Draft.type === 'sale' && Draft.mode === 'whole');
+/* تغيير نوع البيع: يتغيّر سعر الأسطر التي لم يعدّلها التاجر يدوياً، ويُضاف السعر المقترح في الجملة */
+function setMode(D, to) {
+  const was = D.mode === 'whole', w = to === 'whole';
+  D.mode = to;
+  D.lines.forEach(l => {
+    const it = l.itemId && itemById(l.itemId);
+    if (it && round(l.price) === round(itemPrice(it, 'sale', was))) l.price = itemPrice(it, 'sale', w);
+    if (w) { if (l.sug == null || l.sug === '') l.sug = it ? num(it.sale) : ''; } else delete l.sug;
+  });
 }
 function draftCalc() { return calcInvoice({ lines: Draft.lines, discount: Draft.discount, vatRate: Draft.vatRate, vatInclusive: Draft.vatInclusive }); }
 function linesHtml() {
@@ -1935,7 +2295,8 @@ function linesHtml() {
     return `<div class="line" data-i="${i}"><div class="line-top">${thumb(it || { name: l.name }, 'sm')}<b>${esc(l.name)}</b><button class="x-btn" data-ln="del" data-i="${i}" aria-label="حذف">${ic('x')}</button></div>
       <div class="line-row"><div class="qty"><button type="button" data-ln="minus" data-i="${i}">−</button><input class="qty-in num" style="text-align:center" inputmode="decimal" data-i="${i}" value="${qtyFmt(l.qty)}"><button type="button" data-ln="plus" data-i="${i}">+</button></div>
       <label class="pr"><span>السعر</span><input class="pr-in num" inputmode="decimal" data-i="${i}" value="${money(l.price)}"></label>
-      <div class="line-total" id="lt${i}">${money(num(l.qty) * num(l.price))}</div></div>${hint}</div>`;
+      <div class="line-total" id="lt${i}">${money(num(l.qty) * num(l.price))}</div></div>
+      ${dWhole() ? `<label class="line-sug"><span>السعر المقترح للبيع بالمفرد</span><input class="sug-in num" inputmode="decimal" data-i="${i}" value="${num(l.sug) > 0 ? money(l.sug) : ''}" placeholder="0.000"><small class="muted">لكل ${esc(l.unit || 'حبة')}</small></label>` : ''}${hint}</div>`;
   }).join('');
 }
 function totalsHtml() {
@@ -1959,10 +2320,12 @@ Screens.editor = {
     if (!Draft || Draft.key !== (p.id || 'new')) Draft = initDraft(p);
     const D = Draft, sale = D.type === 'sale';
     return `<div class="${D.type}">
-      <div class="ed-head"><span class="badge ${D.type}" style="font-size:15px">${TYPE_TXT[D.type]}</span><span class="ltr muted">${esc(D.no || 'جديدة')}</span><input type="date" id="edDate" value="${D.date}"></div>
+      <div class="ed-head"><span class="badge ${D.type}" style="font-size:15px">${invTitle(D)}</span><span class="ltr muted">${esc(D.no || 'جديدة')}</span><input type="date" id="edDate" value="${D.date}"></div>
       <div class="card"><div class="field party-box" style="margin-bottom:0"><label>${sale ? 'العميل' : 'المورد'} <span class="muted small">${sale ? '(اتركه فارغاً للبيع النقدي)' : ''}</span></label>
         <input id="edParty" placeholder="${sale ? 'اكتب اسم العميل' : 'اكتب اسم المورد'}" value="${esc(D.partyName)}" autocomplete="off"><div class="sugg hide" id="edSugg"></div></div>
         <div class="field ${D.partyName ? '' : 'hide'}" id="edPhoneF" style="margin:12px 0 0"><label>رقم الهاتف <span class="muted small">(لإرسال الفاتورة عبر واتساب)</span></label><input id="edPhone" class="num" inputmode="tel" value="${esc(D.partyPhone)}" placeholder="9xxxxxxx"></div></div>
+      ${sale ? `<div class="card mode-card"><div class="lbl">نوع البيع</div><div class="seg" id="edMode"><button type="button" data-md="retail" class="${D.mode !== 'whole' ? 'on' : ''}">بيع بالمفرد</button><button type="button" data-md="whole" class="${D.mode === 'whole' ? 'on' : ''} ${Plan.can('wholesale') ? '' : 'locked'}">بيع بالجملة ${Plan.can('wholesale') ? '' : ic('lock')}</button></div>
+        ${D.mode === 'whole' ? '<div class="hint" style="margin-top:8px">تظهر في الفاتورة أسعار الجملة، ومعها السعر المقترح لبيع كل صنف بالمفرد. لا يظهر مجموع السعر المقترح ولا الربح.</div>' : ''}</div>` : ''}
       <div class="sec-title">الأصناف</div>
       <div id="edLines">${linesHtml()}</div>
       <button class="add-line" id="edAdd">${ic('plus')} ${D.lines.length ? 'إضافة أصناف أخرى' : 'اختيار الأصناف من القائمة'}</button>
@@ -2008,9 +2371,18 @@ Screens.editor = {
       const i = +e.target.dataset.i; if (isNaN(i)) return;
       if (e.target.classList.contains('qty-in')) D.lines[i].qty = num(e.target.value);
       if (e.target.classList.contains('pr-in')) D.lines[i].price = num(e.target.value);
+      if (e.target.classList.contains('sug-in')) D.lines[i].sug = num(e.target.value);
       dirty(); refreshTotals();
     });
-    lines.addEventListener('change', e => { if (e.target.classList.contains('qty-in') || e.target.classList.contains('pr-in')) { lines.innerHTML = linesHtml(); refreshTotals(); } });
+    lines.addEventListener('change', e => { if (['qty-in', 'pr-in', 'sug-in'].some(c => e.target.classList.contains(c))) { lines.innerHTML = linesHtml(); refreshTotals(); } });
+    const md = $('#edMode');
+    if (md) md.onclick = async e => {
+      const b = e.target.closest('[data-md]'); if (!b) return; const to = b.dataset.md;
+      if (to === (D.mode || 'retail')) return;
+      if (to === 'whole' && !(await needPlan('wholesale'))) return;
+      setMode(D, to); dirty(); Cloud.ev('inv_mode', { m: to === 'whole' ? 'w' : 'r' });
+      const y = scrollY; render(); scrollTo(0, y);
+    };
     lines.addEventListener('click', e => {
       const b = e.target.closest('[data-ln]'); if (!b) return; const i = +b.dataset.i, l = D.lines[i];
       if (b.dataset.ln === 'del') D.lines.splice(i, 1);
@@ -2042,18 +2414,19 @@ Screens.editor = {
 };
 
 /* قائمة اختيار الأصناف: يختار التاجر عدة أصناف وكمياتها ثم يضيفها مرة واحدة */
-function pickItems() {
-  const type = Draft.type, sale = type === 'sale', sm = stockMap(), sel = new Map(), st = { changed: false };
-  const inInv = {}; Draft.lines.forEach(l => { if (l.itemId) inInv[l.itemId] = round((inInv[l.itemId] || 0) + num(l.qty), 3); });
+function pickItems(opts = {}) {
+  const lab = !!opts.labels; // اختيار أصناف لطباعة ملصقاتها (الكمية = عدد الملصقات)
+  const type = lab ? 'sale' : Draft.type, sale = type === 'sale', sm = stockMap(), sel = new Map(), st = { changed: false };
+  const inInv = {}; if (!lab) Draft.lines.forEach(l => { if (l.itemId) inInv[l.itemId] = round((inInv[l.itemId] || 0) + num(l.qty), 3); });
   const use = {}; DB.invoices.slice(-300).forEach(v => { if (v.type === type && !v.void) v.lines.forEach(l => { if (l.itemId) use[l.itemId] = (use[l.itemId] || 0) + 1; }); });
-  const priceOf = i => sale ? num(i.sale) : num(i.cost);
-  const commit = () => { let n = 0; for (const [id, q] of sel) { const it = itemById(id); if (it && q > 0) { addLine(it, q, true); n++; } } sel.clear(); if (n) st.changed = true; return n; };
-  return Modal.open(`<div class="search">${ic('search')}<input id="pkQ" placeholder="ابحث أو اكتب اسم صنف جديد" autocomplete="off"></div><div id="pkList"></div>
+  const priceOf = i => lab ? num(i.sale) : itemPrice(i, type, dWhole());
+  const commit = () => { if (lab) return 0; let n = 0; for (const [id, q] of sel) { const it = itemById(id); if (it && q > 0) { addLine(it, q, true); n++; } } sel.clear(); if (n) st.changed = true; return n; };
+  return Modal.open(`<div class="search">${ic('search')}<input id="pkQ" placeholder="${lab ? 'ابحث عن صنف' : 'ابحث أو اكتب اسم صنف جديد'}" autocomplete="off"></div><div id="pkList"></div>
     <div class="pk-bar hide" id="pkBar"><button class="btn ${sale ? 'sale' : 'pur'}" id="pkGo"></button></div>`, {
-    title: 'اختر الأصناف', cls: 'tall', onMount(el) {
+    title: lab ? 'اختر أصناف الملصقات' : 'اختر الأصناف', cls: 'tall', onMount(el) {
       const q = $('#pkQ', el), list = $('#pkList', el), bar = $('#pkBar', el), go = $('#pkGo', el);
       const rowHtml = i => {
-        const n = sel.get(i.id) || 0, tr = i.track !== false, avail = sm[i.id], out = sale && tr && avail <= 0;
+        const n = sel.get(i.id) || 0, tr = i.track !== false, avail = sm[i.id], out = !lab && sale && tr && avail <= 0;
         const sub = [`<span class="amt">${money(priceOf(i))}</span>`];
         sub.push(tr ? (out ? '<span style="color:var(--danger)">نفد من المخزون</span>' : 'المتوفر ' + qtyFmt(avail) + ' ' + esc(i.unit || '')) : 'خدمة');
         if (inInv[i.id]) sub.push(`<span class="pk-in">في الفاتورة: ${qtyFmt(inInv[i.id])}</span>`);
@@ -2063,6 +2436,7 @@ function pickItems() {
       const upBar = () => {
         let cnt = 0, tot = 0; for (const [id, n] of sel) { const it = itemById(id); if (it && n > 0) { cnt++; tot += n * priceOf(it); } }
         bar.classList.toggle('hide', !cnt);
+        if (lab) { let q = 0; for (const n of sel.values()) q += Math.max(1, Math.round(n)); go.innerHTML = `${ic('print')} طباعة ${lblN(q)}`; return; }
         go.innerHTML = `${ic('check')} إضافة ${cnt === 1 ? 'صنف واحد' : cnt === 2 ? 'صنفين' : cnt + ' أصناف'} إلى الفاتورة <span class="pk-tot num">${money(tot)}</span>`;
       };
       const draw = () => {
@@ -2071,8 +2445,8 @@ function pickItems() {
         items.sort((a, b) => (s ? (normAr(b.name).startsWith(s) - normAr(a.name).startsWith(s)) : 0) || (use[b.id] || 0) - (use[a.id] || 0) || a.name.localeCompare(b.name, 'ar'));
         const more = items.length > 150; items = items.slice(0, 150);
         let h = '';
-        if (raw && !all.some(i => normAr(i.name) === s)) h += `<div class="list"><button class="row" data-new="1"><div class="ico">${ic('plus')}</div><div class="grow"><div class="t">إضافة «${esc(raw)}» كصنف جديد</div></div></button></div>`;
-        if (items.length) h += `${!raw && all.length > 1 ? '<div class="small muted pk-hint">اضغط على الصنف لإضافته، واضغط مرة أخرى لزيادة الكمية</div>' : ''}<div class="list">${items.map(rowHtml).join('')}</div>`;
+        if (raw && !lab && !itemByBarcode(raw) && !all.some(i => normAr(i.name) === s)) h += `<div class="list"><button class="row" data-new="1"><div class="ico">${ic('plus')}</div><div class="grow"><div class="t">إضافة «${esc(raw)}» كصنف جديد</div></div></button></div>`;
+        if (items.length) h += `${!raw && all.length > 1 ? `<div class="small muted pk-hint">${lab ? 'اضغط على الصنف لاختياره، ومرة أخرى لزيادة عدد ملصقاته' : 'اضغط على الصنف لإضافته، واضغط مرة أخرى لزيادة الكمية'}</div>` : ''}<div class="list">${items.map(rowHtml).join('')}</div>`;
         if (more) h += '<div class="center small muted" style="margin-bottom:10px">اكتب في البحث لعرض باقي الأصناف</div>';
         list.innerHTML = h || `<div class="card">${emptyBox('box', 'لا توجد أصناف بعد<br>اكتب اسم الصنف في خانة البحث لإضافته')}</div>`;
       };
@@ -2083,7 +2457,10 @@ function pickItems() {
         const r = list.querySelector(`.row.pk[data-id="${id}"]`); if (r) r.outerHTML = rowHtml(it);
         upBar(); if (navigator.vibrate && d > 0) navigator.vibrate(8);
       };
-      liveInput(q, draw, 120); draw(); upBar();
+      /* قارئ الباركود (بلوتوث أو USB) يكتب الرقم ثم Enter: يُضاف الصنف مباشرة */
+      const scan = () => { const it = itemByBarcode(q.value); if (!it) return false; q.value = ''; draw(); bump(it.id, 1); toast('«' + it.name + '» ✓', 1200); return true; };
+      liveInput(q, () => { if (isEan13(normBarcode(q.value)) && scan()) return; draw(); }, 120); draw(); upBar();
+      q.addEventListener('keydown', e => { if (e.key === 'Enter' && scan()) e.preventDefault(); });
       if (activeItems().length > 12 || !activeItems().length) setTimeout(() => q.focus(), 280);
       list.onclick = e => {
         const nb = e.target.closest('[data-new]'); if (nb) { commit(); return newItemInline(el, q.value.trim(), type, st); }
@@ -2091,22 +2468,31 @@ function pickItems() {
         const b = e.target.closest('[data-d]'); bump(r.dataset.id, b ? +b.dataset.d : 1);
       };
       list.onkeydown = e => { if (e.key === 'Enter') { const r = e.target.closest('.row.pk'); if (r) bump(r.dataset.id, 1); } };
-      go.onclick = () => { const n = commit(); Modal.close(true); if (n) toast(n === 1 ? 'تمت إضافة الصنف ✓' : `تمت إضافة ${n} أصناف ✓`); };
+      go.onclick = () => {
+        if (lab) { Modal.close([...sel].filter(([, n]) => n > 0).map(([id, n]) => ({ it: itemById(id), copies: Math.max(1, Math.round(n)) })).filter(x => x.it)); return; }
+        const n = commit(); Modal.close(true); if (n) toast(n === 1 ? 'تمت إضافة الصنف ✓' : `تمت إضافة ${n} أصناف ✓`);
+      };
     },
     onClose() { if (sel.size) { /* إغلاق بدون إضافة: لا شيء */ } }
-  }).then(r => r || st.changed);
+  }).then(r => lab ? (Array.isArray(r) ? r : null) : (r || st.changed));
 }
 function addLine(it, qty = 1, quiet) {
   const ex = Draft.lines.find(l => l.itemId === it.id);
   if (ex) { ex.qty = round(num(ex.qty) + num(qty), 3); if (!quiet) toast('تمت زيادة كمية «' + it.name + '»'); }
-  else Draft.lines.push({ itemId: it.id, name: it.name, nameEn: it.nameEn || '', unit: it.unit || '', qty: round(num(qty), 3), price: Draft.type === 'sale' ? num(it.sale) : num(it.cost) });
+  else {
+    const w = dWhole(), l = { itemId: it.id, name: it.name, nameEn: it.nameEn || '', unit: it.unit || '', qty: round(num(qty), 3), price: itemPrice(it, Draft.type, w) };
+    if (w) l.sug = num(it.sale);
+    Draft.lines.push(l);
+  }
+  if (!it.nameEn && Tr.on()) Tr.queue(it.id);
 }
 const UNITS = ['حبة', 'كيلو', 'جرام', 'لتر', 'علبة', 'كرتون', 'كيس', 'متر', 'باقة', 'خدمة'];
 function newItemInline(el, name, type, st) {
-  const sale = type === 'sale';
-  $('.sh-b', el).innerHTML = `${field('اسم الصنف', inp('niName', name))}${DB.settings.bilingual ? field('الاسم بالإنجليزية', inp('niNameEn', '', 'dir="ltr" placeholder="English name"')) : ''}
-    <div class="two">${field(sale ? 'سعر البيع' : 'سعر الشراء', inp('niPrice', '', 'class="num" inputmode="decimal" placeholder="0.000"'))}
-    ${field('الوحدة', `<select id="niUnit">${UNITS.map(u => `<option>${u}</option>`).join('')}</select>`)}</div>
+  const sale = type === 'sale', w = sale && dWhole();
+  $('.sh-b', el).innerHTML = `${field('اسم الصنف', inp('niName', name))}${DB.settings.bilingual && !Tr.on() ? field('الاسم بالإنجليزية', inp('niNameEn', '', 'dir="ltr" placeholder="English name"')) : ''}
+    <div class="two">${field(w ? 'سعر الجملة' : sale ? 'سعر البيع' : 'سعر الشراء', inp('niPrice', '', 'class="num" inputmode="decimal" placeholder="0.000"'))}
+    ${w ? field('سعر البيع بالمفرد', inp('niSale', '', 'class="num" inputmode="decimal" placeholder="المقترح للمستهلك"')) : field('الوحدة', `<select id="niUnit">${UNITS.map(u => `<option>${u}</option>`).join('')}</select>`)}</div>
+    ${w ? field('الوحدة', `<select id="niUnit">${UNITS.map(u => `<option>${u}</option>`).join('')}</select>`) : ''}
     ${sale ? field('الكمية المتوفرة لديك الآن', inp('niQty', '', 'class="num" inputmode="decimal" placeholder="اختياري"'), 'لمتابعة المخزون بدقة') : ''}
     <button class="btn" id="niGo">${ic('check')} إضافة إلى الفاتورة</button>`;
   hardenInputs(el);
@@ -2114,8 +2500,10 @@ function newItemInline(el, name, type, st) {
   $('#niGo', el).onclick = async () => {
     const nm = $('#niName', el).value.trim(); if (!nm) return toast('اكتب اسم الصنف');
     const price = num($('#niPrice', el).value), unit = $('#niUnit', el).value;
-    const it = { id: uid(), name: nm, unit, sale: sale ? price : 0, cost: sale ? 0 : price, opening: sale ? num($('#niQty', el) && $('#niQty', el).value) : 0, track: unit !== 'خدمة', created: Date.now() };
+    const it = { id: uid(), name: nm, unit, sale: sale ? (w ? num($('#niSale', el).value) : price) : 0, cost: sale ? 0 : price, opening: sale ? num($('#niQty', el) && $('#niQty', el).value) : 0, track: unit !== 'خدمة', created: Date.now() };
+    if (w) it.whole = price;
     if ($('#niNameEn', el)) it.nameEn = $('#niNameEn', el).value.trim();
+    if (Plan.can('barcode')) it.barcode = newBarcode();
     DB.items.push(it); addLine(it); if (st) st.changed = true; persist(); Modal.close(true);
   };
 }
@@ -2142,9 +2530,10 @@ async function saveDraft() {
   const inv = isNew ? { id: uid(), type: D.type, no: nextNo(D.type), created: Date.now(), payments: [] } : invById(D.id);
   Object.assign(inv, {
     date: D.date, partyId: pid, partyName: name, partyPhone: phone,
-    lines: D.lines.map(l => { const o = { itemId: l.itemId, name: l.name, unit: l.unit || '', qty: round(num(l.qty), 3), price: round(l.price) }; const en = l.nameEn || lineNameEn(l); if (en) o.nameEn = en; return o; }),
+    lines: D.lines.map(l => { const o = { itemId: l.itemId, name: l.name, unit: l.unit || '', qty: round(num(l.qty), 3), price: round(l.price) }; const en = l.nameEn || lineNameEn(l); if (en) o.nameEn = en; if (dWhole() && num(l.sug) > 0) o.sug = round(l.sug); return o; }),
     discount: round(D.discount), vatRate: D.vatRate, vatInclusive: D.vatInclusive, note: D.note.trim(), method: D.payMethod, updated: Date.now()
   });
+  if (dWhole()) inv.mode = 'whole'; else delete inv.mode;
   const c = calcInvoice(inv); inv.subtotal = c.sub; inv.vat = c.vat; inv.total = c.total;
   const paid = D.payMode === 'full' ? c.total : D.payMode === 'credit' ? 0 : Math.min(round(D.payAmount), c.total);
   if (isNew || round(paid) !== paidOf(inv)) inv.payments = paid > 0 ? [{ d: D.date, a: round(paid), m: D.payMethod }] : [];
@@ -2152,7 +2541,7 @@ async function saveDraft() {
   if (isNew) DB.invoices.push(inv);
   if (inv.type === 'purchase') for (const l of inv.lines) { const it = itemById(l.itemId); if (it && num(l.price) > 0) it.cost = l.price; }
   await persist();
-  Cloud.ev(isNew ? 'inv_new' : 'inv_edit', { t: inv.type === 'sale' ? 's' : 'p', n: DB.invoices.length, l: inv.lines.length, pm: D.payMode[0] });
+  Cloud.ev(isNew ? 'inv_new' : 'inv_edit', { t: inv.type === 'sale' ? (isWhole(inv) ? 'w' : 's') : 'p', n: DB.invoices.length, l: inv.lines.length, pm: D.payMode[0] });
   Draft = null;
   Nav.replace('invoice', { id: inv.id });
   toast(isNew ? 'تم حفظ الفاتورة ✓' : 'تم حفظ التعديلات ✓');
@@ -2163,7 +2552,7 @@ let CurCanvas = null, IvGen = 0;
 function invBI() { return Plan.can('bilingual') && (UI.invBI != null ? UI.invBI : !!DB.settings.bilingual); }
 function invText(inv) {
   const S = DB.settings, due = dueOf(inv);
-  let t = `${inv.partyName ? 'مرحباً ' + inv.partyName + '،\n' : ''}${TYPE_TXT[inv.type]} رقم ${inv.no}\nالتاريخ: ${fmtDate(inv.date)}\nالإجمالي: ${money(inv.total)} ${cur()}`;
+  let t = `${inv.partyName ? 'مرحباً ' + inv.partyName + '،\n' : ''}${invTitle(inv)} رقم ${inv.no}\nالتاريخ: ${fmtDate(inv.date)}\nالإجمالي: ${money(inv.total)} ${cur()}`;
   if (due > 0) t += `\nالمتبقي: ${money(due)} ${cur()}`;
   t += `\n\n${S.bizName}${S.phone ? '\n' + S.phone : ''}`;
   return t;
@@ -2173,7 +2562,7 @@ Screens.invoice = {
   render(p) {
     const inv = invById(p.id); if (!inv) return emptyBox('receipt', 'الفاتورة غير موجودة');
     const st = statusOf(inv), due = dueOf(inv), bi = invBI();
-    return `<div class="status-bar"><span class="badge ${inv.type}" style="font-size:15px">${TYPE_TXT[inv.type]}</span><span class="badge ${st}" style="font-size:15px">${STATUS_TXT[st]}${due > 0 ? ' · متبقي ' + money(due) : ''}</span></div>
+    return `<div class="status-bar"><span class="badge ${inv.type}" style="font-size:15px">${invTitle(inv)}</span><span class="badge ${st}" style="font-size:15px">${STATUS_TXT[st]}${due > 0 ? ' · متبقي ' + money(due) : ''}</span></div>
       <div class="btns">
         <button class="btn ${inv.type === 'sale' ? 'sale' : 'pur'}" id="ivShare">${ic('share')} مشاركة الفاتورة<span class="small" style="font-weight:400">صورة — واتساب وغيره</span></button>
         <button class="btn sec" id="ivPdf">${ic('file')} ملف PDF ${Plan.can('pdf') ? '' : '<span class="badge pro">أساسية</span>'}<span class="small muted" style="font-weight:400">للطباعة أو الإيميل</span></button>
@@ -2208,8 +2597,8 @@ Screens.invoice = {
     const fname = (ext) => `${inv.type === 'sale' ? 'فاتورة' : 'شراء'}-${inv.no}.${ext}`;
     const on = (id, fn) => { const e = $('#' + id); if (e) e.onclick = fn; };
     Ads.viewed('invoice');
-    on('ivShare', async () => { Cloud.ev('share_img'); shareFile(await canvasBlob(cv), fname('png'), TYPE_TXT[inv.type] + ' ' + inv.no); });
-    on('ivPdf', async () => { if (!(await needPlan('pdf'))) return; Cloud.ev('share_pdf'); shareFile(await canvasToPdf(cv), fname('pdf'), TYPE_TXT[inv.type] + ' ' + inv.no); });
+    on('ivShare', async () => { Cloud.ev('share_img'); shareFile(await canvasBlob(cv), fname('png'), invTitle(inv) + ' ' + inv.no); });
+    on('ivPdf', async () => { if (!(await needPlan('pdf'))) return; Cloud.ev('share_pdf'); shareFile(await canvasToPdf(cv), fname('pdf'), invTitle(inv) + ' ' + inv.no); });
     on('ivPrint', async () => { if (!(await needPlan('print'))) return; Cloud.ev('print'); printCanvas(cv); });
     on('ivWa', () => { Cloud.ev('wa_text'); openExternal(waLink(inv.partyPhone, invText(inv))); });
     on('ivEdit', () => { Draft = null; Nav.go('editor', { type: inv.type, id: inv.id }); });
@@ -2243,6 +2632,7 @@ function paySheet(due, title = 'تسجيل دفعة') {
 /* ---------- الأصناف ---------- */
 Screens.items = {
   title: 'الأصناف والمخزون',
+  actions: () => Plan.can('barcode') && DB.items.length ? `<button class="tb-btn" data-act="labelsBatch" aria-label="طباعة ملصقات الباركود">${ic('barcode')}</button>` : '',
   render: () => `<div class="search">${ic('search')}<input id="itQ" placeholder="ابحث عن صنف" value="${esc(UI.itemQ)}" autocomplete="off"></div><div id="itList"></div>
     <button class="btn" data-act="go" data-to="item">${ic('plus')} إضافة صنف جديد</button>`,
   mount() {
@@ -2252,54 +2642,89 @@ Screens.items = {
       if (!list.length) { $('#itList').innerHTML = `<div class="card">${emptyBox('box', q ? 'لا توجد نتائج' : 'لم تُضف أصنافاً بعد.<br>أضف منتجاتك وأسعارها ليسهل عليك إصدار الفواتير.')}</div>`; return; }
       $('#itList').innerHTML = `<div class="small muted" style="margin:0 4px 8px">${list.length} صنف</div><div class="list">${list.map(i => {
         const s = sm[i.id], tr = i.track !== false;
-        return `<button class="row" data-act="go" data-to="item" data-p='${JSON.stringify({ id: i.id })}'>${thumb(i)}<div class="grow"><div class="t">${esc(i.name)}</div><div class="s">بيع: <span class="amt" style="font-weight:500">${money(i.sale)}</span> · شراء: <span class="amt" style="font-weight:500">${money(i.cost)}</span></div></div>
+        return `<button class="row" data-act="go" data-to="item" data-p='${JSON.stringify({ id: i.id })}'>${thumb(i)}<div class="grow"><div class="t">${esc(i.name)}</div><div class="s">بيع: <span class="amt" style="font-weight:500">${money(i.sale)}</span>${num(i.whole) ? ` · جملة: <span class="amt" style="font-weight:500">${money(i.whole)}</span>` : ''} · شراء: <span class="amt" style="font-weight:500">${money(i.cost)}</span></div></div>
         ${tr ? `<span class="badge ${s <= lim ? 'low' : 'ok'}">${qtyFmt(s)} ${esc(i.unit || '')}</span>` : '<span class="badge ok">خدمة</span>'}</button>`;
       }).join('')}</div>`;
     };
     liveInput($('#itQ'), v => { UI.itemQ = v; draw(); });
+    if (Plan.can('barcode') && ensureBarcodes()) persist();
     draw();
   }
 };
+ACT.labelsBatch = async () => { if (!(await needPlan('barcode'))) return; const r = await pickItems({ labels: true }); if (r && r.length) printLabels(r); };
 Screens.item = {
   noTabs: true,
   title: p => p.id ? 'تعديل صنف' : 'صنف جديد',
   render(p) {
-    const it = p.id ? itemById(p.id) : { name: '', unit: 'حبة', sale: '', cost: '', track: true };
+    const it = p.id ? itemById(p.id) : { name: '', unit: 'حبة', sale: '', cost: '', whole: '', track: true };
     const stock = p.id ? stockMap()[p.id] : '';
     const units = UNITS.includes(it.unit) || !it.unit ? UNITS : [it.unit, ...UNITS];
-    const img = p.id ? Imgs.get(p.id) : '', showEn = DB.settings.bilingual || it.nameEn;
+    const img = p.id ? Imgs.get(p.id) : '', canTr = Plan.can('autotr'), showEn = DB.settings.bilingual || it.nameEn || canTr, bcOn = Plan.can('barcode');
+    const pv = v => v !== '' && v != null && num(v) ? money(v) : '';
     return `<div class="card"><div class="img-pick"><div id="iImgBox" class="img-box">${img ? `<img src="${img}" alt="">` : ic('image')}</div>
         <div class="grow"><div class="b">صورة الصنف <span class="muted small">(اختياري)</span></div><div class="small muted">صغيرة جداً، تظهر في التطبيق فقط ولا تظهر في الفاتورة</div>
         <div class="img-btns"><button type="button" class="btn sm sec" id="iCam">${ic('camera')} تصوير</button><button type="button" class="btn sm sec" id="iGal">${ic('image')} من الاستوديو</button><button type="button" class="btn sm ghost ${img ? '' : 'hide'}" id="iImgDel">إزالة</button></div></div></div>
       ${field('اسم الصنف *', inp('iName', it.name, 'placeholder="مثال: زعفران 5 جرام"'))}
-      ${showEn ? field('الاسم بالإنجليزية', inp('iNameEn', it.nameEn || '', 'dir="ltr" placeholder="e.g. Saffron 5g"'), 'يظهر في الفاتورة ثنائية اللغة') : ''}
-      <div class="two">${field('سعر البيع', inp('iSale', it.sale !== '' ? money(it.sale) : '', 'class="num" inputmode="decimal" placeholder="0.000"'))}${field('سعر الشراء (التكلفة)', inp('iCost', it.cost !== '' ? money(it.cost) : '', 'class="num" inputmode="decimal" placeholder="0.000"'))}</div>
-      ${field('الوحدة', `<select id="iUnit">${units.map(u => `<option ${u === it.unit ? 'selected' : ''}>${u}</option>`).join('')}</select>`)}
+      ${showEn ? field('الاسم بالإنجليزية', `<div class="inp-btn">${inp('iNameEn', it.nameEn || '', 'dir="ltr" placeholder="e.g. Saffron 5g"')}${canTr ? `<button type="button" class="btn sm sec" id="iTr">${ic('globe')} ترجم</button>` : ''}</div>`, canTr && DB.settings.autoTr ? 'يُترجم تلقائياً عند الحفظ إذا تركته فارغاً (عند توفر الإنترنت)' : 'يظهر في الفاتورة ثنائية اللغة') : ''}
+      <div class="two">${field('سعر البيع (المفرد)', inp('iSale', pv(it.sale), 'class="num" inputmode="decimal" placeholder="0.000"'))}${field('سعر الجملة', inp('iWhole', pv(it.whole), 'class="num" inputmode="decimal" placeholder="اختياري"'))}</div>
+      <div class="two">${field('سعر الشراء (التكلفة)', inp('iCost', pv(it.cost), 'class="num" inputmode="decimal" placeholder="0.000"'))}${field('الوحدة', `<select id="iUnit">${units.map(u => `<option ${u === it.unit ? 'selected' : ''}>${u}</option>`).join('')}</select>`)}</div>
       ${sw('iTrack', 'متابعة المخزون', it.track !== false, 'إيقافه للخدمات أو الأصناف غير المعدودة')}
       <div id="iQtyF" class="${it.track !== false ? '' : 'hide'}">${field(p.id ? 'الكمية الحالية في المخزون' : 'الكمية المتوفرة الآن', inp('iQty', p.id ? qtyFmt(stock) : '', 'class="num" inputmode="decimal" placeholder="0"'), p.id ? 'غيّرها فقط عند الجرد أو تصحيح الكمية' : 'تزيد تلقائياً مع فواتير الشراء وتنقص مع المبيعات')}</div></div>
+      ${bcOn ? `<div class="card bc-card"><div class="bc-h"><b>${ic('barcode')} الباركود</b><button type="button" class="link" id="iBcEdit">${it.barcode ? 'تغيير' : 'إدخال باركود المنتج'}</button></div>
+        <div id="iBcBox" class="bc-box">${bcBox(it.barcode)}</div>
+        <div id="iBcF" class="hide">${field('رقم الباركود', inp('iBc', it.barcode || '', 'class="num" dir="ltr" placeholder="امسح أو اكتب الباركود"'), 'إذا كان على المنتج باركود من المصنع اكتبه أو امسحه هنا. اتركه فارغاً لإنشاء باركود جديد.')}</div>
+        ${p.id ? `<button type="button" class="btn sec" id="iLabel">${ic('print')} طباعة ملصق الباركود</button>` : ''}</div>`
+      : `<div class="list"><button type="button" class="row" data-act="needFeat" data-f="barcode"><div class="ico">${ic('barcode')}</div><div class="grow"><div class="t">باركود الصنف وطباعة الملصقات</div><div class="s">باركود خاص لكل صنف يُطبع على طابعة ملصقات حرارية بالبلوتوث</div></div><span class="badge pro">متقدمة</span></button></div>`}
       <button class="btn" id="iSave">${ic('check')} حفظ</button>
       ${p.id ? `<button class="btn danger sec" id="iDel" style="margin-top:10px">${ic('trash')} حذف الصنف</button>` : ''}`;
   },
   mount(v, p) {
     let img; // undefined = بدون تغيير
     const setImg = u => { img = u; $('#iImgBox').innerHTML = u ? `<img src="${u}" alt="">` : ic('image'); $('#iImgDel').classList.toggle('hide', !u); };
-    const pick = async cap => { const u = await pickImage(cap); if (u) setImg(u); else if (u === '' && cap) { } };
+    const pick = async cap => { const u = await pickImage(cap); if (u) setImg(u); };
     $('#iCam').onclick = () => pick(true);
     $('#iGal').onclick = () => pick(false);
     $('#iImgDel').onclick = () => setImg('');
     $('#iTrack').onchange = e => $('#iQtyF').classList.toggle('hide', !e.target.checked);
+    // الاسم الإنجليزي: يدوي أو مترجم تلقائياً
+    const enIn = $('#iNameEn'); let enMode = null; // null = بدون تغيير، 'manual'، 'auto'
+    if (enIn) enIn.addEventListener('input', () => { enMode = 'manual'; });
+    const trB = $('#iTr');
+    if (trB) trB.onclick = async () => {
+      const nm = $('#iName').value.trim(); if (!nm) return toast('اكتب اسم الصنف أولاً');
+      const old = trB.innerHTML; trB.disabled = true; trB.textContent = 'جاري الترجمة…';
+      try { const en = await Tr.now(nm); if (en) { enIn.value = en; enMode = 'auto'; Cloud.ev('tr_manual'); } else toast('لم نجد ترجمة مناسبة، اكتبها يدوياً'); }
+      catch (e) { toast(navigator.onLine === false ? 'يلزم الاتصال بالإنترنت للترجمة' : 'تعذّرت الترجمة الآن، حاول لاحقاً'); }
+      trB.disabled = false; trB.innerHTML = old;
+    };
+    // الباركود
+    const bcIn = $('#iBc'), bcE = $('#iBcEdit');
+    if (bcE) bcE.onclick = () => { const f = $('#iBcF'); f.classList.toggle('hide'); if (!f.classList.contains('hide')) setTimeout(() => bcIn.focus(), 50); };
+    if (bcIn) liveInput(bcIn, v => { $('#iBcBox').innerHTML = bcBox(normBarcode(v), true); }, 200);
+    const lb = $('#iLabel'); if (lb) lb.onclick = () => printLabels([{ it: itemById(p.id), copies: 1 }]);
     $('#iSave').onclick = async () => {
       const name = $('#iName').value.trim(); if (!name) return toast('اكتب اسم الصنف');
       const dup = DB.items.find(x => !x.archived && x.name.trim() === name && x.id !== p.id);
       if (dup) return toast('يوجد صنف بنفس الاسم');
+      let bc = null;
+      if (bcIn) {
+        bc = normBarcode(bcIn.value);
+        if (bc && !Barcode.valid(bc)) return toast('الباركود يقبل الأرقام والحروف الإنجليزية فقط');
+        const dupB = bc && DB.items.find(x => !x.archived && x.barcode === bc && x.id !== p.id);
+        if (dupB) return toast('هذا الباركود مستخدم للصنف «' + dupB.name + '»');
+      }
       let it = p.id ? itemById(p.id) : null;
       if (!it) { it = { id: uid(), opening: 0, created: Date.now() }; DB.items.push(it); }
-      Object.assign(it, { name, sale: round($('#iSale').value), cost: round($('#iCost').value), unit: $('#iUnit').value, track: $('#iTrack').checked });
-      if ($('#iNameEn')) it.nameEn = $('#iNameEn').value.trim();
+      Object.assign(it, { name, sale: round($('#iSale').value), cost: round($('#iCost').value), whole: round($('#iWhole').value), unit: $('#iUnit').value, track: $('#iTrack').checked });
+      if (!it.whole) delete it.whole;
+      if (enIn && enMode) { it.nameEn = enIn.value.trim(); if (enMode === 'auto' && it.nameEn) { it.trAuto = true; it.trSrc = name; } else { delete it.trAuto; delete it.trSrc; } }
+      if (bcIn) it.barcode = bc || newBarcode(); else if (Plan.can('barcode') && !it.barcode) it.barcode = newBarcode();
       const qv = $('#iQty').value.trim();
       if (it.track && qv !== '') { const curS = p.id ? stockMap()[it.id] : 0; it.opening = round(num(it.opening) + (num(qv) - curS), 3); }
       if (img !== undefined) { Imgs.set(it.id, img); if (img) Cloud.ev('item_img'); }
-      await persist(); toast('تم الحفظ ✓'); Nav.back();
+      await persist(); toast('تم الحفظ ✓');
+      if (Tr.need(it)) Tr.queue(it.id);
+      Nav.back();
     };
     const del = $('#iDel');
     if (del) del.onclick = async () => {
@@ -2310,7 +2735,130 @@ Screens.item = {
     };
   }
 };
+function bcBox(c, typing) {
+  if (c && Barcode.valid(c)) return `${Barcode.svg(c)}<div class="bc-num ltr">${esc(c)}</div>${isEan13(c) || !/^\d+$/.test(c) ? '' : '<div class="small muted">Code 128</div>'}`;
+  if (c) return '<div class="small" style="color:var(--danger)">الباركود يقبل الأرقام والحروف الإنجليزية فقط</div>';
+  return `<div class="muted small">${typing ? 'سيُنشأ باركود جديد عند الحفظ' : 'يُنشأ باركود خاص لهذا الصنف تلقائياً عند الحفظ'}</div>`;
+}
 
+/* ---------- ملصقات الباركود ---------- */
+const lblN = n => n === 1 ? 'ملصق واحد' : n === 2 ? 'ملصقان' : n <= 10 ? n + ' ملصقات' : n + ' ملصقاً';
+async function printLabels(pages) {
+  if (!(await needPlan('barcode'))) return;
+  pages = pages.filter(x => x && x.it);
+  if (!pages.length) return;
+  let ch = false; pages.forEach(x => { if (!x.it.barcode) { x.it.barcode = newBarcode(); ch = true; } }); if (ch) await persist();
+  const L = labelCfg(), single = pages.length === 1, first = await labelCanvas(pages[0].it, L);
+  const total = () => pages.reduce((a, x) => a + x.copies, 0);
+  await Modal.open(`<div class="lbl-prev"><img id="lpImg" src="${first.toDataURL('image/png')}" alt="معاينة الملصق" style="aspect-ratio:${L.w}/${L.h}"></div>
+    <div class="small muted center" style="margin:6px 0 12px"><bdi dir="ltr" class="num">${L.w}×${L.h}</bdi> مم · ${L.lang === 'escpos' ? 'طابعة إيصالات' : 'طابعة ملصقات'}${L.dev ? ' · ' + esc(L.dev.name) : ''} · <button class="link" id="lpSet" style="display:inline">الإعدادات</button></div>
+    ${single ? `<div class="copies"><span>عدد الملصقات</span><div class="qty"><button type="button" data-c="-1">−</button><input id="lpN" class="num" inputmode="numeric" value="${pages[0].copies}"><button type="button" data-c="1">+</button></div></div>`
+      : `<div class="small muted center" style="margin-bottom:10px">${pages.length} أصناف · <b id="lpTot">${lblN(total())}</b> — المعاينة للصنف الأول</div>`}
+    ${Printer.avail() ? `<button class="btn" id="lpBt">${ic('print')} طباعة عبر البلوتوث</button>`
+      : `<div class="banner info" style="margin-bottom:10px">${ic('info')}<div class="grow small">الطباعة المباشرة بالبلوتوث متاحة في تطبيق أندرويد. هنا يمكنك مشاركة صورة الملصق وطباعتها من تطبيق الطابعة.</div></div>`}
+    <button class="btn sec" id="lpShare" style="margin-top:8px">${ic('share')} مشاركة صورة الملصق</button>`, {
+    title: single ? 'ملصق «' + pages[0].it.name + '»' : 'طباعة الملصقات', onMount(el) {
+      const n = $('#lpN', el);
+      const setN = v => { pages[0].copies = Math.max(1, Math.min(500, Math.round(num(v)) || 1)); if (n) n.value = pages[0].copies; };
+      el.addEventListener('click', e => { const b = e.target.closest('[data-c]'); if (b) setN(pages[0].copies + +b.dataset.c); });
+      if (n) n.onchange = () => setN(n.value);
+      $('#lpSet', el).onclick = () => { Modal.close(); Nav.go('labelSet'); };
+      $('#lpShare', el).onclick = async () => {
+        Cloud.ev('label_share', { n: pages.length });
+        const cvs = []; for (const x of pages) cvs.push(await labelCanvas(x.it, L));
+        const sc = 2, gap = 24, W = Math.max(...cvs.map(c => c.width)) * sc, H = cvs.reduce((a, c) => a + c.height * sc + gap, -gap);
+        const out = document.createElement('canvas'); out.width = W; out.height = H; const cx = out.getContext('2d');
+        cx.fillStyle = '#fff'; cx.fillRect(0, 0, W, H); cx.imageSmoothingEnabled = false;
+        let y = 0; for (const c of cvs) { cx.drawImage(c, 0, y, c.width * sc, c.height * sc); y += c.height * sc + gap; }
+        shareFile(await canvasBlob(out), single ? `ملصق-${pages[0].it.barcode}.png` : 'ملصقات-الباركود.png', 'ملصقات الباركود');
+      };
+      const bt = $('#lpBt', el);
+      if (bt) bt.onclick = async () => {
+        let C = labelCfg();
+        if (!C.dev) { const d = await choosePrinter(); if (!d) return; C = labelCfg(); }
+        bt.disabled = true; const old = bt.innerHTML; bt.innerHTML = 'جاري التجهيز…';
+        try {
+          const job = [];
+          for (const x of pages) job.push({ cv: await labelCanvas(x.it, C), copies: x.copies });
+          const bytes = C.lang === 'escpos' ? escposJob(job, C) : tsplJob(job, C);
+          bt.innerHTML = `جاري الإرسال إلى ${esc(C.dev.name)}…`;
+          await Printer.send(bytes, C.dev.address);
+          Cloud.ev('label_print', { n: total(), l: C.lang === 'escpos' ? 'e' : 't', w: C.w, h: C.h });
+          Modal.close(true); toast(`تم إرسال ${lblN(total())} للطابعة ✓`);
+        } catch (e) {
+          Cloud.ev('label_fail', { m: String((e && e.message) || e).slice(0, 60) });
+          bt.disabled = false; bt.innerHTML = old;
+          const again = await confirmDlg(Printer.err(e), { ok: 'اختيار طابعة أخرى', cancel: 'إغلاق' });
+          if (again) await choosePrinter();
+        }
+      };
+    }
+  });
+}
+const PRINTER_RX = /print|xp-|xprinter|pos|label|thermal|hprt|tsc|gp-|gprinter|zj|mtp|ptp|rpp|bixolon|sunmi|zebra|munbyn|rongta|jolimark|hprt|hm-|qr-|peripage|phomemo|niimbot|طابعة/i;
+async function choosePrinter() {
+  if (!Printer.avail()) { await alertDlg('اختيار الطابعة متاح في تطبيق أندرويد فقط.'); return null; }
+  let devs;
+  try { devs = await Printer.list(); }
+  catch (e) { await alertDlg(Printer.err(e)); return null; }
+  devs.sort((a, b) => (PRINTER_RX.test(b.name) || b.cls === 1536) - (PRINTER_RX.test(a.name) || a.cls === 1536) || String(a.name).localeCompare(String(b.name)));
+  const cur = (labelCfg().dev || {}).address;
+  const d = await Modal.open(devs.length ? `<p class="muted small" style="margin-top:0">الأجهزة المقترنة مع جوالك. إذا لم تجد طابعتك، اقرنها أولاً من إعدادات البلوتوث في الجوال (الرمز غالباً 0000 أو 1234).</p>
+      <div class="list">${devs.map((x, i) => `<button class="row" data-i="${i}"><div class="ico">${ic(PRINTER_RX.test(x.name) || x.cls === 1536 ? 'print' : 'bt')}</div><div class="grow"><div class="t ltr" style="text-align:right">${esc(x.name)}</div><div class="s ltr" style="text-align:right">${esc(x.address)}</div></div>${x.address === cur ? ic('check') : ''}</button>`).join('')}</div>`
+    : `<div class="center">${ic('bt')}<p>لا توجد أجهزة بلوتوث مقترنة.</p><p class="muted small">شغّل الطابعة، ثم افتح إعدادات البلوتوث في جوالك واقرنها (الرمز غالباً 0000 أو 1234)، ثم ارجع هنا.</p></div><button class="btn" data-close>حسناً</button>`, {
+    title: 'اختر الطابعة', onMount(el) { el.addEventListener('click', e => { const b = e.target.closest('[data-i]'); if (b) Modal.close(devs[+b.dataset.i]); }); }
+  });
+  if (!d || !d.address) return null;
+  DB.settings.label = Object.assign(labelCfg(), { dev: { name: d.name, address: d.address } });
+  await persist(); Cloud.ev('printer_set'); toast('تم اختيار الطابعة ' + d.name + ' ✓');
+  return d;
+}
+ACT.labelSet = async () => { if (await needPlan('barcode')) Nav.go('labelSet'); };
+Screens.labelSet = {
+  noTabs: true, title: 'طابعة الملصقات',
+  render() {
+    const L = labelCfg(), std = LABEL_SIZES.some(([w, h]) => w === L.w && h === L.h);
+    return `<div class="card"><h3>${ic('print')} الطابعة</h3>
+        ${Printer.avail() ? `<div class="row-line"><div class="grow"><div class="b">${L.dev ? esc(L.dev.name) : 'لم تُحدد طابعة'}</div><div class="small muted ltr" style="text-align:right">${L.dev ? esc(L.dev.address) : 'طابعة حرارية مقترنة عبر البلوتوث'}</div></div><button class="btn sm sec" id="lsDev" style="width:auto">${L.dev ? 'تغيير' : 'اختيار'}</button></div>`
+          : `<div class="small muted">الطباعة المباشرة بالبلوتوث متاحة في تطبيق أندرويد. في هذه النسخة شارك صورة الملصق مع تطبيق طابعتك.</div>`}
+        <div class="lbl" style="margin-top:14px">نوع الطابعة</div>
+        <div class="seg" id="lsLang"><button data-l="tspl" class="${L.lang !== 'escpos' ? 'on' : ''}">طابعة ملصقات (TSPL)</button><button data-l="escpos" class="${L.lang === 'escpos' ? 'on' : ''}">طابعة إيصالات (ESC/POS)</button></div>
+        <div class="hint">أغلب طابعات الملصقات الصغيرة مثل Xprinter و HPRT و TSC تعمل بنظام TSPL. واختر ESC/POS لطابعات الإيصالات بعرض 58 أو 80 مم.</div></div>
+      <div class="card"><h3>مقاس الملصق (مم)</h3>
+        <div class="chips" id="lsSize">${LABEL_SIZES.map(([w, h]) => `<button class="chip ${w === L.w && h === L.h ? 'on' : ''}" data-w="${w}" data-h="${h}"><bdi dir="ltr" class="num">${w}×${h}</bdi></button>`).join('')}<button class="chip ${std ? '' : 'on'}" data-w="0">مقاس آخر</button></div>
+        <div class="two ${std ? 'hide' : ''}" id="lsCustom">${field('العرض', inp('lsW', L.w, 'class="num" inputmode="decimal"'))}${field('الارتفاع', inp('lsH', L.h, 'class="num" inputmode="decimal"'))}</div>
+        <div class="two"><div id="lsGapF" class="${L.lang === 'escpos' ? 'hide' : ''}">${field('المسافة بين الملصقات', inp('lsGap', L.gap, 'class="num" inputmode="decimal"'))}</div>
+        <div id="lsPwF" class="${L.lang === 'escpos' ? '' : 'hide'}">${field('عرض ورق الطابعة', `<select id="lsPw"><option value="384" ${+L.pw !== 576 ? 'selected' : ''}>58 مم</option><option value="576" ${+L.pw === 576 ? 'selected' : ''}>80 مم</option></select>`)}</div></div></div>
+      <div class="card"><h3>محتوى الملصق</h3>
+        ${sw('lsShop', 'اسم المحل', L.shop)}${sw('lsPrice', 'سعر البيع', L.price)}${sw('lsEn', 'الاسم بالإنجليزية', L.en, 'إن وُجد للصنف')}
+        <div class="lbl" style="margin-top:12px">المعاينة</div><div class="lbl-prev"><img id="lsPrev" alt="معاينة"></div></div>
+      <details class="card"><summary class="b">حل المشكلات</summary><div style="margin-top:10px">
+        ${sw('lsInv', 'عكس الألوان', L.inv, 'فعّله إذا خرج الملصق أسود بالكامل أو بألوان معكوسة')}${sw('lsFlip', 'قلب اتجاه الطباعة', L.flip, 'فعّله إذا خرج الملصق مقلوباً')}
+        <div class="hint">تأكد أن الطابعة مقترنة من إعدادات البلوتوث في الجوال، وأن مقاس الملصق في التطبيق يطابق الملصقات في الطابعة.</div></div></details>
+      ${Printer.avail() ? `<button class="btn sec" id="lsTest">${ic('print')} طباعة ملصق تجريبي</button>` : ''}
+      <button class="btn" id="lsSave" style="margin-top:10px">${ic('check')} حفظ</button>`;
+  },
+  mount() {
+    const L = labelCfg();
+    const read = () => {
+      const cu = !$('#lsCustom').classList.contains('hide');
+      const sz = $('#lsSize .chip.on');
+      const w = cu ? Math.min(110, Math.max(20, num($('#lsW').value))) : +sz.dataset.w, h = cu ? Math.min(150, Math.max(10, num($('#lsH').value))) : +sz.dataset.h;
+      return Object.assign({}, L, { w: w || 40, h: h || 30, gap: Math.max(0, Math.min(10, num($('#lsGap').value))), lang: $('#lsLang .on').dataset.l, pw: +$('#lsPw').value,
+        shop: $('#lsShop').checked, price: $('#lsPrice').checked, en: $('#lsEn').checked, inv: $('#lsInv').checked, flip: $('#lsFlip').checked, dev: labelCfg().dev });
+    };
+    const sample = () => activeItems().find(i => i.barcode) || { name: 'زعفران إيراني 5 جرام', nameEn: 'Iranian Saffron 5g', sale: 4.5, barcode: '2000000000015' };
+    let pt = 0; const prev = () => { clearTimeout(pt); pt = setTimeout(async () => { const c = read(), cv = await labelCanvas(sample(), c), im = $('#lsPrev'); if (im) { im.src = cv.toDataURL(); im.style.aspectRatio = c.w + '/' + c.h; } }, 120); };
+    $('#lsLang').onclick = e => { const b = e.target.closest('[data-l]'); if (!b) return; $$('#lsLang button').forEach(x => x.classList.toggle('on', x === b)); const es = b.dataset.l === 'escpos'; $('#lsGapF').classList.toggle('hide', es); $('#lsPwF').classList.toggle('hide', !es); prev(); };
+    $('#lsSize').onclick = e => { const b = e.target.closest('.chip'); if (!b) return; $$('#lsSize .chip').forEach(x => x.classList.toggle('on', x === b)); $('#lsCustom').classList.toggle('hide', b.dataset.w !== '0'); prev(); };
+    $$('#view input, #view select').forEach(x => x.addEventListener(x.type === 'checkbox' || x.tagName === 'SELECT' ? 'change' : 'input', prev));
+    const dv = $('#lsDev'); if (dv) dv.onclick = async () => { DB.settings.label = read(); if (await choosePrinter()) render(); };
+    const save = async () => { DB.settings.label = read(); await persist(); };
+    $('#lsSave').onclick = async () => { await save(); toast('تم الحفظ ✓'); Nav.back(); };
+    const ts = $('#lsTest'); if (ts) ts.onclick = async () => { await save(); printLabels([{ it: sample(), copies: 1 }]); };
+    prev();
+  }
+};
 /* ---------- العملاء والموردون ---------- */
 Screens.parties = {
   title: 'العملاء والموردون',
@@ -2446,15 +2994,16 @@ Screens.more = {
       ${moreRow('store', 'بيانات النشاط التجاري', esc(DB.settings.bizName), 'data-act="go" data-to="setBiz"')}
       ${moreRow('sliders', 'إعدادات الفاتورة والضريبة', DB.settings.vatOn ? 'الضريبة مفعّلة ' + DB.settings.vatRate + '%' : 'بدون ضريبة', 'data-act="go" data-to="setInv"')}
       ${moreRow('chart', 'التقارير', '', 'data-act="go" data-to="reports"')}
+      ${moreRow('barcode', 'طابعة الملصقات والباركود', Plan.can('barcode') ? (labelCfg().dev ? esc(labelCfg().dev.name) : 'لم تُحدد طابعة بعد') : '<span class="badge pro">متقدمة</span>', 'data-act="labelSet"')}
     </div><div class="list">
-      ${moreRow('shield', 'الحماية والرمز السري', 'القفل التلقائي، تغيير الرمز', 'data-act="go" data-to="security"')}
+      ${moreRow(Vault.auto() ? 'unlock' : 'shield', 'الحماية والرمز السري', Vault.auto() ? 'يُفتح بدون رمز سري' : 'القفل التلقائي، تغيير الرمز', 'data-act="go" data-to="security"')}
       ${moreRow('cloud', 'النسخ الاحتياطي والاستعادة', DB.lastBackup ? 'آخر نسخة: ' + fmtDate(ymd(new Date(DB.lastBackup))) : 'لم تُؤخذ نسخة بعد', 'data-act="go" data-to="backup"')}
       ${moreRow('star', 'الاشتراك والباقات', 'الباقة ' + Plan.cfg().name + (Plan.src ? ' — ' + Plan.srcTxt() : ''), 'data-act="go" data-to="plans" id="morePlans"')}
     </div><div class="list">
       ${moreRow('headset', 'الدعم الفني والاقتراحات', 'واتساب ' + APP.contactLocal, 'data-act="support"')}
       ${moreRow('help', 'جولة تعريفية بالتطبيق', 'شرح سريع لأهم الأزرار', 'data-act="replayTour"')}
       ${moreRow('info', 'حول التطبيق', 'الإصدار ' + APP.version, 'data-act="go" data-to="about"')}
-      ${moreRow('lock', 'قفل التطبيق الآن', '', 'data-act="lockNow"')}
+      ${Vault.auto() ? '' : moreRow('lock', 'قفل التطبيق الآن', '', 'data-act="lockNow"')}
     </div>`
 };
 Screens.setBiz = {
@@ -2497,7 +3046,8 @@ Screens.setInv = {
       <div class="two">${field('العملة', inp('sCur', S.currency))}${field('عدد الخانات العشرية', `<select id="sDec"><option value="3" ${S.decimals == 3 ? 'selected' : ''}>3 (ريال عماني، دينار)</option><option value="2" ${S.decimals == 2 ? 'selected' : ''}>2 (درهم، ريال سعودي)</option><option value="0" ${S.decimals == 0 ? 'selected' : ''}>0</option></select>`)}</div></div>
       <div class="card" id="sBiCard"><h3>لغة الفاتورة ${Plan.can('bilingual') ? '' : '<span class="badge pro">متقدمة</span>'}</h3>${sw('sBi', 'فاتورة بالعربية والإنجليزية', S.bilingual && Plan.can('bilingual'), 'العناوين والإجماليات وحالة الدفع باللغتين، مع الاسم الإنجليزي لكل صنف')}
         <div id="sBiF" class="${S.bilingual && Plan.can('bilingual') ? '' : 'hide'}">${field('عبارة أسفل الفاتورة بالإنجليزية', inp('sFootEn', S.footerEn, 'dir="ltr"'))}
-        <div class="hint">أضف الاسم بالإنجليزية لكل صنف من شاشة الأصناف، واسم المحل وعنوانه بالإنجليزية من «بيانات النشاط التجاري».</div></div></div>
+        ${sw('sTr', 'ترجمة أسماء الأصناف تلقائياً', S.autoTr && Plan.can('autotr'), 'عند توفر الإنترنت تُترجم أسماء أصنافك إلى الإنجليزية لتظهر في الفاتورة. يُرسل اسم الصنف فقط إلى خدمة الترجمة MyMemory، ويمكنك تعديل أي ترجمة من شاشة الصنف.')}
+        <div class="hint">اسم المحل وعنوانه بالإنجليزية من «بيانات النشاط التجاري».</div></div></div>
       <div class="card"><h3>المخزون</h3>${field('تنبيه عندما تصل الكمية إلى', inp('sLow', S.lowStock, 'class="num" inputmode="decimal"'))}</div>
       <button class="btn" id="sSave">${ic('check')} حفظ</button>`;
   },
@@ -2510,10 +3060,14 @@ Screens.setInv = {
       if (e.target.checked && !Plan.can('bilingual')) { e.target.checked = false; await needPlan('bilingual'); return; }
       $('#sBiF').classList.toggle('hide', !e.target.checked);
     };
+    $('#sTr').onchange = async e => { if (e.target.checked && !Plan.can('autotr')) { e.target.checked = false; await needPlan('autotr'); } };
     $('#sSave').onclick = async () => {
       if ($('#sBi').checked !== !!DB.settings.bilingual) Cloud.ev('bilingual', { on: $('#sBi').checked ? 1 : 0 });
+      const trOn = $('#sTr').checked && $('#sBi').checked, trWas = !!DB.settings.autoTr;
+      DB.settings.autoTr = trOn; if (trOn !== trWas) Cloud.ev('auto_tr', { on: trOn ? 1 : 0 });
       Object.assign(DB.settings, { bilingual: $('#sBi').checked, footerEn: $('#sFootEn').value.trim(), vatOn: $('#sVat').checked, vatRate: num($('#sRate').value) || 5, vatInclusive: $('#sIncl').checked, salePrefix: $('#sSP').value.trim(), purchasePrefix: $('#sPP').value.trim(), footer: $('#sFoot').value.trim(), currency: $('#sCur').value.trim() || 'ر.ع.', decimals: +$('#sDec').value, lowStock: num($('#sLow').value) });
       await persist(); toast('تم الحفظ ✓'); Nav.back();
+      if (Tr.on()) { const n = DB.items.filter(i => Tr.need(i)).length; if (n) { Tr.queueAll(); toast(navigator.onLine === false ? `ستُترجم ${n} أصناف عند الاتصال بالإنترنت` : `جاري ترجمة ${n} أصناف…`, 3000); } }
     };
   }
 };
@@ -2521,16 +3075,28 @@ Screens.security = {
   noTabs: true, title: 'الحماية',
   render() {
     const m = DB.settings.lockMinutes;
-    return `<div class="banner info">${ic('shield')}<div class="grow small">بياناتك مخزّنة على هذا الجهاز فقط ومشفّرة بتشفير AES-256، ولا يمكن فتحها إلا بالرمز السري أو رمز الاستعادة.</div></div>
+    const au = Vault.auto();
+    return `${au ? `<div class="banner warn">${ic('unlock')}<div class="grow small">التطبيق يُفتح بدون رمز سري. بياناتك ما زالت مشفّرة على هذا الجهاز، لكن أي شخص يمسك جوالك يستطيع فتحه.</div></div>`
+      : `<div class="banner info">${ic('shield')}<div class="grow small">بياناتك مخزّنة على هذا الجهاز فقط ومشفّرة بتشفير AES-256، ولا يمكن فتحها إلا بالرمز السري أو رمز الاستعادة.</div></div>`}
       <div class="list">${moreRow('lock', 'تغيير الرمز السري', '', 'id="scPin"')}${moreRow('key', 'إنشاء رمز استعادة جديد', 'يُلغي رمز الاستعادة القديم', 'id="scRec"')}</div>
+      <div class="card">${sw('scAuto', 'فتح التطبيق بدون رمز سري', au, 'يُفتح مباشرة دون طلب الرمز. يبقى الرمز مطلوباً لإلغاء الفواتير وتغيير إعدادات الحماية ومسح البيانات')}</div>
+      <div class="card ${au ? 'hide' : ''}">${field('القفل التلقائي', `<select id="scLock">${[[0, 'فور الخروج من التطبيق'], [1, 'بعد دقيقة'], [3, 'بعد 3 دقائق'], [5, 'بعد 5 دقائق'], [10, 'بعد 10 دقائق']].map(([v, l]) => `<option value="${v}" ${m == v ? 'selected' : ''}>${l}</option>`).join('')}</select>`, 'يُقفل التطبيق عند عدم الاستخدام أو الخروج منه')}</div>
       <div class="card">${sw('scStats', 'مشاركة إحصائيات استخدام مجهولة', Cloud.on, 'أعداد فقط (مثل عدد الفواتير ونوع الجهاز) لتحسين التطبيق — لا نرسل أي محتوى من فواتيرك أو أسماء عملائك')}
         <button class="link" data-act="privacy" style="margin-top:6px">سياسة الخصوصية</button></div>
-      <div class="card">${field('القفل التلقائي', `<select id="scLock">${[[0, 'فور الخروج من التطبيق'], [1, 'بعد دقيقة'], [3, 'بعد 3 دقائق'], [5, 'بعد 5 دقائق'], [10, 'بعد 10 دقائق']].map(([v, l]) => `<option value="${v}" ${m == v ? 'selected' : ''}>${l}</option>`).join('')}</select>`, 'يُقفل التطبيق عند عدم الاستخدام أو الخروج منه')}</div>
       <div class="sec-title" style="color:var(--danger)">منطقة الخطر</div>
       <button class="btn danger sec" id="scWipe">${ic('trash')} مسح جميع البيانات من هذا الجهاز</button>`;
   },
   mount() {
     $('#scLock').onchange = async e => { DB.settings.lockMinutes = +e.target.value; await persist(); toast('تم الحفظ ✓'); };
+    $('#scAuto').onchange = async e => {
+      const on = e.target.checked; e.target.checked = !on;
+      if (on) {
+        if (!(await confirmDlg('سيُفتح التطبيق دون طلب الرمز السري، وأي شخص يمسك جوالك يستطيع رؤية فواتيرك وبيانات عملائك.<br><span class="small muted">يبقى الرمز السري مطلوباً لإلغاء الفواتير وتغيير إعدادات الحماية ومسح البيانات.</span>', { ok: 'فتح بدون رمز', cancel: 'إلغاء' }))) return;
+        if (!(await askPin('أدخل الرمز السري للتأكيد'))) return;
+        await Vault.enableAuto(); Cloud.ev('auto_open', { on: 1 }); toast('سيُفتح التطبيق بدون رمز سري ✓');
+      } else { await Vault.disableAuto(); Cloud.ev('auto_open', { on: 0 }); toast('سيطلب التطبيق الرمز السري عند فتحه ✓'); }
+      render();
+    };
     $('#scStats').onchange = async e => { await Cloud.setOn(e.target.checked); toast(e.target.checked ? 'شكراً لمساعدتك في تحسين التطبيق' : 'تم إيقاف مشاركة الإحصائيات'); };
     $('#scPin').onclick = async () => {
       if (!(await askPin('أدخل الرمز السري الحالي'))) return;
@@ -2546,7 +3112,7 @@ Screens.security = {
       if (!(await confirmDlg('سيتم حذف كل الفواتير والأصناف والبيانات نهائياً من هذا الجهاز. هل أخذت نسخة احتياطية؟', { ok: 'متابعة الحذف', danger: true }))) return;
       if (!(await askPin())) return;
       if (!(await confirmDlg('تأكيد أخير: حذف كل البيانات نهائياً؟', { ok: 'حذف نهائي', danger: true }))) return;
-      await Vault.chain; await Store.del('data'); await Store.del('meta'); await Store.del('imgs'); Vault.lock(); setDB(null);
+      await Vault.chain; await Store.del('data'); await Store.del('meta'); await Store.del('imgs'); await Store.del('autoKey'); Vault.lock(); setDB(null);
       location.reload();
     };
   }
@@ -2623,7 +3189,8 @@ Screens.plans = {
         <details class="card" style="margin-top:12px" ${p.code ? 'open' : ''}><summary class="b">لديك كود تفعيل؟</summary>
           <div class="small muted" style="margin:8px 0">رمز جهازك: <span class="ltr b">${License.deviceLabel()}</span></div>${codeBox(p)}</details>`;
     } else {
-      h += `<div class="card"><h3>كيف أشترك؟</h3><ol class="steps-ol"><li>اضغط «اشترك عبر واتساب» تحت الباقة المناسبة.</li><li>ادفع قيمة الاشتراك حسب التعليمات التي تصلك.</li><li>يصلك كود تفعيل، الصقه في الخانة بالأسفل.</li></ol>
+      h += `<div class="card"><h3>كيف أشترك؟</h3><ol class="steps-ol"><li>اضغط «اشترك عبر واتساب» تحت الباقة المناسبة.</li><li>ادفع قيمة الاشتراك حسب التعليمات التي تصلك.</li><li>يُفعَّل اشتراكك تلقائياً خلال لحظات وجوالك متصل بالإنترنت، دون أن تُدخل أي كود.</li></ol>
+        <div class="small muted" style="margin:-4px 0 10px">وإن وصلك كود تفعيل، الصقه في الخانة بالأسفل.</div>
         <div class="small muted">رمز جهازك (يُرسل تلقائياً مع الطلب):</div><div class="code-box" style="font-size:26px;margin:8px 0">${License.deviceLabel()}</div>
         <button class="btn sec sm" id="lcCopy" style="width:auto">${ic('copy')} نسخ الرمز</button></div>
         <div class="card"><h3>إدخال كود التفعيل</h3>${codeBox(p)}</div>`;
@@ -2633,6 +3200,7 @@ Screens.plans = {
   },
   mount(v, p) {
     Cloud.ev('paywall_open', { f: p.from || '' });
+    Cloud.fast(true); Cloud.sync(true);
     const on = (id, fn) => { const e = $('#' + id); if (e) e.onclick = fn; };
     on('perSeg', e => { const b = e.target.closest('[data-per]'); if (!b || b.dataset.per === UI.planPer) return; UI.planPer = b.dataset.per; Cloud.ev('plan_per', { y: UI.planPer }); const y = scrollY; render(); scrollTo(0, y); });
     on('lcCopy', async () => { try { await navigator.clipboard.writeText(License.deviceLabel()); toast('تم نسخ الرمز ✓'); } catch (e) { toast('انسخ الرمز يدوياً'); } });
@@ -2699,7 +3267,11 @@ async function boot() {
   setupBackTrap(); Lock.init();
   if (Store.mode === 'mem') toast('تنبيه: المتصفح لا يسمح بحفظ البيانات في هذا الوضع', 5000);
   if (!Vault.ready()) { Nav.stack = [{ name: 'welcome', params: {} }]; render(); }
-  else { Lock.on = true; showLockScreen(); }
+  else {
+    const raw = Vault.auto() ? await Vault.tryAuto() : null;
+    if (raw) { await Vault.unlockWith(raw); await afterUnlock(); creditsSplash(); }
+    else { Lock.on = true; showLockScreen(); }
+  }
   try {
     if ('serviceWorker' in navigator && location.protocol === 'https:' && !isNative() && window.top === window && document.querySelector('link[rel=manifest]')) navigator.serviceWorker.register('sw.js').catch(() => { });
   } catch (e) { }
@@ -2724,6 +3296,7 @@ const TOURS = {
   ],
   editor: [
     { sel: '#edParty', t: 'اسم العميل', d: 'اكتب اسم العميل، أو اتركه فارغاً للبيع النقدي.' },
+    { sel: '#edMode', t: 'مفرد أو جملة', d: 'اختر «بيع بالجملة» لتظهر أسعار الجملة، ومعها السعر المقترح لبيع كل صنف بالمفرد.' },
     { sel: '#edAdd', t: 'اختيار الأصناف', d: 'تفتح قائمة أصنافك بصورها: اضغط على كل صنف تريده (مرتين لزيادة الكمية)، ثم «إضافة إلى الفاتورة».' },
     { sel: '#edPay', t: 'حالة الدفع', d: 'مدفوعة كاملة، أو آجلة (دَين)، أو دفع جزئي.' },
     { sel: '#edSave', t: 'حفظ الفاتورة', d: 'بعد الحفظ تظهر الفاتورة جاهزة للإرسال والطباعة.' }

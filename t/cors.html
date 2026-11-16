@@ -1,5 +1,0 @@
-<!doctype html><meta charset="utf-8"><title>cors</title><body><pre id="o">...</pre><script>
-(async()=>{const o=document.getElementById('o');const qs=['زعفران إيراني 5 جرام','هيل أخضر 250 جرام','قهوة عربية محمصة','عسل سدر عماني','بهارات مشكلة'];let out='';
-for(const q of qs){try{const r=await fetch('https://api.mymemory.translated.net/get?q='+encodeURIComponent(q)+'&langpair=ar|en');const j=await r.json();out+=r.status+' | '+q+' => '+(j.responseData&&j.responseData.translatedText)+' | st='+j.responseStatus+' | quota='+j.quotaFinished+'\n';}catch(e){out+='ERR '+q+' '+e+'\n';}}
-o.textContent=out;})();
-</script>
