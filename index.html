@@ -230,6 +230,64 @@ body.privacy #app,body.privacy #modal-root{filter:blur(18px)}
   #printArea{display:block!important}
   #printArea img{width:100%;display:block}
 }
+/* ---------- الحقول: تحديد النص وسرعة اللمس ---------- */
+input,textarea{-webkit-user-select:text;user-select:text}
+button,.row,.chip{touch-action:manipulation}
+/* ---------- الحقوق في شاشة الرمز ---------- */
+.credits{margin-top:auto;padding-top:18px;text-align:center;font-size:13px;line-height:1.7;color:rgba(255,255,255,.82)}
+.credits b{color:#fff;font-weight:700}
+.credits .cr-tel{display:inline-flex;align-items:center;gap:6px;margin-top:4px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:999px;padding:5px 12px;font-size:13px;cursor:pointer}
+.credits .cr-tel .i{width:16px;height:16px}
+.credits.light{color:var(--muted);margin-top:18px;padding-top:12px}
+.credits.light b{color:var(--ink,#0F172A)}
+.credits.light .cr-tel{background:var(--pri-l);border-color:transparent;color:var(--pri-d)}
+#lock .credits{position:absolute;bottom:calc(14px + var(--safe-b));left:0;right:0;padding:0 16px}
+/* ---------- الإعلان ---------- */
+.ad-slot{margin:14px 0 4px}
+.ad-card{position:relative;display:flex;align-items:center;gap:12px;width:100%;border:0;border-radius:18px;padding:14px 14px 14px 12px;text-align:right;cursor:pointer;box-shadow:0 6px 18px rgba(15,23,42,.12)}
+.ad-card img{width:58px;height:58px;border-radius:12px;object-fit:cover;flex:none;background:rgba(255,255,255,.2)}
+.ad-t{font-weight:800;font-size:17px}.ad-b{font-size:14px;opacity:.9;margin-top:2px}
+.ad-cta{flex:none;font-weight:700;font-size:13px;border-radius:999px;padding:7px 12px}
+.ad-tag{position:absolute;top:6px;left:10px;font-size:10px;opacity:.75;border:1px solid currentColor;border-radius:6px;padding:0 5px;line-height:16px}
+.ad-up{display:block;margin:6px auto 0;background:none;border:0;color:var(--muted);font-size:13px;text-decoration:underline;cursor:pointer}
+/* ---------- الباقات ---------- */
+.badge.pro{background:#FEF3C7;color:#92400E;font-size:11px;padding:1px 7px;vertical-align:middle;margin-inline-start:4px}
+.plan{position:relative;background:#fff;border:2px solid var(--line);border-radius:20px;padding:16px;margin-bottom:12px}
+.plan.best{border-color:var(--pri);box-shadow:0 8px 24px rgba(15,118,110,.14)}
+.plan.cur{background:var(--pri-l)}
+.plan-tag{position:absolute;top:-11px;right:16px;background:var(--pri);color:#fff;font-size:12px;font-weight:700;border-radius:999px;padding:2px 10px}
+.plan-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;font-size:19px}
+.plan-p{color:var(--pri-d);font-weight:800;font-size:16px}
+.plan ul{list-style:none;padding:0;margin:10px 0 12px}
+.plan li{display:flex;gap:8px;align-items:center;padding:3px 0;font-size:15px}
+.plan li .i{width:18px;height:18px;color:var(--sale);flex:none}
+.plan li.no{color:var(--muted)} .plan li.no .i{color:var(--danger)}
+.plan-cur{display:flex;align-items:center;gap:6px;justify-content:center;color:var(--pri-d);font-weight:700}
+.plan-now{border-right:5px solid var(--pri)}
+.steps-ol{margin:0 0 10px;padding-inline-start:20px;font-size:15px;line-height:1.9}
+details.card summary{cursor:pointer;list-style:none} details.card summary::-webkit-details-marker{display:none}
+.up-ic{width:58px;height:58px;margin:0 auto;border-radius:18px;display:grid;place-items:center;background:#FEF3C7;color:#B45309}
+.up-ic .i{width:30px;height:30px}
+.locked{position:relative}.locked-blur{filter:blur(6px);opacity:.55;pointer-events:none}
+.locked-card{position:relative;margin-top:-60px}
+/* ---------- الجولة التعريفية (بالونات شفافة) ---------- */
+#tour{position:fixed;inset:0;z-index:95;animation:fade .2s}
+#tour.out{opacity:0;transition:opacity .2s}
+.tr-spot{position:fixed;border-radius:16px;box-shadow:0 0 0 9999px rgba(15,23,42,.55),0 0 0 3px rgba(255,255,255,.85);transition:all .28s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.tr-bub{position:fixed;padding:16px 16px 14px;border-radius:22px;color:#0F172A;background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(14px) saturate(1.5);backdrop-filter:blur(14px) saturate(1.5);border:1px solid rgba(255,255,255,.75);box-shadow:0 18px 40px rgba(15,23,42,.28),inset 0 1px 0 rgba(255,255,255,.9);transition:top .28s,left .28s;animation:float 3.2s ease-in-out infinite}
+.tr-bub.pop{animation:pop2 .32s cubic-bezier(.2,1.4,.4,1),float 3.2s ease-in-out .32s infinite}
+.tr-tail{position:absolute;top:-9px;width:18px;height:18px;margin-left:-9px;background:inherit;border-left:1px solid rgba(255,255,255,.75);border-top:1px solid rgba(255,255,255,.75);transform:rotate(45deg);border-radius:4px 0 0 0}
+.tr-bub.up .tr-tail{top:auto;bottom:-9px;transform:rotate(225deg)}
+.tr-step{font-size:12px;color:var(--pri-d);font-weight:700}
+.tr-t{font-size:19px;font-weight:800;margin:2px 0 4px}
+.tr-d{font-size:15.5px;line-height:1.6;color:#1E293B}
+.tr-btns{display:flex;gap:8px;margin-top:12px;align-items:center}
+.tr-next{flex:1;border:0;border-radius:14px;padding:11px;font-weight:700;background:var(--pri);color:#fff;cursor:pointer}
+.tr-skip{border:0;background:rgba(15,23,42,.06);border-radius:14px;padding:11px 14px;color:#334155;cursor:pointer}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes pop2{0%{transform:scale(.85);opacity:0}100%{transform:scale(1);opacity:1}}
+@media (prefers-reduced-motion:reduce){.tr-bub,.tr-bub.pop{animation:none}.tr-spot{transition:none}}
+#lock.on{padding-bottom:calc(118px + var(--safe-b))}
 
 #splash{position:fixed;inset:0;display:grid;place-items:center;background:#0F766E;z-index:99}
 #splash img{width:96px;height:96px;border-radius:26px}
@@ -254,14 +312,22 @@ const FW_DEMO = false;
 const APP = {
   name: 'فواتيري',
   nameEn: 'Fawateeri',
-  version: '1.0.1',
-  devName: 'فواتيري',            // اسمك أو اسم مؤسستك كمطوّر
-  devWhatsApp: '96877437749',               // رقم واتساب الدعم الفني بالصيغة الدولية مثل 96891234567
-  trialLimit: 25,                // عدد الفواتير المسموح بها قبل التفعيل
+  version: '1.1.0',
+  devName: 'ABDULAZIZ ALSHAFAI',   // المصمّم
+  sponsor: 'شركة توابل صحار',      // الجهة الداعمة (تظهر في شاشة الرمز السري)
+  devWhatsApp: '96877437749',      // رقم واتساب الدعم الفني بالصيغة الدولية
+  contactLocal: '77437749',        // رقم التواصل والاقتراحات كما يظهر للمستخدم
+  privacyUrl: 'https://a00a00sh-abdulaziz-alshafai.github.io/fawateeri-app/privacy.html',
   footerBrand: 'صادرة من تطبيق فواتيري',
   // المفتاح العام للتحقق من أكواد التفعيل (المفتاح الخاص عندك فقط في أداة التراخيص)
   licenseKey: {"kty": "EC", "x": "tgeGY4dDG158BlSydrM22KA9WM1WD1zQ-GJjeVuWNuY", "y": "KoFKHAom97Jtp8gGMAuvRW61xKbK-x4T8iWvWcoJTrE", "crv": "P-256"}
 };
+/* قناة التوزيع: play (متجر Google Play) | direct (ملف APK مباشر) | web (آيفون والمتصفح) */
+const FW_CHANNEL = "web";
+/* خادم الإحصائيات والإعدادات (مفتاح عام للنشر فقط — الصلاحيات محمية بقواعد قاعدة البيانات) */
+const API = {"url": "https://c--dc0151d4-f557-4f0c-be26-603129cec414-prod.lovable.cloud", "key": "sb_publishable_xHQHQ-HwVX6GCHeljvOX0w_olxPqERU"};
+/* إجراءات تُسجَّل من الوحدات قبل تعريف واجهة المستخدم */
+const ACT_EXTRA = {};
 
 /* ---------- أدوات عامة ---------- */
 const $ = (s, r = document) => r.querySelector(s);
@@ -427,6 +493,8 @@ const License = {
       if (!ok) return null;
       const payload = JSON.parse(TD.decode(B64.unurl(p)));
       if (normCode(payload.d) !== normCode(this.device)) return { err: 'device', payload };
+      if (payload.p && !['basic', 'advanced'].includes(payload.p)) return null;
+      if (payload.e && !/^\d{4}-\d{2}-\d{2}$/.test(payload.e)) return null;
       return payload;
     } catch (e) { return null; }
   },
@@ -434,8 +502,14 @@ const License = {
     const r = await this.verify(code);
     if (!r) return 'invalid';
     if (r.err) return 'device';
+    if (r.e && r.e < ymd(new Date(typeof Plan !== 'undefined' ? Plan.now() : Date.now()))) return 'expired';
+    if (r.i && (await Store.get('revoked') || []).includes(r.i)) return 'revoked';
     await Store.set('license', String(code).trim().replace(/\s+/g, ''));
     this.data = r; return 'ok';
+  },
+  async revoke() {
+    if (this.data && this.data.i) { const list = (await Store.get('revoked')) || []; if (!list.includes(this.data.i)) list.push(this.data.i); await Store.set('revoked', list); }
+    await Store.del('license'); this.data = null;
   }
 };
 
@@ -572,6 +646,221 @@ function csv(rows) { return '﻿' + rows.map(r => r.map(v => { v = String(v ?? '
 
 'use strict';
 /* =====================================================================
+   الباقات والاشتراكات (Google Play + أكواد التفعيل) والإحصائيات والإعلان
+   ===================================================================== */
+
+/* ---------- الباقات (عدّل الميزات والأسعار من هنا) ---------- */
+const PLANS = {
+  free: { id: 'free', name: 'المجانية', price: 0, limit: 20, ads: true, feats: [] },
+  basic: { id: 'basic', name: 'الأساسية', price: 0.750, limit: 0, ads: false, feats: ['unlimited', 'noads', 'pdf', 'print', 'logo'] },
+  advanced: { id: 'advanced', name: 'المتقدمة', price: 2.450, limit: 0, ads: false, feats: ['unlimited', 'noads', 'pdf', 'print', 'logo', 'reports', 'export', 'vat', 'remind'] }
+};
+const PLAN_RANK = { free: 0, basic: 1, advanced: 2 };
+const FEAT_TXT = {
+  unlimited: 'فواتير بلا حد شهري', noads: 'بدون إعلانات', pdf: 'حفظ الفاتورة PDF', print: 'طباعة الفواتير', logo: 'شعار محلك على الفاتورة',
+  reports: 'التقارير والأرباح', export: 'تصدير Excel', vat: 'ضريبة القيمة المضافة', remind: 'تذكير العملاء بالديون عبر واتساب'
+};
+const BASE_FEATS = ['فواتير بيع وشراء', 'المخزون والعملاء والديون', 'إرسال الفاتورة صورة عبر واتساب', 'النسخ الاحتياطي المشفّر'];
+const PLAY_SKU = { basic: 'fawateeri_basic', advanced: 'fawateeri_advanced' };
+const PLAY_BASE_PLAN = 'monthly';
+
+/* ---------- الباقة الحالية ---------- */
+const Plan = {
+  id: 'free', src: null, exp: null, clock: 0,
+  async init() { this.clock = (await Store.get('clock')) || 0; this.compute(); },
+  now() { return Math.max(Date.now(), this.clock || 0); },
+  async tick(serverNow) {
+    const t = Math.max(Date.now(), +serverNow || 0);
+    if (t > (this.clock || 0) + 60000) { this.clock = t; await Store.set('clock', t); this.compute(); }
+  },
+  compute() {
+    let best = { id: 'free', src: null, exp: null };
+    const L = License.data, d = ymd(new Date(this.now()));
+    if (L) {
+      const p = PLANS[L.p] ? L.p : 'advanced'; // الأكواد القديمة بدون باقة = متقدمة دائمة
+      if ((!L.e || L.e >= d) && PLAN_RANK[p] > PLAN_RANK[best.id]) best = { id: p, src: 'code', exp: L.e || null };
+    }
+    const B = Billing.active;
+    if (B && PLAN_RANK[B.plan] >= PLAN_RANK[best.id] && B.plan !== 'free') best = { id: B.plan, src: 'play', exp: B.exp || null };
+    Object.assign(this, best);
+  },
+  cfg() { return PLANS[this.id]; },
+  can(f) { return this.cfg().feats.includes(f); },
+  ads() { return this.cfg().ads; },
+  paid() { return this.id !== 'free'; },
+  minFor(f) { return ['basic', 'advanced'].find(p => PLANS[p].feats.includes(f)) || 'advanced'; },
+  monthCount() { const m = ymd().slice(0, 7); return DB ? DB.invoices.filter(i => ymd(new Date(i.created || 0)).slice(0, 7) === m).length : 0; },
+  limitLeft() { const l = this.cfg().limit; return l ? Math.max(0, l - this.monthCount()) : Infinity; },
+  daysLeft() { if (!this.exp) return Infinity; return Math.ceil((new Date(this.exp + 'T23:59:59').getTime() - this.now()) / 864e5); },
+  codeExpired() { const L = License.data; return !!(L && L.e && L.e < ymd(new Date(this.now()))); },
+  srcTxt() { return this.src === 'play' ? 'عبر Google Play' : this.src === 'code' ? 'بكود تفعيل' : ''; }
+};
+
+/* ---------- اشتراكات Google Play ---------- */
+const Billing = {
+  P: null, ready: false, products: {}, active: null,
+  avail() { return FW_CHANNEL === 'play' && isNative(); },
+  plugin() {
+    const C = window.Capacitor; if (!C) return null;
+    if (C.Plugins && C.Plugins.NativePurchases) return C.Plugins.NativePurchases;
+    try { return C.registerPlugin ? C.registerPlugin('NativePurchases') : null; } catch (e) { return null; }
+  },
+  async init() {
+    const c = await Store.get('playEnt');
+    if (c && Date.now() - c.at < 7 * 864e5) this.active = { plan: c.plan, exp: c.exp || null };
+    if (!this.avail()) { this.active = null; return; }
+    try {
+      this.P = this.plugin(); if (!this.P) return;
+      const s = await this.P.isBillingSupported(); if (!s || !s.isBillingSupported) return;
+      this.ready = true; await this.refresh(); this.loadProducts();
+    } catch (e) { console.warn('billing init', e); }
+  },
+  async loadProducts() {
+    try {
+      const r = await this.P.getProducts({ productIdentifiers: Object.values(PLAY_SKU), productType: 'subs' });
+      for (const p of (r && r.products) || []) {
+        const plan = Object.keys(PLAY_SKU).find(k => PLAY_SKU[k] === p.planIdentifier || PLAY_SKU[k] === p.identifier);
+        if (plan && (!this.products[plan] || p.identifier === PLAY_BASE_PLAN)) this.products[plan] = { price: p.priceString, base: p.identifier };
+      }
+    } catch (e) { console.warn('billing products', e); }
+  },
+  async refresh() {
+    if (!this.ready) return;
+    try {
+      const r = await this.P.getPurchases({ productType: 'subs' });
+      let best = null;
+      for (const t of (r && r.purchases) || []) {
+        const plan = Object.keys(PLAY_SKU).find(k => PLAY_SKU[k] === t.productIdentifier);
+        if (!plan) continue;
+        if (t.purchaseState != null && String(t.purchaseState) !== '1') continue;
+        if (t.expirationDate && new Date(t.expirationDate).getTime() < Date.now()) continue;
+        if (t.subscriptionState && ['expired', 'revoked'].includes(t.subscriptionState)) continue;
+        if (!best || PLAN_RANK[plan] > PLAN_RANK[best.plan]) best = { plan, exp: t.expirationDate ? String(t.expirationDate).slice(0, 10) : null };
+      }
+      this.active = best;
+      await Store.set('playEnt', best ? { plan: best.plan, exp: best.exp, at: Date.now() } : null);
+    } catch (e) { console.warn('billing refresh', e); }
+    Plan.compute();
+  },
+  async buy(plan) {
+    if (!this.ready) { toast('خدمة Google Play غير متاحة على هذا الجهاز'); return false; }
+    Cloud.ev('buy_start', { p: plan });
+    try {
+      Lock.grace(300000);
+      await this.P.purchaseProduct({ productIdentifier: PLAY_SKU[plan], planIdentifier: (this.products[plan] && this.products[plan].base) || PLAY_BASE_PLAN, productType: 'subs' });
+      await this.refresh();
+      if (Plan.id === plan || PLAN_RANK[Plan.id] >= PLAN_RANK[plan]) { Cloud.ev('buy_ok', { p: plan, s: 'play' }); Cloud.sync(); return true; }
+    } catch (e) {
+      const m = String((e && (e.message || e.code)) || e);
+      Cloud.ev('buy_fail', { p: plan, m: m.slice(0, 60) });
+      if (!/cancel/i.test(m)) toast('لم تكتمل عملية الاشتراك');
+    }
+    return false;
+  },
+  async restore() {
+    if (!this.ready) return;
+    try { await this.P.restorePurchases(); } catch (e) { }
+    await this.refresh();
+  },
+  manage() { if (this.ready) { Lock.grace(300000); this.P.manageSubscriptions().catch(() => { }); } }
+};
+
+/* ---------- الإحصائيات المجهولة والإعدادات عن بُعد ---------- */
+const ESSENTIAL_EV = new Set(['install', 'buy_start', 'buy_ok', 'buy_fail', 'lic_ok']);
+const Cloud = {
+  iid: '', q: [], cfg: null, on: true, busy: false, saveT: null, lastSync: 0,
+  async init() {
+    this.iid = await Store.get('iid');
+    if (!this.iid) { this.iid = randCode(16); await Store.set('iid', this.iid); }
+    this.q = (await Store.get('evq')) || [];
+    this.cfg = await Store.get('cfg');
+    this.on = (await Store.get('stats')) !== false;
+    if (!(await Store.get('installed'))) { await Store.set('installed', Date.now()); this.ev('install', { ch: FW_CHANNEL }); }
+    setInterval(() => this.sync(), 5 * 60000);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) this.sync(); });
+    addEventListener('online', () => this.sync());
+  },
+  async setOn(v) { this.on = !!v; await Store.set('stats', this.on); if (!v) { this.q = this.q.filter(e => ESSENTIAL_EV.has(e.n)); this.save(); } },
+  ev(n, p) {
+    if (!this.on && !ESSENTIAL_EV.has(n)) return;
+    this.q.push(p ? { n, t: Date.now(), p } : { n, t: Date.now() });
+    if (this.q.length > 400) this.q = this.q.slice(-400);
+    this.save();
+  },
+  save() { clearTimeout(this.saveT); this.saveT = setTimeout(() => Store.set('evq', this.q).catch(() => { }), 400); },
+  platform() {
+    if (isNative()) return (window.Capacitor.getPlatform && window.Capacitor.getPlatform()) || 'native';
+    return /iPhone|iPad|iPod/.test(navigator.userAgent) ? 'ios-web' : /Android/.test(navigator.userAgent) ? 'android-web' : 'web';
+  },
+  os() {
+    const u = navigator.userAgent; let m;
+    if ((m = /Android ([\d.]+)/.exec(u))) return 'Android ' + m[1].split('.')[0];
+    if ((m = /OS (\d+)_/.exec(u)) && /iPhone|iPad/.test(u)) return 'iOS ' + m[1];
+    return /Windows/.test(u) ? 'Windows' : /Mac OS/.test(u) ? 'macOS' : 'Other';
+  },
+  async sync(force) {
+    if (!API.url || this.busy || FW_DEMO) return;
+    if (navigator.onLine === false) return;
+    if (!force && Date.now() - this.lastSync < 20000) return;
+    this.busy = true; this.lastSync = Date.now();
+    const batch = this.q.slice(0, 120);
+    const p = {
+      iid: this.iid, dc: License.device, v: APP.version, ch: FW_CHANNEL, pf: this.platform(), os: this.os(),
+      lang: (navigator.language || '').slice(0, 10), tz: (() => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone; } catch (e) { return ''; } })(),
+      plan: Plan.id, ps: Plan.src, pe: Plan.exp, lic: License.data ? License.data.i : null, an: this.on,
+      c: (this.on && DB) ? { inv: DB.invoices.length, im: Plan.monthCount(), it: DB.items.length, pa: DB.parties.length } : null,
+      ev: batch
+    };
+    try {
+      const ctl = window.AbortController ? new AbortController() : null; const to = ctl ? setTimeout(() => ctl.abort(), 15000) : 0;
+      const r = await fetch(API.url + '/rest/v1/rpc/fw_sync', { method: 'POST', headers: { 'Content-Type': 'application/json', apikey: API.key }, body: JSON.stringify({ p }), signal: ctl ? ctl.signal : undefined });
+      clearTimeout(to);
+      if (r.ok) {
+        const j = await r.json();
+        this.q.splice(0, batch.length); this.save();
+        if (j && typeof j === 'object') {
+          this.cfg = j; await Store.set('cfg', j);
+          if (j.now) await Plan.tick(j.now);
+          if (j.lic === 'revoked' && License.data) { await License.revoke(); Plan.compute(); if (DB && !Lock.on) render(); }
+          Ads.refresh();
+        }
+      }
+    } catch (e) { /* بدون إنترنت — ستُرسل لاحقاً */ }
+    finally { this.busy = false; }
+  }
+};
+
+/* ---------- الإعلان في الباقة المجانية ---------- */
+const DEFAULT_AD = { on: true, title: 'توابل صحار', body: 'بهارات وتوابل عُمانية مختارة — اطلب الآن', cta: 'تواصل عبر واتساب', url: 'https://wa.me/96877437749', bg: '#7C2D12', fg: '#FFFFFF', img: '' };
+const Ads = {
+  seen: {},
+  cur() {
+    if (!Plan.ads()) return null;
+    const a = (Cloud.cfg && Cloud.cfg.ad) || DEFAULT_AD;
+    return a && a.on !== false && (a.title || a.body || a.img) ? a : null;
+  },
+  html(place) {
+    const a = this.cur(); if (!a) return '';
+    const safeUrl = /^https:\/\//.test(a.url || '') ? a.url : '';
+    const bg = /^#[0-9a-f]{3,8}$/i.test(a.bg || '') ? a.bg : '#7C2D12', fg = /^#[0-9a-f]{3,8}$/i.test(a.fg || '') ? a.fg : '#FFFFFF';
+    const img = /^(https:\/\/|data:image\/)/.test(a.img || '') ? a.img : '';
+    return `<div class="ad-slot" data-place="${place}"><button class="ad-card" data-act="adClick" data-url="${esc(safeUrl)}" data-place="${place}" style="background:${bg};color:${fg}">
+      ${img ? `<img src="${esc(img)}" alt="">` : ''}<div class="grow"><div class="ad-t">${esc(a.title || '')}</div>${a.body ? `<div class="ad-b">${esc(a.body)}</div>` : ''}</div>
+      ${a.cta && safeUrl ? `<span class="ad-cta" style="color:${bg};background:${fg}">${esc(a.cta)}</span>` : ''}<span class="ad-tag">إعلان</span></button>
+      <button class="ad-up" data-act="go" data-to="plans">إزالة الإعلانات</button></div>`;
+  },
+  viewed(place) {
+    const k = place + ymd(); if (this.seen[k] || !this.cur()) return;
+    this.seen[k] = 1; Cloud.ev('ad_view', { w: place });
+  },
+  refresh() {
+    $$('.ad-slot').forEach(s => { const h = this.html(s.dataset.place); if (h) s.outerHTML = h; else s.remove(); });
+  }
+};
+ACT_EXTRA.adClick = el => { Cloud.ev('ad_click', { w: el.dataset.place }); if (el.dataset.url) openExternal(el.dataset.url); };
+
+'use strict';
+/* =====================================================================
    رسم الفاتورة كصورة (للمشاركة عبر واتساب) وتحويلها إلى PDF، ومشاركة الملفات
    ===================================================================== */
 const FONT = 'Tajawal, "Segoe UI", Tahoma, Arial, sans-serif';
@@ -606,7 +895,7 @@ async function invoiceCanvas(inv) {
   const col = inv.type === 'sale' ? '#0E9F6E' : '#2563EB';
   const colL = inv.type === 'sale' ? '#E7F7F0' : '#EAF1FE';
   const c = calcInvoice(inv), st = statusOf(inv), paid = paidOf(inv), due = dueOf(inv);
-  const logo = S.logo ? await loadImg(S.logo) : null;
+  const logo = (S.logo && Plan.can('logo')) ? await loadImg(S.logo) : null;
   const rate = num(inv.vatRate);
   const isTax = inv.type === 'sale' && rate > 0;
 
@@ -867,7 +1156,9 @@ const IC = {
   truck: '<path d="M2 6h12v10H2zM14 9h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>',
   cloud: '<path d="M7 18a5 5 0 0 1-.6-10A6 6 0 0 1 18 9a4.5 4.5 0 0 1 0 9z"/><path d="m9.5 13 2.5-2.5 2.5 2.5M12 10.5V17"/>',
   bell: '<path d="M6 9a6 6 0 0 1 12 0c0 6 2.5 7.5 2.5 7.5h-17S6 15 6 9"/><path d="M10 20a2 2 0 0 0 4 0"/>',
-  user: '<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/>'
+  user: '<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/>',
+  star: '<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
+  help: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14"/><path d="M12 17.5v.01"/>'
 };
 const ic = (n, cls = '') => `<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true">${IC[n] || ''}</svg>`;
 
@@ -890,6 +1181,7 @@ const Modal = {
       wrap.querySelector('.bd').addEventListener('click', () => { if (opts.dismissable !== false) this.close(); });
       wrap.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => this.close()));
       if (opts.onMount) opts.onMount(wrap.querySelector('.sheet,.dlg'), m);
+      hardenInputs(wrap);
     });
   },
   close(result) { const m = this.stack.pop(); if (!m) return; m.el.remove(); if (m.opts.onClose) m.opts.onClose(result); m.resolve(result); },
@@ -937,6 +1229,7 @@ function pinPad(el, { title, sub = '', light = false, onDone, foot = '' }) {
   el.addEventListener('click', e => { const b = e.target.closest('[data-k]'); if (b) press(b.dataset.k); });
   const kd = e => {
     if (!el.isConnected) { document.removeEventListener('keydown', kd); return; }
+    const tg = e.target; if (tg && tg.closest && tg.closest('input,textarea,select,[contenteditable]')) return;
     if (!el.getClientRects().length) return;
     if (Modal.stack.length && !el.closest('#modal-root')) return;
     if (/^\d$/.test(toEnDigits(e.key))) press(toEnDigits(e.key)); else if (e.key === 'Backspace') press('del');
@@ -1042,6 +1335,26 @@ function render() {
   view.style.padding = bare ? '0' : '';
   view.innerHTML = scr.render(c.params);
   if (scr.mount) scr.mount(view, c.params);
+  hardenInputs(view);
+  if (scr.after) scr.after(view, c.params);
+  if (typeof Tour !== 'undefined') Tour.maybe(c.name);
+}
+/* إعدادات الحقول لتفادي بطء الحذف ومشاكل لوحات المفاتيح الذكية على أندرويد */
+function hardenInputs(root) {
+  $$('input:not([type=checkbox]):not([type=radio]):not([type=date]):not([type=file]),textarea', root).forEach(x => {
+    if (x.dataset.hz) return; x.dataset.hz = 1;
+    x.setAttribute('spellcheck', 'false'); x.setAttribute('autocorrect', 'off');
+    if (!x.hasAttribute('autocomplete')) x.setAttribute('autocomplete', 'off');
+    if (!x.hasAttribute('autocapitalize')) x.setAttribute('autocapitalize', 'off');
+  });
+}
+/* تنفيذ مؤجل للبحث: لا يعيد رسم القائمة مع كل حرف ولا أثناء تركيب الكلمة في لوحة المفاتيح */
+function liveInput(inputEl, fn, ms = 160) {
+  let t = 0, comp = false;
+  const run = () => { clearTimeout(t); t = setTimeout(() => fn(inputEl.value), ms); };
+  inputEl.addEventListener('compositionstart', () => { comp = true; });
+  inputEl.addEventListener('compositionend', () => { comp = false; run(); });
+  inputEl.addEventListener('input', e => { if (comp || e.isComposing) return; run(); });
 }
 
 /* ---------- الأحداث العامة ---------- */
@@ -1057,6 +1370,7 @@ const ACT = {
     openExternal(waLink(APP.devWhatsApp, `السلام عليكم، أحتاج مساعدة في تطبيق ${APP.name}\nالنشاط: ${DB ? DB.settings.bizName : ''}`));
   }
 };
+Object.assign(ACT, ACT_EXTRA);
 document.addEventListener('click', e => {
   const el = e.target.closest('[data-act]'); if (!el) return;
   const fn = ACT[el.dataset.act]; if (fn) { e.preventDefault(); fn(el, e); }
@@ -1089,10 +1403,16 @@ const Lock = {
   }
 };
 
+function creditsHtml(light = false) {
+  return `<div class="credits ${light ? 'light' : ''}"><div>بدعم من <b>${esc(APP.sponsor)}</b></div><div class="ltr">Design: <b>${esc(APP.devName)}</b> · تصميم</div>
+    <button type="button" class="cr-tel" data-act="contactUs">${ic('wa')} للتواصل والاقتراحات: <span class="ltr">${esc(APP.contactLocal)}</span></button></div>`;
+}
+ACT.contactUs = () => openExternal(waLink(APP.devWhatsApp, `السلام عليكم، لدي اقتراح/استفسار بخصوص تطبيق ${APP.name}`));
+let lockTick = 0;
 function showLockScreen() {
   const box = $('#lock'); box.classList.add('on');
   box.innerHTML = `<div style="margin-bottom:10px">${ic('lock')}</div><div id="lockPad" style="width:100%;display:flex;justify-content:center"></div>
-    <button class="btn ghost" style="color:#fff;margin-top:14px;width:auto" id="forgotBtn">نسيت الرمز السري؟</button>`;
+    <button class="btn ghost" style="color:#fff;margin-top:14px;width:auto" id="forgotBtn">نسيت الرمز السري؟</button>${creditsHtml()}`;
   const pad = pinPad($('#lockPad'), {
     title: APP.name, sub: 'أدخل الرمز السري', onDone: async pin => {
       if (Vault.meta.lockUntil > Date.now()) return 'محاولات كثيرة، انتظر ' + Math.ceil((Vault.meta.lockUntil - Date.now()) / 1000) + ' ثانية';
@@ -1111,16 +1431,17 @@ function showLockScreen() {
     if (w > 0) { pad.disabled = true; pad.setMsg('محاولات كثيرة، انتظر ' + Math.ceil(w / 1000) + ' ثانية'); setTimeout(tick, 1000); }
     else if (pad.disabled) { pad.disabled = false; pad.setMsg(''); }
   };
-  tick(); setInterval(tick, 3000);
+  clearInterval(lockTick); tick(); lockTick = setInterval(tick, 3000);
   $('#forgotBtn').onclick = () => recoveryFlow();
 }
 async function afterUnlock() {
   if (!DB) { const d = await Vault.read(); setDB(migrate(d || newDB())); }
-  Lock.on = false; Lock.last = Date.now();
+  Lock.on = false; Lock.last = Date.now(); clearInterval(lockTick);
   const box = $('#lock'); box.classList.remove('on'); box.innerHTML = '';
+  Cloud.ev('app_open'); Cloud.sync(true); if (Billing.ready) Billing.refresh();
   if (!Nav.stack.length || Screens[Nav.cur().name].bare) Nav.stack = [{ name: 'home', params: {} }];
   render();
-  if (PendingActivation) { Nav.go('license', { code: PendingActivation }); PendingActivation = null; }
+  if (PendingActivation) { Nav.go('plans', { code: PendingActivation }); PendingActivation = null; }
 }
 function recoveryFlow() {
   Modal.open(`<p class="muted" style="margin-top:0">أدخل رمز الاستعادة الذي حصلت عليه عند إنشاء التطبيق (16 حرفاً ورقماً).</p>
@@ -1155,7 +1476,20 @@ function invRow(inv) {
 }
 const byNewest = (a, b) => (b.date + String(b.created).padStart(15, '0')).localeCompare(a.date + String(a.created).padStart(15, '0'));
 function emptyBox(icon, text, btn = '') { return `<div class="empty">${ic(icon)}<div>${text}</div>${btn}</div>`; }
-function trialBlocked() { return !License.active() && DB.invoices.length >= APP.trialLimit; }
+function limitBlocked() { return Plan.limitLeft() <= 0; }
+/* نافذة الترقية عند طلب ميزة غير متاحة في الباقة الحالية */
+async function needPlan(feat) {
+  if (Plan.can(feat)) return true;
+  const p = PLANS[Plan.minFor(feat)];
+  Cloud.ev('paywall', { f: feat });
+  const go = await Modal.open(`<div class="center"><div class="up-ic">${ic('star')}</div><h3 style="margin:6px 0">${esc(FEAT_TXT[feat] || 'هذه الميزة')}</h3>
+    <p class="muted" style="margin:0 0 14px">متاحة في <b>الباقة ${esc(p.name)}</b>${p.id === 'basic' ? ' والمتقدمة' : ''}. اشترك لتفعيلها فوراً.</p></div>
+    <button class="btn" data-r="1">${ic('star')} عرض الباقات</button><button class="btn ghost" data-r="0" style="width:100%">لاحقاً</button>`, {
+    type: 'dlg', onMount(el) { el.addEventListener('click', e => { const b = e.target.closest('[data-r]'); if (b) Modal.close(b.dataset.r === '1'); }); }
+  });
+  if (go) Nav.go('plans', { from: feat });
+  return false;
+}
 function migrate(d) {
   const base = newDB();
   d.settings = Object.assign({}, base.settings, d.settings || {});
@@ -1166,9 +1500,10 @@ function migrate(d) {
 }
 
 async function startInvoice(type, partyId) {
-  if (trialBlocked()) {
-    const go = await confirmDlg(`انتهت النسخة التجريبية (${APP.trialLimit} فاتورة).<br>فعّل التطبيق للاستمرار في إصدار الفواتير.`, { ok: 'تفعيل الآن', cancel: 'لاحقاً' });
-    if (go) Nav.go('license');
+  if (limitBlocked()) {
+    Cloud.ev('limit_hit');
+    const go = await confirmDlg(`وصلت إلى حد الباقة المجانية (${PLANS.free.limit} فاتورة هذا الشهر).<br>اشترك في الباقة الأساسية لإصدار فواتير بلا حد، أو انتظر بداية الشهر القادم.`, { ok: 'عرض الباقات', cancel: 'لاحقاً' });
+    if (go) Nav.go('plans', { from: 'limit' });
     return;
   }
   Draft = null;
@@ -1227,7 +1562,7 @@ Screens.setupBiz = {
 Screens.setupPin = {
   bare: true,
   render: () => `<div class="onb" style="align-items:center"><div class="steps"><i class="on"></i><i class="on"></i><i></i></div><div id="spPad" style="width:100%;display:flex;justify-content:center"></div>
-    <button class="btn ghost" data-act="back" style="width:auto;margin-top:10px">رجوع</button></div>`,
+    <button class="btn ghost" data-act="back" style="width:auto;margin-top:10px">رجوع</button>${creditsHtml(true)}</div>`,
   mount() { newPinFlow($('#spPad'), async p => { Onb.pin = p; Onb.rec = randCode(16); Nav.go('setupRecovery'); }); }
 };
 Screens.setupRecovery = {
@@ -1247,9 +1582,10 @@ Screens.setupRecovery = {
       await Vault.create(Onb.pin, Onb.rec, db);
       Onb = {};
       try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch (e) { }
+      Cloud.ev('onboard_done'); Cloud.sync(true);
       Nav.stack = [{ name: 'home', params: {} }]; render();
-      setTimeout(() => alertDlg('تم إعداد التطبيق بنجاح 🎉<br><span class="small muted">ابدأ بإضافة أصنافك أو أصدر أول فاتورة مباشرة.</span>', 'ابدأ'), 300);
-      if (PendingActivation) { Nav.go('license', { code: PendingActivation }); PendingActivation = null; }
+      setTimeout(() => alertDlg('تم إعداد التطبيق بنجاح 🎉<br><span class="small muted">سنعرض لك جولة سريعة بأهم الأزرار.</span>', 'ابدأ الجولة').then(() => Tour.maybe('home', true)), 300);
+      if (PendingActivation) { Nav.go('plans', { code: PendingActivation }); PendingActivation = null; }
     };
   }
 };
@@ -1302,7 +1638,7 @@ Screens.restore = {
     $('#rsPick').onclick = async () => {
       const bk = await readBackupFile(); if (!bk) return;
       const u = await unlockBackup(bk); if (!u) return;
-      await adoptBackup(bk, u);
+      await adoptBackup(bk, u); Cloud.ev('backup_restore');
       if (u.rec) { // استخدم رمز الاستعادة: نطلب رمزاً سرياً جديداً
         await Modal.open('<div class="pinbox"></div>', { title: 'رمز سري جديد', dismissable: false, onMount(el) { newPinFlow($('.pinbox', el), async p => { await Vault.setPin(p); Modal.close(); }); } });
       }
@@ -1321,9 +1657,11 @@ Screens.home = {
     const low = lowStockItems(), recent = [...DB.invoices].sort(byNewest).slice(0, 5);
     let h = '';
     if (FW_DEMO) h += `<div class="banner warn">${ic('info')}<div class="grow small">نسخة عرض للتجربة — البيانات تُحفظ في هذا المتصفح فقط</div></div>`;
-    if (!License.active()) {
-      const used = DB.invoices.length;
-      h += `<div class="banner ${used >= APP.trialLimit ? 'danger' : 'info'}">${ic('key')}<div class="grow">${used >= APP.trialLimit ? 'انتهت النسخة التجريبية' : `نسخة تجريبية: ${used} من ${APP.trialLimit} فاتورة`}</div><button class="btn sm" data-act="go" data-to="license">تفعيل</button></div>`;
+    if (!Plan.paid()) {
+      const used = Plan.monthCount(), lim = PLANS.free.limit;
+      h += `<div class="banner ${used >= lim ? 'danger' : 'info'}" id="planBanner">${ic('star')}<div class="grow">${used >= lim ? 'وصلت لحد الباقة المجانية هذا الشهر' : `الباقة المجانية: ${used} من ${lim} فاتورة هذا الشهر`}${Plan.codeExpired() ? '<div class="small">انتهى اشتراكك السابق — جدّده للاستمرار</div>' : ''}</div><button class="btn sm" data-act="go" data-to="plans">ترقية</button></div>`;
+    } else if (Plan.daysLeft() <= 5) {
+      h += `<div class="banner warn">${ic('star')}<div class="grow">ينتهي اشتراك الباقة ${esc(Plan.cfg().name)} خلال ${Math.max(0, Plan.daysLeft())} يوم</div><button class="btn sm" data-act="go" data-to="plans">تجديد</button></div>`;
     }
     if (DB.invoices.length >= 5 && Date.now() - (DB.lastBackup || 0) > 7 * 864e5) {
       h += `<div class="banner warn">${ic('cloud')}<div class="grow">${DB.lastBackup ? 'آخر نسخة احتياطية قبل أكثر من أسبوع' : 'لم تأخذ نسخة احتياطية بعد'}</div><button class="btn sm sec" data-act="go" data-to="backup">نسخ الآن</button></div>`;
@@ -1332,14 +1670,14 @@ Screens.home = {
       <div class="big-actions">
         <button class="big-act sale" data-act="newInv" data-type="sale">${ic('bag')}<div><b>فاتورة بيع</b><span>بيع لعميل</span></div></button>
         <button class="big-act pur" data-act="newInv" data-type="purchase">${ic('truck')}<div><b>فاتورة شراء</b><span>شراء من مورد</span></div></button>
-      </div>
+      </div>${Ads.html('home')}
       <div class="stats">
         <div class="stat g"><div class="l">مبيعات اليوم (${r.salesCount})</div><div class="v">${money(r.sales)}</div></div>
         <div class="stat bl"><div class="l">مشتريات اليوم (${r.purCount})</div><div class="v">${money(r.purchases)}</div></div>
         <button class="stat r" style="border:0;text-align:right;cursor:pointer" data-act="partiesTab" data-k="customer"><div class="l">ديون لك عند العملاء</div><div class="v">${money(recv)}</div></button>
         <button class="stat o" style="border:0;text-align:right;cursor:pointer" data-act="partiesTab" data-k="supplier"><div class="l">ديون عليك للموردين</div><div class="v">${money(pay)}</div></button>
       </div>
-      <button class="row list" style="border-radius:16px" data-act="go" data-to="reports"><div class="ico">${ic('chart')}</div><div class="grow"><div class="t">التقارير</div><div class="s">المبيعات والأرباح والضريبة</div></div>${ic('chev', 'chev')}</button>`;
+      <button class="row list" style="border-radius:16px" data-act="go" data-to="reports" id="homeReports"><div class="ico">${ic('chart')}</div><div class="grow"><div class="t">التقارير ${Plan.can('reports') ? '' : '<span class="badge pro">متقدمة</span>'}</div><div class="s">المبيعات والأرباح والضريبة</div></div>${ic('chev', 'chev')}</button>`;
     if (low.length) {
       h += `<div class="sec-title">${ic('alert')} أصناف قاربت على النفاد</div><div class="list">${low.slice(0, 5).map(x => `<button class="row" data-act="go" data-to="item" data-p='${JSON.stringify({ id: x.item.id })}'><div class="grow"><div class="t">${esc(x.item.name)}</div></div><span class="badge low">المتوفر: ${qtyFmt(x.qty)}</span></button>`).join('')}</div>`;
     }
@@ -1348,6 +1686,7 @@ Screens.home = {
     return h;
   }
 };
+Screens.home.after = () => Ads.viewed('home');
 ACT.partiesTab = el => { UI.partyKind = el.dataset.k; Nav.tab('parties'); };
 
 /* ---------- قائمة الفواتير ---------- */
@@ -1375,7 +1714,7 @@ Screens.invoices = {
       $('#invList').innerHTML = h;
     };
     $('#invSeg').onclick = e => { const b = e.target.closest('[data-f]'); if (!b) return; UI.invFilter = b.dataset.f; $$('#invSeg button').forEach(x => x.classList.toggle('on', x === b)); draw(); };
-    $('#invQ').oninput = e => { UI.invQ = e.target.value; draw(); };
+    liveInput($('#invQ'), v => { UI.invQ = v; draw(); });
     draw();
   }
 };
@@ -1394,7 +1733,7 @@ function initDraft(p) {
   const party = p.party ? partyById(p.party) : null;
   return {
     key: 'new', type: p.type, no: '', date: today(), partyId: party ? party.id : null, partyName: party ? party.name : '', partyPhone: party ? party.phone || '' : '',
-    lines: [], discount: 0, note: '', vatRate: S.vatOn ? num(S.vatRate) : 0, vatInclusive: !!S.vatInclusive,
+    lines: [], discount: 0, note: '', vatRate: S.vatOn && Plan.can('vat') ? num(S.vatRate) : 0, vatInclusive: !!S.vatInclusive,
     payMode: 'full', payAmount: '', payMethod: 'cash', dirty: false
   };
 }
@@ -1464,14 +1803,14 @@ Screens.editor = {
     // العميل/المورد
     const kind = D.type === 'sale' ? 'customer' : 'supplier';
     const pIn = $('#edParty'), sg = $('#edSugg');
-    pIn.oninput = () => {
-      D.partyName = pIn.value; D.partyId = null; dirty();
+    pIn.addEventListener('input', () => { D.partyName = pIn.value; D.partyId = null; dirty(); });
+    liveInput(pIn, () => {
       $('#edPhoneF').classList.toggle('hide', !pIn.value.trim());
       const q = pIn.value.trim();
       const m = q ? DB.parties.filter(x => x.kind === kind && x.name.includes(q)).slice(0, 5) : [];
       sg.innerHTML = m.map(x => `<button type="button" data-pid="${x.id}"><span>${esc(x.name)}</span><span class="muted small ltr">${esc(x.phone || '')}</span></button>`).join('');
       sg.classList.toggle('hide', !m.length);
-    };
+    }, 140);
     pIn.onblur = () => setTimeout(() => sg.classList.add('hide'), 200);
     sg.onclick = e => {
       const b = e.target.closest('[data-pid]'); if (!b) return; const x = partyById(b.dataset.pid);
@@ -1527,7 +1866,7 @@ function pickItem() {
         h += items.map(i => `<button class="row" data-id="${i.id}"><div class="grow"><div class="t">${esc(i.name)}</div><div class="s">${i.track !== false ? 'المتوفر: ' + qtyFmt(sm[i.id]) + ' ' + esc(i.unit || '') : 'بدون مخزون'}</div></div><div class="end amt">${money(type === 'sale' ? i.sale : i.cost)}</div></button>`).join('');
         list.innerHTML = h ? `<div class="list">${h}</div>` : `<div class="card">${emptyBox('box', 'لا توجد أصناف بعد<br>اكتب اسم الصنف في خانة البحث لإضافته')}</div>`;
       };
-      q.oninput = draw; draw();
+      liveInput(q, draw, 120); draw();
       if (activeItems().length > 6 || !activeItems().length) setTimeout(() => q.focus(), 280);
       list.onclick = e => {
         const b = e.target.closest('.row'); if (!b) return;
@@ -1567,7 +1906,7 @@ async function saveDraft() {
   if (D.payMode !== 'full' && !name) { toast(`اكتب اسم ${D.type === 'sale' ? 'العميل' : 'المورد'} لتسجيل الدين عليه`); $('#edParty').focus(); return; }
   if (D.payMode === 'partial' && !(num(D.payAmount) > 0)) { toast('اكتب المبلغ المدفوع'); $('#edPaid').focus(); return; }
   const isNew = !D.id;
-  if (isNew && trialBlocked()) return startInvoice(D.type);
+  if (isNew && limitBlocked()) return startInvoice(D.type);
   // ربط العميل/المورد أو إنشاؤه
   const kind = D.type === 'sale' ? 'customer' : 'supplier';
   let pid = null;
@@ -1591,6 +1930,7 @@ async function saveDraft() {
   if (isNew) DB.invoices.push(inv);
   if (inv.type === 'purchase') for (const l of inv.lines) { const it = itemById(l.itemId); if (it && num(l.price) > 0) it.cost = l.price; }
   await persist();
+  Cloud.ev(isNew ? 'inv_new' : 'inv_edit', { t: inv.type === 'sale' ? 's' : 'p', n: DB.invoices.length, l: inv.lines.length, pm: D.payMode[0] });
   Draft = null;
   Nav.replace('invoice', { id: inv.id });
   toast(isNew ? 'تم حفظ الفاتورة ✓' : 'تم حفظ التعديلات ✓');
@@ -1613,7 +1953,7 @@ Screens.invoice = {
     return `<div class="status-bar"><span class="badge ${inv.type}" style="font-size:15px">${TYPE_TXT[inv.type]}</span><span class="badge ${st}" style="font-size:15px">${STATUS_TXT[st]}${due > 0 ? ' · متبقي ' + money(due) : ''}</span></div>
       <div class="btns">
         <button class="btn ${inv.type === 'sale' ? 'sale' : 'pur'}" id="ivShare">${ic('share')} مشاركة الفاتورة<span class="small" style="font-weight:400">صورة — واتساب وغيره</span></button>
-        <button class="btn sec" id="ivPdf">${ic('file')} ملف PDF<span class="small muted" style="font-weight:400">للطباعة أو الإيميل</span></button>
+        <button class="btn sec" id="ivPdf">${ic('file')} ملف PDF ${Plan.can('pdf') ? '' : '<span class="badge pro">أساسية</span>'}<span class="small muted" style="font-weight:400">للطباعة أو الإيميل</span></button>
       </div>
       <img class="inv-img" id="ivImg" alt="معاينة الفاتورة">
       <div class="sec-title">إجراءات</div>
@@ -1624,6 +1964,7 @@ Screens.invoice = {
         ${!inv.void ? `<button class="row" id="ivEdit"><div class="ico">${ic('edit')}</div><div class="grow"><div class="t">تعديل الفاتورة</div></div>${ic('chev', 'chev')}</button>
         <button class="row" id="ivVoid"><div class="ico" style="background:var(--danger-l);color:var(--danger)">${ic('trash')}</div><div class="grow"><div class="t" style="color:var(--danger)">إلغاء الفاتورة</div><div class="s">تبقى محفوظة كفاتورة ملغاة ولا تدخل في الحسابات</div></div></button>` : ''}
       </div>
+      ${Ads.html('invoice')}
       ${inv.payments.length ? `<div class="sec-title">الدفعات</div><div class="list">${inv.payments.map(p => `<div class="row" style="cursor:default"><div class="grow"><div class="t">${fmtDate(p.d)}</div><div class="s">${PAY_TXT[p.m] || ''}</div></div><div class="amt">${money(p.a)}</div></div>`).join('')}</div>` : ''}`;
   },
   async mount(v, p) {
@@ -1633,22 +1974,23 @@ Screens.invoice = {
     const img = $('#ivImg'); if (img) img.src = cv.toDataURL('image/png');
     const fname = (ext) => `${inv.type === 'sale' ? 'فاتورة' : 'شراء'}-${inv.no}.${ext}`;
     const on = (id, fn) => { const e = $('#' + id); if (e) e.onclick = fn; };
-    on('ivShare', async () => shareFile(await canvasBlob(cv), fname('png'), TYPE_TXT[inv.type] + ' ' + inv.no));
-    on('ivPdf', async () => shareFile(await canvasToPdf(cv), fname('pdf'), TYPE_TXT[inv.type] + ' ' + inv.no));
-    on('ivPrint', () => printCanvas(cv));
-    on('ivWa', () => openExternal(waLink(inv.partyPhone, invText(inv))));
+    Ads.viewed('invoice');
+    on('ivShare', async () => { Cloud.ev('share_img'); shareFile(await canvasBlob(cv), fname('png'), TYPE_TXT[inv.type] + ' ' + inv.no); });
+    on('ivPdf', async () => { if (!(await needPlan('pdf'))) return; Cloud.ev('share_pdf'); shareFile(await canvasToPdf(cv), fname('pdf'), TYPE_TXT[inv.type] + ' ' + inv.no); });
+    on('ivPrint', async () => { if (!(await needPlan('print'))) return; Cloud.ev('print'); printCanvas(cv); });
+    on('ivWa', () => { Cloud.ev('wa_text'); openExternal(waLink(inv.partyPhone, invText(inv))); });
     on('ivEdit', () => { Draft = null; Nav.go('editor', { type: inv.type, id: inv.id }); });
     on('ivPay', async () => { if (await paymentSheet(dueOf(inv))) { } });
     on('ivVoid', async () => {
       if (!(await confirmDlg('هل تريد إلغاء هذه الفاتورة؟<br><span class="small muted">لن تُحسب في المبيعات والمخزون والديون.</span>', { ok: 'إلغاء الفاتورة', cancel: 'تراجع', danger: true }))) return;
       if (!(await askPin())) return;
-      inv.void = true; inv.voidAt = Date.now(); await persist(); render(); toast('تم إلغاء الفاتورة');
+      inv.void = true; inv.voidAt = Date.now(); await persist(); Cloud.ev('inv_void'); render(); toast('تم إلغاء الفاتورة');
     });
     async function paymentSheet(due) {
       const r = await paySheet(due);
       if (!r) return;
       inv.payments.push({ d: r.date, a: Math.min(r.amount, due), m: r.method }); inv.paid = paidOf(inv);
-      await persist(); render(); toast('تم تسجيل الدفعة ✓');
+      await persist(); Cloud.ev('pay_add'); render(); toast('تم تسجيل الدفعة ✓');
     }
   }
 };
@@ -1681,7 +2023,7 @@ Screens.items = {
         ${tr ? `<span class="badge ${s <= lim ? 'low' : 'ok'}">${qtyFmt(s)} ${esc(i.unit || '')}</span>` : '<span class="badge ok">خدمة</span>'}</button>`;
       }).join('')}</div>`;
     };
-    $('#itQ').oninput = e => { UI.itemQ = e.target.value; draw(); };
+    liveInput($('#itQ'), v => { UI.itemQ = v; draw(); });
     draw();
   }
 };
@@ -1744,7 +2086,7 @@ Screens.parties = {
         <div class="end">${bal > 0 ? `<div class="amt" style="color:var(--danger)">${money(bal)}</div><div class="small muted">${k === 'customer' ? 'عليه' : 'له'}</div>` : '<span class="badge paid">لا يوجد دين</span>'}</div></button>`).join('')}</div>`;
     };
     $('#ptSeg').onclick = e => { const b = e.target.closest('[data-k]'); if (!b) return; UI.partyKind = b.dataset.k; render(); };
-    $('#ptQ').oninput = e => { UI.partyQ = e.target.value; draw(); };
+    liveInput($('#ptQ'), v => { UI.partyQ = v; draw(); });
     draw();
   }
 };
@@ -1775,7 +2117,7 @@ Screens.party = {
       const extra = applyPartyPayment(x, Math.min(r.amount, bal), r.method, r.date);
       await persist(); render(); toast(extra > 0 ? 'تم التسجيل (المبلغ أكبر من الدين)' : 'تم تسجيل الدفعة ✓');
     });
-    on('pyRem', () => openExternal(waLink(x.phone, `السلام عليكم ${x.name}،\nنود تذكيركم بأن المبلغ المستحق لدينا هو ${money(partyBalance(x))} ${cur()}.\nشاكرين تعاملكم معنا.\n${DB.settings.bizName}`)));
+    on('pyRem', async () => (await needPlan('remind')) && (Cloud.ev('remind'), true) && openExternal(waLink(x.phone, `السلام عليكم ${x.name}،\nنود تذكيركم بأن المبلغ المستحق لدينا هو ${money(partyBalance(x))} ${cur()}.\nشاكرين تعاملكم معنا.\n${DB.settings.bizName}`)));
     on('pyCall', () => openExternal('tel:' + x.phone));
   }
 };
@@ -1809,6 +2151,9 @@ Screens.partyEdit = {
 Screens.reports = {
   noTabs: true, title: 'التقارير',
   render() {
+    if (!Plan.can('reports')) return `<div class="locked"><div class="locked-blur"><div class="stats">${['المبيعات', 'المشتريات', 'الربح التقديري', 'المبالغ المحصّلة'].map(l => `<div class="stat g"><div class="l">${l}</div><div class="v">000.000</div></div>`).join('')}</div></div>
+      <div class="card center locked-card"><div class="up-ic">${ic('chart')}</div><h3>التقارير والأرباح</h3><p class="muted" style="margin:0 0 12px">اعرف مبيعاتك وأرباحك وضريبتك لأي فترة، وصدّرها إلى Excel. متاحة في <b>الباقة المتقدمة</b>.</p>
+      <button class="btn" data-act="go" data-to="plans" data-p='{"from":"reports"}'>${ic('star')} عرض الباقات</button></div></div>`;
     const [f, t] = periodRange(UI.rep, UI.repFrom, UI.repTo), r = report(f, t);
     const hasVat = r.salesVat > 0 || r.purVat > 0;
     return `<div class="chips" id="rpC">${[['today', 'اليوم'], ['week', 'هذا الأسبوع'], ['month', 'هذا الشهر'], ['last', 'الشهر الماضي'], ['year', 'هذه السنة'], ['custom', 'فترة محددة']].map(([k, l]) => `<button class="chip ${UI.rep === k ? 'on' : ''}" data-k="${k}">${l}</button>`).join('')}</div>
@@ -1829,18 +2174,20 @@ Screens.reports = {
       <div class="btns"><button class="btn sec" id="rpX1">${ic('download')} تصدير الفواتير<span class="small muted" style="font-weight:400">ملف Excel (CSV)</span></button><button class="btn sec" id="rpX2">${ic('download')} تصدير المخزون<span class="small muted" style="font-weight:400">ملف Excel (CSV)</span></button></div>`;
   },
   mount() {
+    if (!Plan.can('reports')) { Cloud.ev('paywall', { f: 'reports' }); return; }
+    Cloud.ev('report_view', { k: UI.rep });
     $('#rpC').onclick = e => { const b = e.target.closest('[data-k]'); if (!b) return; UI.rep = b.dataset.k; if (UI.rep === 'custom' && !UI.repFrom) { UI.repFrom = today().slice(0, 8) + '01'; UI.repTo = today(); } render(); };
     if ($('#rpF')) { $('#rpF').onchange = e => { UI.repFrom = e.target.value; render(); }; $('#rpT').onchange = e => { UI.repTo = e.target.value; render(); }; }
     $('#rpX1').onclick = () => {
       const [f, t] = periodRange(UI.rep, UI.repFrom, UI.repTo);
       const rows = [['النوع', 'الرقم', 'التاريخ', 'الاسم', 'الهاتف', 'المجموع', 'الخصم', 'الضريبة', 'الإجمالي', 'المدفوع', 'المتبقي', 'الحالة']];
       DB.invoices.filter(i => i.date >= f && i.date <= t).sort((a, b) => a.date.localeCompare(b.date)).forEach(i => { const c = calcInvoice(i); rows.push([TYPE_TXT[i.type], i.no, i.date, i.partyName || '', i.partyPhone || '', money(c.sub), money(c.disc), money(c.vat), money(c.total), money(paidOf(i)), money(dueOf(i)), STATUS_TXT[statusOf(i)]]); });
-      shareFile(new Blob([csv(rows)], { type: 'text/csv' }), `فواتير-${f}-${t}.csv`, 'تصدير الفواتير');
+      Cloud.ev('export_csv', { k: 'inv' }); shareFile(new Blob([csv(rows)], { type: 'text/csv' }), `فواتير-${f}-${t}.csv`, 'تصدير الفواتير');
     };
     $('#rpX2').onclick = () => {
       const sm = stockMap(); const rows = [['الصنف', 'الوحدة', 'سعر البيع', 'سعر الشراء', 'الكمية', 'قيمة المخزون بالتكلفة']];
       activeItems().forEach(i => rows.push([i.name, i.unit || '', money(i.sale), money(i.cost), i.track !== false ? qtyFmt(sm[i.id]) : '', i.track !== false ? money(sm[i.id] * num(i.cost)) : '']));
-      shareFile(new Blob([csv(rows)], { type: 'text/csv' }), `المخزون-${today()}.csv`, 'تصدير المخزون');
+      Cloud.ev('export_csv', { k: 'stock' }); shareFile(new Blob([csv(rows)], { type: 'text/csv' }), `المخزون-${today()}.csv`, 'تصدير المخزون');
     };
   }
 };
@@ -1856,9 +2203,10 @@ Screens.more = {
     </div><div class="list">
       ${moreRow('shield', 'الحماية والرمز السري', 'القفل التلقائي، تغيير الرمز', 'data-act="go" data-to="security"')}
       ${moreRow('cloud', 'النسخ الاحتياطي والاستعادة', DB.lastBackup ? 'آخر نسخة: ' + fmtDate(ymd(new Date(DB.lastBackup))) : 'لم تُؤخذ نسخة بعد', 'data-act="go" data-to="backup"')}
-      ${moreRow('key', 'تفعيل التطبيق', License.active() ? 'مفعّل ✓' : 'نسخة تجريبية', 'data-act="go" data-to="license"')}
+      ${moreRow('star', 'الاشتراك والباقات', 'الباقة ' + Plan.cfg().name + (Plan.src ? ' — ' + Plan.srcTxt() : ''), 'data-act="go" data-to="plans" id="morePlans"')}
     </div><div class="list">
-      ${moreRow('headset', 'الدعم الفني', 'تواصل معنا عبر واتساب', 'data-act="support"')}
+      ${moreRow('headset', 'الدعم الفني والاقتراحات', 'واتساب ' + APP.contactLocal, 'data-act="support"')}
+      ${moreRow('help', 'جولة تعريفية بالتطبيق', 'شرح سريع لأهم الأزرار', 'data-act="replayTour"')}
       ${moreRow('info', 'حول التطبيق', 'الإصدار ' + APP.version, 'data-act="go" data-to="about"')}
       ${moreRow('lock', 'قفل التطبيق الآن', '', 'data-act="lockNow"')}
     </div>`
@@ -1876,7 +2224,8 @@ Screens.setBiz = {
   },
   mount() {
     let logo = DB.settings.logo;
-    $('#sbLogoBtn').onclick = () => {
+    $('#sbLogoBtn').onclick = async () => {
+      if (!(await needPlan('logo'))) return;
       const f = document.createElement('input'); f.type = 'file'; f.accept = 'image/*';
       f.onchange = async () => { if (!f.files[0]) return; logo = await resizeImageFile(f.files[0]); const im = $('#sbLogo'); im.src = logo; im.style.display = 'block'; };
       Lock.grace(); f.click();
@@ -1903,7 +2252,10 @@ Screens.setInv = {
       <button class="btn" id="sSave">${ic('check')} حفظ</button>`;
   },
   mount() {
-    $('#sVat').onchange = e => $('#sVatF').classList.toggle('hide', !e.target.checked);
+    $('#sVat').onchange = async e => {
+      if (e.target.checked && !Plan.can('vat')) { e.target.checked = false; await needPlan('vat'); return; }
+      $('#sVatF').classList.toggle('hide', !e.target.checked);
+    };
     $('#sSave').onclick = async () => {
       Object.assign(DB.settings, { vatOn: $('#sVat').checked, vatRate: num($('#sRate').value) || 5, vatInclusive: $('#sIncl').checked, salePrefix: $('#sSP').value.trim(), purchasePrefix: $('#sPP').value.trim(), footer: $('#sFoot').value.trim(), currency: $('#sCur').value.trim() || 'ر.ع.', decimals: +$('#sDec').value, lowStock: num($('#sLow').value) });
       await persist(); toast('تم الحفظ ✓'); Nav.back();
@@ -1916,12 +2268,15 @@ Screens.security = {
     const m = DB.settings.lockMinutes;
     return `<div class="banner info">${ic('shield')}<div class="grow small">بياناتك مخزّنة على هذا الجهاز فقط ومشفّرة بتشفير AES-256، ولا يمكن فتحها إلا بالرمز السري أو رمز الاستعادة.</div></div>
       <div class="list">${moreRow('lock', 'تغيير الرمز السري', '', 'id="scPin"')}${moreRow('key', 'إنشاء رمز استعادة جديد', 'يُلغي رمز الاستعادة القديم', 'id="scRec"')}</div>
+      <div class="card">${sw('scStats', 'مشاركة إحصائيات استخدام مجهولة', Cloud.on, 'أعداد فقط (مثل عدد الفواتير ونوع الجهاز) لتحسين التطبيق — لا نرسل أي محتوى من فواتيرك أو أسماء عملائك')}
+        <button class="link" data-act="privacy" style="margin-top:6px">سياسة الخصوصية</button></div>
       <div class="card">${field('القفل التلقائي', `<select id="scLock">${[[0, 'فور الخروج من التطبيق'], [1, 'بعد دقيقة'], [3, 'بعد 3 دقائق'], [5, 'بعد 5 دقائق'], [10, 'بعد 10 دقائق']].map(([v, l]) => `<option value="${v}" ${m == v ? 'selected' : ''}>${l}</option>`).join('')}</select>`, 'يُقفل التطبيق عند عدم الاستخدام أو الخروج منه')}</div>
       <div class="sec-title" style="color:var(--danger)">منطقة الخطر</div>
       <button class="btn danger sec" id="scWipe">${ic('trash')} مسح جميع البيانات من هذا الجهاز</button>`;
   },
   mount() {
     $('#scLock').onchange = async e => { DB.settings.lockMinutes = +e.target.value; await persist(); toast('تم الحفظ ✓'); };
+    $('#scStats').onchange = async e => { await Cloud.setOn(e.target.checked); toast(e.target.checked ? 'شكراً لمساعدتك في تحسين التطبيق' : 'تم إيقاف مشاركة الإحصائيات'); };
     $('#scPin').onclick = async () => {
       if (!(await askPin('أدخل الرمز السري الحالي'))) return;
       await Modal.open('<div class="pinbox"></div>', { title: 'رمز سري جديد', onMount(el) { newPinFlow($('.pinbox', el), async p => { await Vault.setPin(p); Modal.close(true); toast('تم تغيير الرمز السري ✓'); }); } });
@@ -1953,6 +2308,7 @@ Screens.backup = {
       DB.lastBackup = Date.now(); await persist(); await Vault.chain;
       const meta = await Store.get('meta'), data = await Store.get('data');
       const bk = { app: 'fawateeri', kind: 'backup', v: 1, created: new Date().toISOString(), biz: DB.settings.bizName, count: DB.invoices.length, meta: { v: meta.v, iter: meta.iter, salt: meta.salt, saltR: meta.saltR, wrapPin: meta.wrapPin, wrapRec: meta.wrapRec }, data };
+      Cloud.ev('backup_make');
       await shareFile(new Blob([JSON.stringify(bk)], { type: 'text/plain' }), `fawateeri-backup-${today()}.txt`, 'نسخة احتياطية - ' + APP.name);
       render();
     };
@@ -1967,41 +2323,81 @@ Screens.backup = {
     };
   }
 };
-Screens.license = {
-  noTabs: true, title: 'تفعيل التطبيق',
+/* ---------- الاشتراك والباقات ---------- */
+function planPrice(id) {
+  if (FW_CHANNEL === 'play' && Billing.products[id] && Billing.products[id].price) return esc(Billing.products[id].price) + ' / شهرياً';
+  return PLANS[id].price ? `${PLANS[id].price.toFixed(3)} ر.ع. / شهرياً` : 'مجاناً';
+}
+function planCard(id) {
+  const P = PLANS[id], cur = Plan.id === id, best = id === 'advanced';
+  const feats = id === 'free' ? [...BASE_FEATS.map(t => [t, 1]), [`حتى ${P.limit} فاتورة شهرياً`, 1], ['تظهر إعلانات', 0]]
+    : [...(id === 'advanced' ? [['كل مزايا الباقة الأساسية', 1]] : [['كل مزايا الباقة المجانية', 1]]), ...P.feats.filter(f => id === 'basic' || !PLANS.basic.feats.includes(f)).map(f => [FEAT_TXT[f], 1])];
+  let btn = '';
+  if (cur) btn = `<div class="plan-cur">${ic('check')} باقتك الحالية${Plan.src ? ' — ' + Plan.srcTxt() : ''}</div>`;
+  else if (id !== 'free' && PLAN_RANK[id] > PLAN_RANK[Plan.id]) btn = `<button class="btn ${best ? '' : 'sec'}" data-act="subscribe" data-plan="${id}">${FW_CHANNEL === 'play' ? 'اشترك الآن' : `${ic('wa')} اشترك عبر واتساب`}</button>`;
+  return `<div class="plan ${best ? 'best' : ''} ${cur ? 'cur' : ''}" id="plan-${id}">${best ? '<span class="plan-tag">الأكثر فائدة</span>' : ''}
+    <div class="plan-h"><b>الباقة ${P.name}</b><span class="plan-p">${planPrice(id)}</span></div>
+    <ul>${feats.map(([t, ok]) => `<li class="${ok ? '' : 'no'}">${ic(ok ? 'check' : 'x')} ${esc(t)}</li>`).join('')}</ul>${btn}</div>`;
+}
+Screens.plans = {
+  noTabs: true, title: 'الاشتراك والباقات',
   render(p) {
-    if (License.active()) {
-      const L = License.data;
-      return `<div class="card center"><div style="color:var(--sale)">${ic('shield')}</div><h3 style="font-size:22px;color:var(--sale)">التطبيق مفعّل ✓</h3>
-        <div class="muted">مرخّص لـ</div><div class="b" style="font-size:20px">${esc(L.n)}</div>
-        <div class="small muted" style="margin-top:8px">رقم الترخيص: <span class="ltr">${esc(L.i || '')}</span> · تاريخ التفعيل: ${esc(L.t ? fmtDate(L.t) : '')}</div></div>
-        <div class="card small muted">شكراً لثقتك. للتحديثات والإضافات الجديدة تواصل مع الدعم الفني.</div>
-        <button class="btn sec" data-act="support">${ic('headset')} الدعم الفني</button>`;
+    const L = License.data, play = FW_CHANNEL === 'play';
+    let h = `<div class="card plan-now"><div class="muted small">باقتك الحالية</div><div class="b" style="font-size:22px">الباقة ${esc(Plan.cfg().name)}</div>
+      <div class="small muted">${Plan.paid() ? (Plan.src ? Plan.srcTxt() : '') + (Plan.exp ? ' · صالحة حتى ' + fmtDate(Plan.exp) : Plan.src === 'code' ? ' · بدون تاريخ انتهاء' : ' · تتجدد تلقائياً') : `استخدمت ${Plan.monthCount()} من ${PLANS.free.limit} فاتورة هذا الشهر`}</div>
+      ${Plan.codeExpired() ? '<div class="small" style="color:var(--danger);margin-top:4px">انتهت صلاحية كود التفعيل السابق</div>' : ''}</div>`;
+    h += ['free', 'basic', 'advanced'].map(planCard).join('');
+    if (play) {
+      h += `<div class="small muted center" style="margin:4px 8px 10px">الاشتراك شهري ويتجدد تلقائياً عبر Google Play، ويمكنك إلغاؤه في أي وقت من إعدادات Google Play.</div>
+        <div class="two"><button class="btn sec" data-act="playRestore">${ic('upload')} استعادة المشتريات</button><button class="btn sec" data-act="playManage">${ic('sliders')} إدارة الاشتراك</button></div>
+        <details class="card" style="margin-top:12px" ${p.code ? 'open' : ''}><summary class="b">لديك كود تفعيل؟</summary>
+          <div class="small muted" style="margin:8px 0">رمز جهازك: <span class="ltr b">${License.deviceLabel()}</span></div>${codeBox(p)}</details>`;
+    } else {
+      h += `<div class="card"><h3>كيف أشترك؟</h3><ol class="steps-ol"><li>اضغط «اشترك عبر واتساب» تحت الباقة المناسبة.</li><li>ادفع قيمة الاشتراك حسب التعليمات التي تصلك.</li><li>يصلك كود تفعيل، الصقه في الخانة بالأسفل.</li></ol>
+        <div class="small muted">رمز جهازك (يُرسل تلقائياً مع الطلب):</div><div class="code-box" style="font-size:26px;margin:8px 0">${License.deviceLabel()}</div>
+        <button class="btn sec sm" id="lcCopy" style="width:auto">${ic('copy')} نسخ الرمز</button></div>
+        <div class="card"><h3>إدخال كود التفعيل</h3>${codeBox(p)}</div>`;
     }
-    return `<div class="card"><div class="muted">النسخة التجريبية</div><div class="b" style="font-size:18px">استخدمت ${DB.invoices.length} من ${APP.trialLimit} فاتورة مجانية</div></div>
-      <div class="card"><h3>1. أرسل رمز جهازك</h3><div class="muted small">أرسل هذا الرمز مع اسم نشاطك لتحصل على كود التفعيل.</div>
-        <div class="code-box" style="font-size:30px">${License.deviceLabel()}</div>
-        <div class="two"><button class="btn sec" id="lcCopy">${ic('copy')} نسخ الرمز</button><button class="btn wa" id="lcWa">${ic('wa')} طلب عبر واتساب</button></div></div>
-      <div class="card"><h3>2. أدخل كود التفعيل</h3>
-        <textarea id="lcCode" class="num" style="font-size:14px;direction:ltr;text-align:left" placeholder="الصق كود التفعيل هنا">${esc(p.code || '')}</textarea>
-        <div id="lcMsg" class="pin-msg" style="color:var(--danger)"></div>
-        <button class="btn" id="lcGo">${ic('key')} تفعيل</button></div>`;
+    if (L) h += `<div class="small muted center" style="margin:6px">الترخيص: <span class="ltr">${esc(L.i || '')}</span>${L.n ? ' · ' + esc(L.n) : ''}</div>`;
+    return h;
   },
-  mount() {
+  mount(v, p) {
+    Cloud.ev('paywall_open', { f: p.from || '' });
     const on = (id, fn) => { const e = $('#' + id); if (e) e.onclick = fn; };
     on('lcCopy', async () => { try { await navigator.clipboard.writeText(License.deviceLabel()); toast('تم نسخ الرمز ✓'); } catch (e) { toast('انسخ الرمز يدوياً'); } });
-    on('lcWa', () => {
-      const msg = `السلام عليكم، أرغب بتفعيل تطبيق ${APP.name}\nاسم النشاط: ${DB.settings.bizName}\nالهاتف: ${DB.settings.phone || ''}\nرمز الجهاز: ${License.deviceLabel()}`;
-      if (APP.devWhatsApp) openExternal(waLink(APP.devWhatsApp, msg)); else openExternal('https://wa.me/?text=' + encodeURIComponent(msg));
-    });
     on('lcGo', async () => {
       const code = $('#lcCode').value.trim(); if (!code) return;
       $('#lcGo').disabled = true; const r = await License.activate(code); $('#lcGo').disabled = false;
-      if (r === 'ok') { render(); toast('تم تفعيل التطبيق بنجاح 🎉', 3500); }
-      else $('#lcMsg').textContent = r === 'device' ? 'هذا الكود صادر لجهاز آخر. تأكد من إرسال رمز هذا الجهاز.' : 'كود التفعيل غير صحيح. انسخه كاملاً كما وصلك.';
+      if (r === 'ok') { Plan.compute(); Cloud.ev('lic_ok', { p: License.data.p || 'advanced' }); Cloud.sync(true); render(); toast('تم تفعيل الباقة ' + Plan.cfg().name + ' 🎉', 3500); }
+      else $('#lcMsg').textContent = { device: 'هذا الكود صادر لجهاز آخر. تأكد من رمز هذا الجهاز.', expired: 'انتهت صلاحية هذا الكود. اطلب كوداً جديداً.', revoked: 'تم إلغاء هذا الكود.' }[r] || 'كود التفعيل غير صحيح. انسخه كاملاً كما وصلك.';
     });
+    if (FW_CHANNEL === 'play' && Billing.ready && !Object.keys(Billing.products).length) Billing.loadProducts().then(() => { if (Nav.cur().name === 'plans') render(); });
   }
 };
+Screens.license = Screens.plans; // توافق مع روابط التفعيل القديمة
+function codeBox(p) {
+  return `<textarea id="lcCode" class="num" style="font-size:14px;direction:ltr;text-align:left" placeholder="الصق كود التفعيل هنا">${esc(p.code || '')}</textarea>
+    <div id="lcMsg" class="pin-msg" style="color:var(--danger)"></div><button class="btn" id="lcGo">${ic('key')} تفعيل</button>`;
+}
+ACT.subscribe = async el => {
+  const plan = el.dataset.plan;
+  if (FW_CHANNEL === 'play') {
+    if (Plan.src === 'play' && Plan.id === 'basic' && plan === 'advanced') {
+      const go = await confirmDlg('للترقية إلى الباقة المتقدمة: ألغِ اشتراك الباقة الأساسية أولاً من «إدارة الاشتراك»، ثم اشترك في المتقدمة.<br><span class="small muted">تبقى الأساسية فعّالة حتى نهاية مدتها.</span>', { ok: 'إدارة الاشتراك', cancel: 'إغلاق' });
+      if (go) Billing.manage();
+      return;
+    }
+    el.disabled = true; const ok = await Billing.buy(plan); el.disabled = false;
+    if (ok) { render(); toast('شكراً لاشتراكك! تم تفعيل الباقة ' + PLANS[plan].name + ' 🎉', 3500); }
+    return;
+  }
+  Cloud.ev('buy_start', { p: plan, s: 'wa' });
+  const S = DB.settings;
+  openExternal(waLink(APP.devWhatsApp, `السلام عليكم، أرغب بالاشتراك في الباقة ${PLANS[plan].name} لتطبيق ${APP.name}\nاسم النشاط: ${S.bizName}\nالهاتف: ${S.phone || ''}\nرمز الجهاز: ${License.deviceLabel()}`));
+};
+ACT.playRestore = async () => { await Billing.restore(); render(); toast(Plan.src === 'play' ? 'تمت استعادة اشتراكك ✓' : 'لا يوجد اشتراك فعّال على حساب Google هذا'); };
+ACT.playManage = () => Billing.manage();
+ACT.privacy = () => openExternal(APP.privacyUrl);
 Screens.about = {
   noTabs: true, title: 'حول التطبيق',
   render: () => `<div class="card center"><img src="${APP_ICON}" style="width:84px;height:84px;border-radius:22px"><h3 style="font-size:22px;margin:10px 0 0">${APP.name}</h3><div class="muted">الإصدار ${APP.version}</div></div>
@@ -2009,7 +2405,9 @@ Screens.about = {
       <div>${ic('check')} فواتير بيع وشراء مع متابعة المخزون</div><div>${ic('check')} متابعة ديون العملاء والموردين</div>
       <div>${ic('check')} مشاركة الفواتير صورة أو PDF عبر واتساب</div><div>${ic('check')} تقارير المبيعات والأرباح والضريبة</div>
       <div>${ic('check')} تشفير كامل للبيانات وحماية برمز سري</div><div>${ic('check')} يعمل بدون إنترنت</div></div></div>
-    <div class="card small muted">الخصوصية: لا يرسل التطبيق أي بيانات إلى الإنترنت. كل الفواتير محفوظة ومشفّرة على جهازك فقط.<br>تطوير: ${esc(APP.devName)}</div>`
+    <div class="card small muted">الخصوصية: فواتيرك وأسماء عملائك وأرقامهم محفوظة ومشفّرة على جهازك فقط ولا تُرسل لأي خادم. يرسل التطبيق إحصائيات استخدام مجهولة (أعداد فقط) لتحسينه، ويمكنك إيقافها من «الحماية».
+      <br><button class="link" data-act="privacy" style="margin-top:6px">سياسة الخصوصية</button></div>
+    ${creditsHtml(true)}`
 };
 
 /* =====================================================================
@@ -2023,6 +2421,9 @@ async function boot() {
   }
   await Store.open();
   await License.init();
+  await Plan.init();
+  await Cloud.init();
+  await Billing.init(); Plan.compute();
   await Vault.load();
   setupBackTrap(); Lock.init();
   if (Store.mode === 'mem') toast('تنبيه: المتصفح لا يسمح بحفظ البيانات في هذا الوضع', 5000);
@@ -2032,8 +2433,96 @@ async function boot() {
     if ('serviceWorker' in navigator && location.protocol === 'https:' && !isNative() && window.top === window && document.querySelector('link[rel=manifest]')) navigator.serviceWorker.register('sw.js').catch(() => { });
   } catch (e) { }
   const sp = document.getElementById('splash'); if (sp) sp.remove();
+  setTimeout(() => Cloud.sync(true), 1500);
 }
 boot();
+
+'use strict';
+/* =====================================================================
+   الجولة التعريفية: بالونات شفافة تشرح أساسيات التطبيق عند أول استخدام
+   ===================================================================== */
+const TOURS = {
+  home: [
+    { sel: '.big-act.sale', t: 'فاتورة بيع', d: 'من هنا تصدر فاتورة بيع لعميلك، ثم ترسلها له على واتساب بضغطة.' },
+    { sel: '.big-act.pur', t: 'فاتورة شراء', d: 'سجّل ما تشتريه من الموردين، فيزيد مخزونك تلقائياً.' },
+    { sel: '.stats', t: 'ملخص يومك', d: 'مبيعات ومشتريات اليوم، وديونك عند العملاء وما عليك للموردين.' },
+    { sel: '#tabbar [data-tab=items]', t: 'الأصناف', d: 'أضف منتجاتك وأسعارها مرة واحدة لتختارها بسرعة في الفواتير.' },
+    { sel: '#tabbar [data-tab=parties]', t: 'العملاء والموردون', d: 'تابع ديون كل عميل وسجّل دفعاته.' },
+    { sel: '#tabbar [data-tab=more]', t: 'المزيد', d: 'الإعدادات والنسخ الاحتياطي والاشتراك في الباقات.' },
+    { sel: '#topbar [data-act=lockNow]', t: 'قفل سريع', d: 'اقفل التطبيق بضغطة عندما تترك جوالك.' }
+  ],
+  editor: [
+    { sel: '#edParty', t: 'اسم العميل', d: 'اكتب اسم العميل، أو اتركه فارغاً للبيع النقدي.' },
+    { sel: '#edAdd', t: 'إضافة صنف', d: 'اختر الصنف من قائمتك، أو اكتب اسم صنف جديد وأضفه فوراً.' },
+    { sel: '#edPay', t: 'حالة الدفع', d: 'مدفوعة كاملة، أو آجلة (دَين)، أو دفع جزئي.' },
+    { sel: '#edSave', t: 'حفظ الفاتورة', d: 'بعد الحفظ تظهر الفاتورة جاهزة للإرسال والطباعة.' }
+  ],
+  invoice: [
+    { sel: '#ivShare', t: 'أرسل الفاتورة', d: 'أرسلها صورة لعميلك عبر واتساب أو أي تطبيق آخر.' },
+    { sel: '#ivImg', t: 'معاينة الفاتورة', d: 'هكذا تظهر فاتورتك لعميلك. يمكنك تعديل بيانات محلك من «المزيد».' }
+  ],
+  items: [
+    { sel: '#view .btn[data-to=item]', t: 'صنف جديد', d: 'أضف اسم الصنف وسعر البيع والكمية المتوفرة لديك.' }
+  ]
+};
+const Tour = {
+  active: false, el: null,
+  maybe(name, force) {
+    if (!TOURS[name] || !DB || this.active) return;
+    DB.tours = DB.tours || {};
+    if (DB.tours[name] && !force) return;
+    setTimeout(() => {
+      if (this.active || Lock.on || !DB) return;
+      if (!force && (Modal.stack.length || Nav.cur().name !== name)) return;
+      this.run(name);
+    }, force ? 200 : 650);
+  },
+  run(name) {
+    const steps = TOURS[name].filter(s => document.querySelector(s.sel));
+    if (!steps.length) return;
+    this.active = true; let i = 0;
+    const root = document.createElement('div'); root.id = 'tour';
+    root.innerHTML = '<div class="tr-spot"></div><div class="tr-bub" role="dialog" aria-live="polite"><div class="tr-tail"></div><div class="tr-in"></div></div>';
+    document.body.appendChild(root); this.el = root;
+    const spot = $('.tr-spot', root), bub = $('.tr-bub', root), tail = $('.tr-tail', root), inner = $('.tr-in', root);
+    const finish = skipped => {
+      this.active = false; root.classList.add('out'); setTimeout(() => root.remove(), 220);
+      removeEventListener('resize', place);
+      DB.tours = DB.tours || {}; DB.tours[name] = 1; persist();
+      Cloud.ev('tour', { k: name, s: skipped ? i + 1 : 0 });
+    };
+    const place = () => {
+      const s = steps[i], t = document.querySelector(s.sel); if (!t) return;
+      const r = t.getBoundingClientRect(), pad = 6;
+      Object.assign(spot.style, { top: (r.top - pad) + 'px', left: (r.left - pad) + 'px', width: (r.width + pad * 2) + 'px', height: (r.height + pad * 2) + 'px' });
+      const vw = innerWidth, vh = innerHeight, bw = Math.min(330, vw - 24);
+      bub.style.width = bw + 'px';
+      const bh = bub.offsetHeight || 150;
+      const below = r.bottom + 14 + bh < vh - 8 || r.top - 14 - bh < 8;
+      const top = below ? Math.min(r.bottom + 14, vh - bh - 8) : Math.max(8, r.top - 14 - bh);
+      const cx = r.left + r.width / 2, left = Math.max(12, Math.min(vw - bw - 12, cx - bw / 2));
+      Object.assign(bub.style, { top: top + 'px', left: left + 'px' });
+      bub.classList.toggle('up', !below);
+      tail.style.left = Math.max(18, Math.min(bw - 18, cx - left)) + 'px';
+    };
+    const show = () => {
+      const s = steps[i], t = document.querySelector(s.sel);
+      if (t && t.scrollIntoView && !t.closest('#tabbar,#topbar')) t.scrollIntoView({ block: 'center', behavior: 'instant' in document.documentElement.style ? 'instant' : 'auto' });
+      const last = i === steps.length - 1;
+      inner.innerHTML = `<div class="tr-step">${i + 1} من ${steps.length}</div><div class="tr-t">${esc(s.t)}</div><div class="tr-d">${esc(s.d)}</div>
+        <div class="tr-btns"><button type="button" class="tr-next">${last ? 'فهمت 👍' : 'التالي'}</button>${last ? '' : '<button type="button" class="tr-skip">تخطي</button>'}</div>`;
+      bub.classList.remove('pop'); void bub.offsetWidth; bub.classList.add('pop');
+      requestAnimationFrame(place);
+    };
+    root.addEventListener('click', e => {
+      if (e.target.closest('.tr-skip')) return finish(true);
+      if (e.target.closest('.tr-next') || e.target === root || e.target.classList.contains('tr-spot')) { if (i < steps.length - 1) { i++; show(); } else finish(false); }
+    });
+    addEventListener('resize', place);
+    show();
+  }
+};
+ACT.replayTour = () => { Nav.tab('home'); Tour.maybe('home', true); };
 
 </script>
 </body>
