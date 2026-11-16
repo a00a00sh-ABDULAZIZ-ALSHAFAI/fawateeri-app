@@ -288,6 +288,12 @@ details.card summary{cursor:pointer;list-style:none} details.card summary::-webk
 @keyframes pop2{0%{transform:scale(.85);opacity:0}100%{transform:scale(1);opacity:1}}
 @media (prefers-reduced-motion:reduce){.tr-bub,.tr-bub.pop{animation:none}.tr-spot{transition:none}}
 #lock.on{padding-bottom:calc(118px + var(--safe-b))}
+@media (max-width:380px){
+  .qty button{width:38px}.qty input{width:46px}
+  .line-total{min-width:62px;font-size:15px}
+  .line-row .pr input{padding:8px 6px;font-size:16px}
+  .line{padding:10px}
+}
 
 #splash{position:fixed;inset:0;display:grid;place-items:center;background:#0F766E;z-index:99}
 #splash img{width:96px;height:96px;border-radius:26px}
