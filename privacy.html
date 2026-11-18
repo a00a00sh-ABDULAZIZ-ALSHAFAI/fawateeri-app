@@ -19,13 +19,18 @@ table{border-collapse:collapse;width:100%;font-size:15px} td,th{border-bottom:1p
 </style>
 </head>
 <body><div class="wrap">
-<header><div class="ic">ف</div><div><h1>سياسة الخصوصية — تطبيق «فواتيري»</h1><div class="muted">آخر تحديث: 16 نوفمبر 2026</div></div></header>
+<header><div class="ic">ف</div><div><h1>سياسة الخصوصية — تطبيق «فواتيري»</h1><div class="muted">آخر تحديث: 18 نوفمبر 2026</div></div></header>
 
 <div class="card">
 <p>«فواتيري» تطبيق لإصدار فواتير البيع والشراء للتجار الصغار، من تصميم <b>ABDULAZIZ ALSHAFAI</b> وبدعم من <b>شركة توابل صحار</b> (صحار، سلطنة عُمان). نحترم خصوصيتك وخصوصية عملائك، وهذه السياسة توضح ما نجمعه وما لا نجمعه.</p>
 
 <h2>1. بياناتك التجارية تبقى على جهازك</h2>
-<p>كل ما تُدخله في التطبيق — الفواتير، الأصناف والأسعار، أسماء العملاء والموردين وأرقام هواتفهم، الديون والدفعات، بيانات محلك وشعاره — <b>محفوظ على جهازك فقط ومشفّر بتشفير AES-256</b> ولا يمكن فتحه إلا برمزك السري أو رمز الاستعادة. <b>لا نرسل هذه البيانات إلى أي خادم ولا نطّلع عليها</b>. النسخة الاحتياطية ملف مشفّر تحفظه أنت حيث تشاء.</p>
+<p>كل ما تُدخله في التطبيق — الفواتير، الأصناف والأسعار، أسماء العملاء والموردين وأرقام هواتفهم، الديون والدفعات، بيانات محلك وشعاره — <b>محفوظ على جهازك فقط ومشفّر بتشفير AES-256</b> ولا يمكن فتحه إلا برمزك السري أو رمز الاستعادة. <b>لا نرسل هذه البيانات إلى أي خادم ولا نطّلع عليها</b> (إلا إذا فعّلت المزامنة السحابية، وعندها تُرفع مشفّرة كما في البند 1-أ). النسخة الاحتياطية ملف مشفّر تحفظه أنت حيث تشاء.</p>
+<p><b>النسخ التلقائي في الجوال (أندرويد):</b> يحفظ التطبيق نسخة مشفّرة يومياً في مجلد <b>Documents/Fawateeri</b> على جوالك لتستعيد بياناتك إذا حذفت التطبيق وأعدت تثبيته. تبقى هذه الملفات على جوالك فقط، ويمكنك إيقاف النسخ التلقائي أو حذف الملفات في أي وقت. تُفتح بالرمز السري أو برمز الاستعادة، أو برمز الاستعادة فقط إذا فعّلت «حماية أقوى».</p>
+
+<h2>1-أ. المزامنة السحابية (اختيارية — الباقة الأساسية والمتقدمة)</h2>
+<p>إذا فعّلتها لإدارة محلك من الكمبيوتر أو لإضافة موظفين، <b>تُشفَّر كل بياناتك على جهازك قبل رفعها</b> بمفتاح لا يغادر أجهزتك (تشفير من طرف إلى طرف AES-256-GCM)، فيحفظ خادمنا نصوصاً مشفّرة لا نستطيع نحن ولا مزوّد الاستضافة قراءتها. يرى الخادم فقط: عدد السجلات وأحجامها وأوقات تعديلها، وقائمة الأجهزة المرتبطة (بأسماء مشفّرة) ونوعها وصلاحيتها وآخر اتصال لها، وعنوان IP مؤقتاً (يومين كحد أقصى) لمنع إساءة الاستخدام.</p>
+<p>تُربط الأجهزة الجديدة برمز ربط لمرة واحدة صالح 15 دقيقة. وعند تفعيل «الاستعادة من السحابة» نحفظ بصمة مشتقة من رمز الاستعادة (لا الرمز نفسه) ونسخة مشفّرة من مفتاحك لا تُفتح إلا برمز الاستعادة. يمكنك فصل أي جهاز، أو «إيقاف المزامنة وحذف البيانات من السحابة» فتُحذف كل بياناتك المشفّرة من خوادمنا فوراً.</p>
 
 <h2>2. إحصائيات استخدام مجهولة</h2>
 <p>لتحسين التطبيق ومتابعة الاشتراكات، يرسل التطبيق عند اتصاله بالإنترنت بيانات تقنية مجهولة لا تكشف هويتك:</p>
@@ -48,11 +53,14 @@ table{border-collapse:collapse;width:100%;font-size:15px} td,th{border-bottom:1p
 <p>لا نبيع أي بيانات ولا نشاركها مع أي جهة. الإحصائيات المجهولة تُخزّن لدى مزوّد استضافة سحابية يعمل نيابة عنا ومحمية بقواعد وصول صارمة، وتُنقل مشفّرة (HTTPS).</p>
 <p><b>الترجمة التلقائية (اختيارية، الباقة المتقدمة):</b> إذا فعّلت «ترجمة أسماء الأصناف تلقائياً» أو ضغطت زر «ترجم»، يُرسل التطبيق <b>اسم الصنف فقط</b> (مثل «زعفران 5 جرام») إلى خدمة الترجمة المجانية <a href="https://mymemory.translated.net/doc/privacy.php" rel="noopener">MyMemory</a> عبر اتصال مشفّر، ويستلم الترجمة الإنجليزية. لا يُرسل معه أي فواتير أو أسعار أو أسماء عملاء أو معرّفات. يمكنك إيقاف الترجمة التلقائية في أي وقت من «إعدادات الفاتورة».</p>
 
+<h2>5-أ. تذكير العملاء بالدفع</h2>
+<p>رسائل التذكير تُفتح جاهزة في واتساب أو تطبيق البريد على جهازك وتُرسل منك أنت بضغطة إرسال؛ لا نرسل أي رسائل نيابة عنك. بريد العميل الإلكتروني (إن أضفته) يُحفظ مشفّراً مع باقي بياناتك. إشعارات مواعيد التذكير تُجدول محلياً على جوالك دون أي خادم.</p>
+
 <h2>6. الأذونات</h2>
-<p>يستخدم التطبيق الإنترنت (للإحصائيات والإعلان والاشتراك)، ومشاركة الملفات (لإرسال الفاتورة أو النسخة الاحتياطية بطلبك)، واختيار الصور (لشعار المحل وصور الأصناف بطلبك)، وفتح تطبيق الكاميرا في النظام لتصوير صورة صنف بطلبك دون أن يطلب التطبيق إذن الكاميرا. صور الأصناف تُصغَّر وتُحفظ مشفّرة على جهازك فقط ولا تُرسل إلى أي جهة. في تطبيق أندرويد يطلب التطبيق إذن <b>الأجهزة القريبة (البلوتوث)</b> عند أول طباعة لملصقات الباركود فقط، ليتصل بطابعتك الحرارية المقترنة ويرسل إليها الملصق مباشرة؛ لا يبحث عن أجهزة أخرى ولا يستخدم البلوتوث لتحديد موقعك. لا يصل التطبيق إلى جهات اتصالك أو موقعك أو الميكروفون.</p>
+<p>يستخدم التطبيق الإنترنت (للإحصائيات والإعلان والاشتراك)، ومشاركة الملفات (لإرسال الفاتورة أو النسخة الاحتياطية بطلبك)، واختيار الصور (لشعار المحل وصور الأصناف بطلبك)، وفتح تطبيق الكاميرا في النظام لتصوير صورة صنف بطلبك دون أن يطلب التطبيق إذن الكاميرا. صور الأصناف تُصغَّر وتُحفظ مشفّرة على جهازك فقط ولا تُرسل إلى أي جهة. في تطبيق أندرويد يطلب التطبيق إذن <b>الأجهزة القريبة (البلوتوث)</b> عند أول طباعة لملصقات الباركود فقط، ليتصل بطابعتك الحرارية المقترنة ويرسل إليها الملصق مباشرة؛ لا يبحث عن أجهزة أخرى ولا يستخدم البلوتوث لتحديد موقعك. وفي أندرويد قد يطلب التطبيق إذن <b>الإشعارات</b> إذا فعّلت جدولة تذكير العملاء، وإذن <b>الوصول للملفات</b> في أندرويد 10 وأقدم فقط لحفظ النسخ التلقائية. لا يصل التطبيق إلى جهات اتصالك أو موقعك أو الميكروفون.</p>
 
 <h2>7. حذف البيانات</h2>
-<p>حذف التطبيق أو استخدام «مسح جميع البيانات» من شاشة الحماية يحذف كل بياناتك من جهازك. لحذف الإحصائيات المجهولة المرتبطة بجهازك من خوادمنا، راسلنا برمز جهازك (يظهر في شاشة الاشتراك) وسنحذفها خلال 30 يوماً.</p>
+<p>حذف التطبيق أو استخدام «مسح جميع البيانات» من شاشة الحماية يحذف كل بياناتك من جهازك (تبقى النسخ التلقائية في مجلد Documents/Fawateeri حتى تحذفها أنت). وبيانات المزامنة السحابية تُحذف فوراً من «الكمبيوتر والمستخدمون ← إيقاف المزامنة وحذف البيانات من السحابة». لحذف الإحصائيات المجهولة المرتبطة بجهازك من خوادمنا، راسلنا برمز جهازك (يظهر في شاشة الاشتراك) وسنحذفها خلال 30 يوماً.</p>
 
 <h2>8. الأطفال</h2>
 <p>التطبيق موجّه للتجار وأصحاب الأعمال، وليس موجّهاً للأطفال دون 13 عاماً.</p>
@@ -63,10 +71,12 @@ table{border-collapse:collapse;width:100%;font-size:15px} td,th{border-bottom:1p
 
 <div class="card en">
 <h1 style="font-size:22px">Privacy Policy — Fawateeri</h1>
-<div class="muted">Last updated: November 16, 2026</div>
+<div class="muted">Last updated: November 18, 2026</div>
 <p>Fawateeri is a sales and purchase invoicing app for small merchants, designed by <b>ABDULAZIZ ALSHAFAI</b> and supported by <b>Sohar Spices Company</b> (Sohar, Oman).</p>
 <h2>Your business data stays on your device</h2>
-<p>Invoices, items and their photos, prices, customer and supplier names and phone numbers, debts, payments and your shop details are stored <b>only on your device, encrypted with AES-256</b>, and unlocked only with your PIN or recovery code. We never upload or access this data. Backups are encrypted files that you keep. Item photos are picked from your gallery or taken with the system camera app at your request (the app does not request the camera permission), shrunk to tiny thumbnails, and never uploaded.</p>
+<p>Invoices, items and their photos, prices, customer and supplier names and phone numbers, debts, payments and your shop details are stored <b>only on your device, encrypted with AES-256</b>, and unlocked only with your PIN or recovery code. We never upload or access this data. Backups are encrypted files that you keep. On Android, an encrypted automatic backup is saved daily in <b>Documents/Fawateeri</b> on your phone so you can restore after reinstalling; it stays on your phone only and you can turn it off or delete it anytime. Item photos are picked from your gallery or taken with the system camera app at your request (the app does not request the camera permission), shrunk to tiny thumbnails, and never uploaded.</p>
+<h2>Optional encrypted cloud sync (Basic and Advanced plans)</h2>
+<p>If you turn on cloud sync to manage your shop from a computer or add staff, <b>all your data is encrypted on your device before upload</b> with a key that never leaves your devices (end-to-end AES-256-GCM). Our servers store only ciphertext that neither we nor our hosting provider can read. The server sees only record counts, sizes and modification times, the list of linked devices (with encrypted names), their type, role and last connection, and your IP address temporarily (up to 2 days) to prevent abuse. New devices are linked with a one-time code valid for 15 minutes. If you enable cloud restore, we store a value derived from your recovery code (not the code itself) and an encrypted copy of your key that only the recovery code can open. You can disconnect any device, or "Stop sync and delete data from the cloud" to erase all your encrypted data from our servers immediately.</p>
 <h2>Anonymous usage statistics</h2>
 <p>When online, the app sends anonymous technical data: a random install ID and the random activation device code; app version, platform, OS version, device language, time zone and approximate country; current plan, its expiry and license ID; <b>counts only</b> of invoices, items and customers (never their content, names or amounts); and general usage events (e.g. "invoice created", "reports opened", "ad viewed/clicked"). You can turn statistics off in More → Security. A minimal request is still made to receive the in-app ad and verify activation codes.</p>
 <h2>Subscriptions and payments</h2>
@@ -77,8 +87,9 @@ table{border-collapse:collapse;width:100%;font-size:15px} td,th{border-bottom:1p
 <p>We do not sell or share data with third parties. Anonymous statistics are stored with a cloud hosting provider acting on our behalf, protected by strict access rules and transmitted over HTTPS.</p>
 <p><b>Automatic translation (optional, Advanced plan):</b> if you enable "Translate item names automatically" or tap "Translate", the app sends <b>only the item name</b> to the free translation service <a href="https://mymemory.translated.net/doc/privacy.php" rel="noopener">MyMemory</a> over an encrypted connection and receives the English translation. No invoices, prices, customer names or identifiers are sent. You can turn it off anytime in Invoice settings.</p>
 <p><b>Bluetooth (Android):</b> the app asks for the Nearby devices (Bluetooth) permission only when you first print barcode labels, to connect to your paired thermal printer. It does not scan for other devices or use Bluetooth for location.</p>
+<p><b>Payment reminders:</b> reminder messages open ready in WhatsApp or your email app and are sent by you with one tap; we never send messages on your behalf. Reminder notifications are scheduled locally on your phone. On Android the app may ask for the Notifications permission when you turn on reminder scheduling, and the storage permission on Android 10 and older only, to save automatic backups.</p>
 <h2>Deletion</h2>
-<p>Uninstalling the app or using "Erase all data" removes everything from your device. To delete the anonymous statistics linked to your device, contact us with your device code and we will delete them within 30 days.</p>
+<p>Uninstalling the app or using "Erase all data" removes everything from your device (automatic backups in Documents/Fawateeri stay until you delete them). Cloud sync data is deleted immediately with "Stop sync and delete data from the cloud". To delete the anonymous statistics linked to your device, contact us with your device code and we will delete them within 30 days.</p>
 <h2>Children</h2>
 <p>The app is intended for merchants and is not directed to children under 13.</p>
 <h2>Contact</h2>
