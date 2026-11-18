@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-cBq9ZmdcAtecYiG98wIgCeib3tSgrmrxNJ9JPQROZYU='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src data:; connect-src 'self' https://c--dc0151d4-f557-4f0c-be26-603129cec414-prod.lovable.cloud https://api.mymemory.translated.net; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-a84YFhvk/5z9V2sDiu4bCPQHwww4L1g0oEO3H+i1S28='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src data:; connect-src 'self' https://c--dc0151d4-f557-4f0c-be26-603129cec414-prod.lovable.cloud https://api.mymemory.translated.net; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
 <meta name="theme-color" content="#0F766E">
 <meta name="mobile-web-app-capable" content="yes">
@@ -427,6 +427,51 @@ html.desk #topbar{border-radius:0 0 16px 16px}
 html.desk .inv-img{max-width:720px;margin-inline:auto;display:block}
 @media (min-width:1000px){html.desk body{font-size:16px}}
 
+/* ---------- نافذة الترقية ومعاينة الميزات والعرض الترويجي (1.4.1) ---------- */
+.up-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+.up-btns .btn{min-height:52px;font-size:16px;padding:10px 8px;flex-direction:row}
+.up-plan{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+.up-plan .badge.pro{font-size:13px;padding:3px 10px;margin:0}
+.up-promo{display:flex;gap:6px;align-items:center;justify-content:center;flex-wrap:wrap;background:#FFF1F2;color:#9F1239;border-radius:12px;padding:8px 10px;font-size:14px;margin-bottom:10px}
+.up-promo .i{width:18px;height:18px}
+.up-pv{width:100%;justify-content:center;margin-top:6px}
+.banner.promo{background:linear-gradient(135deg,#FFE4E6,#FEF3C7);color:#881337}
+.banner.promo .btn{background:#BE123C}
+.promo-card{display:flex;gap:12px;align-items:center;background:linear-gradient(135deg,#BE123C,#E11D48 55%,#F59E0B);color:#fff;border-radius:18px;padding:14px 16px;margin-bottom:12px;box-shadow:0 8px 22px rgba(190,18,60,.25);font-size:15px}
+.promo-card .b{font-size:18px}
+.promo-card .pc-ic{width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.2);display:grid;place-items:center;flex:none}
+.promo-card .pc-ic .i{width:26px;height:26px}
+.promo-card .pc-price{font-size:20px}
+.old-p{color:var(--muted);font-weight:500;font-size:14px}
+.pv-entry{border-radius:16px;margin-bottom:12px}
+.pv-link{width:100%;justify-content:center;margin-top:2px}
+.pv-chip{display:inline-flex;align-items:center;gap:4px;color:var(--pri);font-weight:700;font-size:13px;white-space:nowrap}
+.pv-chip .i{width:16px;height:16px}
+.pv-head{display:flex;gap:12px;align-items:center}
+.pv-head .up-ic{margin:0;flex:none}
+.pv-note{display:flex;gap:8px;align-items:center;background:#FEF3C7;color:#92400E;border-radius:12px;padding:9px 12px;font-size:14px;margin-bottom:12px}
+.pv-note .i{width:18px;height:18px;flex:none}
+.pv-body{position:relative}
+.pv-img{background:#fff;border-radius:16px;padding:8px;box-shadow:var(--shadow);margin-bottom:12px}
+.pv-img img{width:100%;height:auto;display:block;border-radius:8px;pointer-events:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.pv-img.paper{background:#E9EEF2;padding:16px}.pv-img.paper img{max-width:300px;margin:0 auto;border-radius:2px;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.pv-img.label{background:#E9EEF2;padding:18px}.pv-img.label img{max-width:320px;margin:0 auto;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.pv-dis .btn[disabled],.pv-body .btn[disabled],.pv-body .mini[disabled]{opacity:.5;cursor:not-allowed}
+.pv-bars{display:flex;align-items:flex-end;gap:8px;height:110px;padding-top:6px}
+.pv-bars i{flex:1;background:var(--pri);border-radius:4px 4px 0 0;opacity:.85}
+.pv-notif{display:flex;gap:10px;align-items:center;background:#fff;border-radius:16px;padding:12px 14px;box-shadow:0 6px 20px rgba(15,23,42,.12);margin-bottom:12px;border:1px solid var(--line)}
+.pv-notif>.i{width:34px;height:34px;padding:7px;border-radius:10px;background:var(--pri);color:#fff;flex:none}
+.pv-bubble{background:#DCF8C6;color:#111;border-radius:14px 14px 4px 14px;padding:12px 14px;font-size:15px;line-height:1.6;margin:0 4px 12px;max-width:92%;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.pv-tr{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:16px}
+.pv-tr .i{width:18px;height:18px;color:var(--muted)}
+.pv-tr .ltr{color:var(--pri-d);font-weight:700}
+.pv-big{font-size:44px;font-weight:800;color:var(--pri-d)}
+.pv-meter{height:12px;border-radius:999px;background:#E9EEF2;overflow:hidden;margin-top:10px}.pv-meter i{display:block;height:100%;background:var(--warn,#F59E0B)}
+.pv-ad-x{position:relative}.pv-ad-x .ad-card{width:100%;opacity:.55}
+.pv-x{position:absolute;inset:0;display:grid;place-items:center;color:#DC2626}.pv-x .i{width:64px;height:64px;stroke-width:3}
+.pv-bar{position:sticky;bottom:calc(10px + var(--safe-b));z-index:6;background:#fff;border-radius:18px;padding:12px;margin-top:14px;box-shadow:0 -4px 24px rgba(15,23,42,.14);border:1px solid var(--line)}
+.pv-bar .up-promo{margin-bottom:8px}
+
 #splash{position:fixed;inset:0;display:grid;place-items:center;background:#0F766E;z-index:99}
 #splash img{width:96px;height:96px;border-radius:26px}
 </style>
@@ -450,7 +495,7 @@ const FW_DEMO = false;
 const APP = {
   name: 'فواتيري',
   nameEn: 'Fawateeri',
-  version: '1.4.0',
+  version: '1.4.1',
   devName: 'ABDULAZIZ ALSHAFAI',   // المصمّم
   sponsor: 'شركة توابل صحار',      // الجهة الداعمة (تظهر في شاشة الرمز السري)
   sponsorEn: 'Tawabil Sohar Co.',
@@ -963,7 +1008,9 @@ const EN_DICT = {
 "{0} إضافة مستخدم {1}": "{0} Add user {1}",
 "{0} اشترك لتفعيلها فوراً.": "{0} Subscribe to unlock it now.",
 "{0} باقتك الحالية{1}": "{0} Your current plan{1}",
+"{0} بيسة": "{0} baisa",
 "{0} ر.ع. / {1}": "{0} OMR / {1}",
+"{0} ر.ع. / شهرياً": "{0} OMR / month",
 "{0} رقم {1} التاريخ: {2} الإجمالي: {3} {4}": "{0} No. {1} Date: {2} Total: {3} {4}",
 "{0} صنف": "{0} item(s)",
 "{0} طباعة {1}": "{0} Print {1}",
@@ -992,7 +1039,8 @@ const EN_DICT = {
 "· صالحة حتى": "· valid until",
 "· صالحة حتى {0}": "· valid until {0}",
 "· متأخر": "· overdue",
-"· متأخر {0} يوماً": "· {0} days overdue",
+"· متأخر {0} يوماً": "· overdue {0} days",
+"· متأخر {0} يوماً · الموعد بعد {1} أيام": "· overdue {0} days · due in {1} days",
 "· متبقي": "· remaining",
 "· متبقي {0}": "· remaining {0}",
 "، أو ليمسح الرمز بكاميرا جواله:": ", or let them scan the code with their phone camera:",
@@ -1025,11 +1073,14 @@ const EN_DICT = {
 "أرسل الرابط إلى": "Send the link to",
 "أرسل الرابط إلى {0}، أو ليمسح الرمز بكاميرا جواله:": "Send the link to {0}, or let them scan the code with their phone camera:",
 "أرسل الفاتورة": "Send the invoice",
+"أرسل الفاتورة ملف PDF لعميلك أو احفظها للطباعة والبريد.": "Send the invoice as a PDF to your customer, or save it for printing and email.",
 "أرسل الملف لنفسك على واتساب أو احفظه في Google Drive أسبوعياً.": "Send the file to yourself on WhatsApp or save it in Google Drive every week.",
 "أرسلها صورة لعميلك عبر واتساب أو أي تطبيق آخر.": "Send it as an image to your customer by WhatsApp or any other app.",
 "أرقام الفواتير،": "invoice numbers,",
 "أساسية": "Basic",
 "أصدر فواتير البيع والشراء بسهولة، وتابع مخزونك وديونك من جوالك أو الكمبيوتر.": "Issue sales and purchase invoices easily, and track your stock and debts from your phone or computer.",
+"أصدر ما تشاء من الفواتير كل شهر دون التوقف عند حد الباقة المجانية.": "Issue as many invoices as you like every month, with no free-plan limit.",
+"أصدرت {0} فاتورة هذا الشهر. اشترك في الباقة الأساسية لإصدار فواتير بلا حد، أو انتظر بداية الشهر القادم.": "You've issued {0} invoices this month. Subscribe to the Basic plan for unlimited invoices, or wait until next month.",
 "أصناف": "items",
 "أصناف ·": "items ·",
 "أصناف عند الاتصال بالإنترنت": "items when you're online",
@@ -1038,6 +1089,7 @@ const EN_DICT = {
 "أصناف…": "items…",
 "أضف اسم الصنف وسعر البيع والكمية المتوفرة، وصورة صغيرة له إن أردت.": "Add the item name, selling price and available quantity, and a small photo if you like.",
 "أضف بريد العميل من صفحته": "Add the customer's email from their page",
+"أضف حتى {0} موظفين على جوالاتهم بصلاحية مدير أو بائع.": "Add up to {0} staff on their own phones as manager or seller.",
 "أضف رقم هاتف العميل": "Add the customer's phone number",
 "أضف صنفاً واحداً على الأقل": "Add at least one item",
 "أضف منتجاتك وأسعارها ليسهل عليك إصدار الفواتير.": "Add your products and prices to make invoicing easier.",
@@ -1051,6 +1103,7 @@ const EN_DICT = {
 "أو ثبّت التطبيق واختر {0} واكتب الرمز:": "or install the app, choose {0} and type the code:",
 "أو رقِّ للباقة المتقدمة": "or upgrade to the Advanced plan",
 "أو فعّل": "or turn on",
+"أول تذكير بعد {0} أيام من الاستحقاق، ثم كل {1} أيام · عبر واتساب": "First reminder {0} days after the due date, then every {1} days · via WhatsApp",
 "أول تذكير بعد الاستحقاق (أيام)": "First reminder after due date (days)",
 "أيام": "days",
 "أيام مجاناً": "days free",
@@ -1170,20 +1223,32 @@ const EN_DICT = {
 "اسمك على الفواتير": "Your name on invoices",
 "اسمك على هذا الجهاز": "Your name on this device",
 "اشتراك المتجر": "Shop subscription",
+"اشترك": "Subscribe",
 "اشترك الآن": "Subscribe now",
 "اشترك عبر واتساب": "Subscribe via WhatsApp",
+"اشترك في أي باقة بـ": "Subscribe to any plan for",
+"اشترك في الباقة الأساسية بـ": "Subscribe to the Basic plan for",
 "اشترك في الباقة الأساسية لإصدار فواتير بلا حد، أو انتظر بداية الشهر القادم.": "Subscribe to the Basic plan for unlimited invoices, or wait for next month.",
+"اشترك في الباقة المتقدمة بـ": "Subscribe to the Advanced plan for",
 "اشترك لتفعيلها فوراً.": "Subscribe to unlock it now.",
 "اضغط {0} تحت الباقة المناسبة.": "Tap {0} under the plan you want.",
 "اضغط {0} لإصدار أول فاتورة.": "Tap {0} to issue your first invoice.",
+"اضغط أي ميزة لترى كيف تعمل قبل أن تشترك. المعاينة ببيانات توضيحية ولا تتيح استخدام الميزة.": "Tap any feature to see how it works before you subscribe. Previews use sample data and don't unlock the feature.",
 "اضغط رجوع مرة أخرى للخروج": "Press back again to exit",
 "اضغط على الصنف لإضافته، واضغط مرة أخرى لزيادة الكمية": "Tap an item to add it, and tap again to increase the quantity",
 "اضغط على الصنف لاختياره، ومرة أخرى لزيادة عدد ملصقاته": "Tap an item to select it, and again to add more labels",
+"اطبع الفاتورة إيصالاً على طابعة حرارية {0} أو {1} مم بالبلوتوث.": "Print the invoice as a receipt on a {0} or {1} mm Bluetooth thermal printer.",
+"اطبع الفاتورة على أي طابعة متصلة بجوالك أو بالكمبيوتر.": "Print invoices on any printer connected to your phone or computer.",
+"اطبع ملصقات الأسعار لأصناف كثيرة دفعة واحدة": "Print price labels for many items at once",
 "اطلب الآن": "Order now",
+"اطلب من مالك المتجر ترقية الباقة لتفعيل هذه الميزة": "Ask the store owner to upgrade the plan to enable this feature",
+"اطلب من مالك المتجر ترقية الباقة.": "Ask the store owner to upgrade the plan.",
 "اعرف مبيعاتك وأرباحك وضريبتك لأي فترة، وصدّرها إلى Excel. متاحة في": "See your sales, profits and VAT for any period, and export to Excel. Available in the",
 "افتح التطبيق يومياً لرؤية التذكيرات المستحقة.": "Open the app daily to see due reminders.",
+"افتح رابط فواتيري في متصفح الكمبيوتر.": "Open the Fawateeri link in a computer browser.",
 "افتح فواتيري من متصفح الكمبيوتر وتابع فواتيرك وأصنافك لحظة بلحظة، وأضف موظفين بصلاحيات محددة. متاحة في": "Open Fawateeri in a computer browser and follow your invoices and items live, and add staff with specific permissions. Available in the",
 "افتح محلك من متصفح أي كمبيوتر": "Open your shop from any computer browser",
+"افتح محلك من متصفح الكمبيوتر وتابع كل فاتورة لحظة بلحظة، بتشفير كامل.": "Open your shop in a computer browser and follow every invoice live, fully encrypted.",
 "افتح هذا الرابط على الكمبيوتر لربطه بمحلي في تطبيق فواتيري:": "Open this link on the computer to connect it to my shop in Fawateeri:",
 "افتح هذا الرابط على الكمبيوتر لربطه بمحلي في تطبيق فواتيري: {0}": "Open this link on the computer to connect it to my shop in Fawateeri: {0}",
 "اقفل التطبيق بضغطة عندما تترك جوالك.": "Lock the app with one tap when you leave your phone.",
@@ -1203,6 +1268,7 @@ const EN_DICT = {
 "الأجهزة المرتبطة": "Linked devices",
 "الأجهزة المقترنة مع جوالك. إذا لم تجد طابعتك، اقرنها أولاً من إعدادات البلوتوث في الجوال (الرمز غالباً {0} أو {1}": "Devices paired with your phone. If your printer isn't listed, pair it first in your phone's Bluetooth settings (PIN is usually {0} or {1}",
 "الأساسية": "Basic",
+"الأساسية: كمبيوتر واحد · المتقدمة: {0} أجهزة كمبيوتر و{1} مستخدمين. البيانات مشفّرة على جهازك قبل رفعها.": "Basic: 1 computer · Advanced: {0} computers and {1} users. Data is encrypted on your device before upload.",
 "الأسعار شاملة الضريبة": "Prices include VAT",
 "الأصناف": "Items",
 "الأصناف الأكثر مبيعاً": "Top selling items",
@@ -1226,15 +1292,18 @@ const EN_DICT = {
 "الاسم،": "name,",
 "الاشتراك والباقات": "Subscription & plans",
 "الانضمام إلى متجر": "Join a shop",
+"البائع:": "Seller:",
 "الباركود": "Barcode",
 "الباركود يقبل الأرقام والحروف الإنجليزية فقط": "Barcode accepts numbers and English letters only",
 "الباقة": "plan",
 "الباقة {0}": "{0} plan",
 "الباقة الأساسية": "Basic plan",
+"الباقة الأساسية والمتقدمة": "Basic and Advanced plans",
 "الباقة الأساسية — اشتراك المتجر": "Basic plan — shop subscription",
 "الباقة الأساسية — بكود تفعيل": "Basic plan — with an activation code",
 "الباقة الأساسية — عبر Google Play": "Basic plan — via Google Play",
 "الباقة المتقدمة": "Advanced plan",
+"الباقة المتقدمة (تشمل ميزات الأساسية)": "Advanced plan (includes all Basic features)",
 "الباقة المتقدمة — اشتراك المتجر": "Advanced plan — shop subscription",
 "الباقة المتقدمة — بكود تفعيل": "Advanced plan — with an activation code",
 "الباقة المتقدمة — عبر Google Play": "Advanced plan — via Google Play",
@@ -1253,6 +1322,7 @@ const EN_DICT = {
 "التالي {0} من {1} {2} — {3}": "Next ({0} of {1}): {2} — {3}",
 "التحديث يحافظ على بياناتك كما هي. لا تحذف التطبيق القديم قبل التثبيت.": "The update keeps your data as is. Don't delete the old app before installing.",
 "الترخيص:": "License:",
+"الترقية الآن": "Upgrade now",
 "التطبيق بالعربية أو الإنجليزية": "App in Arabic or English",
 "التطبيق يطلب الرمز السري عند كل دخول": "The app asks for your PIN every time you open it",
 "التطبيق يُفتح بدون رمز سري. بياناتك ما زالت مشفّرة على هذا الجهاز، لكن أي شخص يمسك جوالك يستطيع فتحه.": "The app opens without a PIN. Your data is still encrypted on this device, but anyone holding your phone can open it.",
@@ -1282,6 +1352,7 @@ const EN_DICT = {
 "الرئيسية": "Home",
 "الربح التقديري": "Estimated profit",
 "الربح التقديري = المبيعات بدون ضريبة − تكلفة الأصناف المباعة حسب سعر الشراء المسجّل.": "Estimated profit = sales without VAT − cost of items sold based on the recorded purchase price.",
+"الرسالة التي تصل لعميلك": "The message your customer receives",
 "الرسالة بالعربية": "Arabic message",
 "الرقم": "No.",
 "الرقم الضريبي": "VAT number",
@@ -1308,6 +1379,7 @@ const EN_DICT = {
 "الشهر الماضي": "Last month",
 "الصافي قبل الضريبة": "Net before VAT",
 "الصق كود التفعيل هنا": "Paste the activation code here",
+"الصلاحيات": "Permissions",
 "الصلاحية": "Permission",
 "الصنف": "Item",
 "الضريبة": "VAT",
@@ -1320,6 +1392,7 @@ const EN_DICT = {
 "الطباعة المباشرة بالبلوتوث متاحة في تطبيق أندرويد. هنا يمكنك مشاركة صورة الملصق وطباعتها من تطبيق الطابعة.": "Direct Bluetooth printing is available in the Android app. Here you can share the label image and print it from the printer's app.",
 "العربية": "العربية",
 "العرض": "Width",
+"العرض على الاشتراك الشهري": "Offer applies to monthly plans",
 "العملاء": "Customers",
 "العملاء والموردون": "Customers & suppliers",
 "العملة": "Currency",
@@ -1331,6 +1404,7 @@ const EN_DICT = {
 "الفواتير": "Invoices",
 "الفواتير (": "Invoices (",
 "الفواتير {0}": "Invoices {0}",
+"الفواتير والأصناف والتقارير والإعدادات": "invoices, items, reports and settings",
 "القادم:": "Next:",
 "القادم: {0}": "Next: {0}",
 "القادمة": "Upcoming",
@@ -1345,6 +1419,7 @@ const EN_DICT = {
 "الكمية المتوفرة لديك الآن": "Quantity you have now",
 "اللغة الافتراضية للفواتير، ويمكنك تغييرها لأي فاتورة عند عرضها. الفاتورة ثنائية اللغة من مزايا الباقة المتقدمة.": "Default invoice language; you can change it for any invoice when viewing it. Bilingual invoices are an Advanced plan feature.",
 "المالك": "Owner",
+"المالك:": "Owner:",
 "المبالغ المحصّلة": "Collected amounts",
 "المبالغ المدفوعة للموردين": "Paid to suppliers",
 "المبلغ": "Amount",
@@ -1355,6 +1430,7 @@ const EN_DICT = {
 "المبيعات": "Sales",
 "المبيعات (": "Sales (",
 "المبيعات {0} فاتورة)": "Sales ({0} invoices)",
+"المبيعات اليومية": "Daily sales",
 "المبيعات والأرباح والضريبة": "Sales, profits and VAT",
 "المتبقي": "Balance due",
 "المتبقي {0}": "Remaining {0}",
@@ -1375,6 +1451,7 @@ const EN_DICT = {
 "المخزون-": "stock-",
 "المخزون{0}": "stock{0}",
 "المدفوع": "Paid",
+"المدير:": "Manager:",
 "المزامنة": "Sync",
 "المزامنة السحابية": "Cloud sync",
 "المزامنة السحابية المشفّرة": "Encrypted cloud sync",
@@ -1403,6 +1480,7 @@ const EN_DICT = {
 "الوحدة": "Unit",
 "اليوم": "Today",
 "امسح أو اكتب الباركود": "Scan or type the barcode",
+"امسح الرمز الظاهر على الشاشة بجوالك.": "Scan the code on the screen with your phone.",
 "انتهت صلاحية الرمز": "The code has expired",
 "انتهت صلاحية كود التفعيل السابق": "The previous activation code has expired",
 "انتهت صلاحية هذا الكود. اطلب كوداً جديداً.": "This code has expired. Ask for a new code.",
@@ -1414,6 +1492,7 @@ const EN_DICT = {
 "باركود الصنف وطباعة الملصقات": "Item barcode & label printing",
 "باركود خاص لكل صنف يُطبع على طابعة ملصقات حرارية بالبلوتوث": "A unique barcode for each item, printed on a Bluetooth thermal label printer",
 "باركود لكل صنف وطباعة الملصقات بالبلوتوث": "A barcode for each item & Bluetooth label printing",
+"باركود لكل صنف، وطباعة ملصقات الأسعار على طابعة الملصقات بالبلوتوث.": "A barcode for every item, and price labels printed on a Bluetooth label printer.",
 "باقة": "Plan",
 "باقتك الحالية": "Your current plan",
 "بدعم من": "Supported by",
@@ -1423,6 +1502,7 @@ const EN_DICT = {
 "بدون اسم": "No name",
 "بدون ضريبة": "No VAT",
 "بريد": "Email",
+"بشعار محلك": "With your logo",
 "بطاقة": "Card",
 "بعد {0} دقائق": "After {0} minutes",
 "بعد إعادة تثبيت التطبيق أو تغيير الجوال، استرجع فواتيرك وأصنافك وعملاءك.": "After reinstalling the app or changing your phone, get back your invoices, items and customers.",
@@ -1489,6 +1569,7 @@ const EN_DICT = {
 "تصدير المخزون": "Export stock",
 "تصوير": "Camera",
 "تظهر إعلانات": "Shows ads",
+"تظهر الأسماء الإنجليزية في الفاتورة الإنجليزية أو ثنائية اللغة، ويمكنك تعديل أي ترجمة.": "English names appear on English and bilingual invoices, and you can edit any translation.",
 "تظهر في الفاتورة أسعار الجملة، ومعها السعر المقترح لبيع كل صنف بالمفرد. لا يظهر مجموع السعر المقترح ولا الربح.": "The invoice shows wholesale prices with a suggested retail price for each item. The total of suggested prices and the profit are not shown.",
 "تظهر هذه البيانات على فواتيرك. يمكنك تعديلها لاحقاً.": "These details appear on your invoices. You can edit them later.",
 "تعديل": "Edit",
@@ -1509,6 +1590,7 @@ const EN_DICT = {
 "تعذّر النسخ التلقائي": "Automatic backup failed",
 "تعذّر النسخ:": "Backup failed:",
 "تعذّر النسخ: {0}": "Backup failed: {0}",
+"تعذّر تجهيز النموذج": "Couldn't prepare the sample",
 "تعذّر تحديث الاستعادة من السحابة — حدّثها لاحقاً من {0}": "Couldn't update cloud restore — update it later from {0}",
 "تعذّر تحميل القائمة": "Couldn't load the list",
 "تعذّر تحميل القائمة{0}": "Couldn't load the list{0}",
@@ -1532,6 +1614,7 @@ const EN_DICT = {
 "تفعيل الضريبة على الفواتير": "Add VAT to invoices",
 "تفعيل المزامنة السحابية": "Turn on cloud sync",
 "تقارير المبيعات والأرباح والضريبة": "Sales, profit & VAT reports",
+"تكتب اسم الصنف بالعربية… ويُترجم تلقائياً": "Type the item name in Arabic… it's translated automatically",
 "تكلفة البضاعة المباعة": "Cost of goods sold",
 "تم إرسال": "Sent",
 "تم إرسال {0} للطابعة ✓": "Sent {0} to the printer ✓",
@@ -1596,6 +1679,7 @@ const EN_DICT = {
 "تُفتح برمز الاستعادة {0} حرفاً) فقط بدلاً من الرمز السري، فلا يستطيع من ينسخ الملف من جوالك فتحه بتخمين الرمز السري. احتفظ برمز الاستعادة في مكان آمن.": "Opens only with the recovery code ({0} characters) instead of the PIN, so someone who copies the file from your phone can't open it by guessing the PIN. Keep your recovery code safe.",
 "تُنقل البيانات مشفّرة من طرف إلى طرف، ولا يستطيع الخادم قراءتها.": "Data is transferred end-to-end encrypted; the server can't read it.",
 "ثانية": "seconds",
+"ثم {0} ر.ع. / شهرياً — يمكنك الإلغاء قبل التجديد": "then {0} OMR / month — cancel any time before renewal",
 "ثم كل (أيام)": "Then every (days)",
 "جاري الإرسال إلى": "Sending to",
 "جاري الإرسال إلى {0}": "Sending to {0}",
@@ -1607,6 +1691,7 @@ const EN_DICT = {
 "جاري الربط…": "Connecting…",
 "جاري المزامنة": "Syncing",
 "جاري المزامنة…": "Syncing…",
+"جاري تجهيز النموذج…": "Preparing the sample…",
 "جاري ترجمة": "Translating",
 "جاري ترجمة {0} أصناف…": "Translating {0} items…",
 "جاري تنزيل بيانات المتجر…": "Downloading the shop data…",
@@ -1616,8 +1701,10 @@ const EN_DICT = {
 "جدولة بتاريخ محدد": "Schedule for a date",
 "جديدة": "New",
 "جرام": "g",
+"جرّب الميزات قبل أن تشترك": "Try the features before you subscribe",
 "جملة": "Wholesale",
 "جوال": "Phone",
+"جوال أحمد": "Ahmed's phone",
 "جوال المالك": "Owner's phone",
 "جولة تعريفية بالتطبيق": "App tour",
 "حالة الدفع": "Payment status",
@@ -1687,6 +1774,7 @@ const EN_DICT = {
 "رمز سهل التخمين، اختر رمزاً آخر": "PIN is too easy to guess, choose another",
 "زيادة": "Increase",
 "س.ت": "C.R.",
+"سأشترك لاحقاً": "I'll subscribe later",
 "ساعة": "hours",
 "ستحتاج الرمز السري القديم أو رمز الاستعادة {0} حرفاً) الذي حصلت عليه عند إنشاء التطبيق.": "You'll need your old PIN or the recovery code ({0} characters) you got when you set up the app.",
 "ستستخدمه لفتح التطبيق": "You'll use it to open the app",
@@ -1717,6 +1805,7 @@ const EN_DICT = {
 "سيُنزَّل ملف التحديث": "The update file will be downloaded",
 "سيُنزَّل ملف التحديث {0} افتحه بعد التنزيل واضغط {1}.": "The update file {0} will be downloaded. Open it after downloading and tap {1}.",
 "سيُنشأ باركود جديد عند الحفظ": "A new barcode will be created when saving",
+"شاهد معاينة الميزة": "See a preview",
 "شراء": "Purchase",
 "شراء من مورد": "Buy from a supplier",
 "شرح سريع لأهم الأزرار": "A quick explanation of the main buttons",
@@ -1734,6 +1823,7 @@ const EN_DICT = {
 "صافي الضريبة المستحقة": "Net VAT due",
 "صالح لمدة": "Valid for",
 "صالح لمدة {0} دقيقة ولمرة واحدة": "Valid for {0} minutes, single use",
+"صدّر الفواتير والمخزون إلى ملف Excel لمحاسبك.": "Export invoices and stock to an Excel file for your accountant.",
 "صغيرة جداً، تظهر في التطبيق فقط ولا تظهر في الفاتورة": "Very small, shown in the app only and not on invoices",
 "صنف": "item",
 "صنف جديد": "New item",
@@ -1747,6 +1837,7 @@ const EN_DICT = {
 "ضريبة القيمة المضافة {0} (مشمولة)": "VAT {0} (included)",
 "ضريبة المبيعات (المحصّلة)": "Output VAT (collected)",
 "ضريبة المشتريات (المدفوعة)": "Input VAT (paid)",
+"ضريبية": "With VAT",
 "طابعة إيصالات": "Receipt printer",
 "طابعة إيصالات (ESC/POS)": "Receipt printer (ESC/POS)",
 "طابعة إيصالات {0} أو {1} مم بالبلوتوث": "{0} or {1} mm receipt printer via Bluetooth",
@@ -1784,6 +1875,8 @@ const EN_DICT = {
 "عربي": "Arabic",
 "عربي + English": "Arabic + English",
 "عربي + English {0}": "Arabic + English {0}",
+"عرض الإطلاق": "Launch offer",
+"عرض الإطلاق: أول شهر بـ": "Launch offer: first month for",
 "عرض الباقات": "See plans",
 "عرض الكل": "Show all",
 "عرض الكل (": "Show all (",
@@ -1802,7 +1895,7 @@ const EN_DICT = {
 "عميل واحد": "1 customer",
 "عميل واحد موعد تذكيرهم بالدفع اليوم": "1 customer due for a payment reminder today",
 "عميلان": "2 customers",
-"عميلان موعد تذكيرهم بالدفع اليوم": "2 customers due for a payment reminder today",
+"عميلان موعد تذكيرهم بالدفع اليوم": "2 customers are due for a payment reminder today",
 "عند التفعيل تُستخرج الضريبة من السعر بدلاً من إضافتها": "When on, VAT is taken out of the price instead of added to it",
 "عند توفر الإنترنت تُترجم أسماء أصنافك إلى الإنجليزية لتظهر في الفاتورة. يُرسل اسم الصنف فقط إلى خدمة الترجمة MyMemory، ويمكنك تعديل أي ترجمة من شاشة الصنف.": "When online, your item names are translated to English to appear on invoices. Only the item name is sent to the MyMemory translation service, and you can edit any translation from the item screen.",
 "غير مدفوعة": "Unpaid",
@@ -1814,13 +1907,17 @@ const EN_DICT = {
 "فاتورة بالعربية والإنجليزية": "Arabic & English invoices",
 "فاتورة بيع": "Sales invoice",
 "فاتورة بيع بالجملة": "Wholesale invoice",
+"فاتورة بيع بالجملة فيها السعر المقترح لبيع كل صنف بالمفرد.": "Wholesale invoices that show the suggested retail price for each item.",
 "فاتورة جديدة": "New invoice",
 "فاتورة شراء": "Purchase invoice",
 "فاتورة شهرياً": "invoices a month",
 "فاتورة ضريبية": "Tax invoice",
 "فاتورة ضريبية - جملة": "Tax invoice - wholesale",
+"فاتورة ضريبية تحسب ضريبة القيمة المضافة وتُظهرها لعميلك.": "Tax invoices that calculate VAT and show it to your customer.",
 "فاتورة هذا الشهر": "invoices this month",
+"فاتورة هذا الشهر في الباقة المجانية": "invoices this month on the free plan",
 "فاتورة هذا الشهر).": "invoices this month).",
+"فاتورة واحدة بالعربية والإنجليزية لعملائك من غير العرب.": "One invoice in Arabic and English for your non-Arabic-speaking customers.",
 "فاتورة)": "invoices)",
 "فاتورة، بتاريخ": "invoices, dated",
 "فتح": "Open",
@@ -1835,12 +1932,15 @@ const EN_DICT = {
 "فصل هذا الجهاز": "Disconnect this device",
 "فصل هذا الجهاز عن المتجر": "Disconnect this device from the shop",
 "فصل هذا الجهاز عن المتجر؟": "Disconnect this device from the shop?",
+"فعّل المزامنة من جوالك.": "Turn on sync from your phone.",
 "فعّله إذا خرج الإيصال أسود بالكامل": "Turn on if the receipt prints all black",
 "فعّله إذا خرج الملصق أسود بالكامل أو بألوان معكوسة": "Turn on if the label prints all black or with inverted colors",
 "فعّله إذا خرج الملصق مقلوباً": "Turn on if the label prints upside down",
 "فهمت 👍": "Got it 👍",
 "فواتير البيع": "Sales invoices",
 "فواتير البيع بالجملة مع السعر المقترح للبيع": "Wholesale invoices with suggested retail prices",
+"فواتير البيع والعملاء فقط، ولا يرى التكلفة والأرباح والمشتريات": "sales invoices and customers only; can't see costs, profit or purchases",
+"فواتير بلا حد": "unlimited invoices",
 "فواتير بلا حد شهري": "Unlimited invoices every month",
 "فواتير بيع (مفرد) وشراء": "Sales (retail) & purchase invoices",
 "فواتير بيع وشراء بضغطة زر": "Sales & purchase invoices with one tap",
@@ -1850,6 +1950,7 @@ const EN_DICT = {
 "فواتيري": "Fawateeri",
 "فور الخروج من التطبيق": "As soon as I leave the app",
 "في الآيفون: احفظ النسخة في تطبيق {0} أو أرسلها لنفسك. حذف التطبيق من الشاشة الرئيسية يحذف بياناته.": "On iPhone: save the backup in the {0} app or send it to yourself. Deleting the app from the home screen deletes its data.",
+"في الباقات المدفوعة:": "On paid plans:",
 "في الفاتورة:": "In invoice:",
 "في الفاتورة: {0}": "In invoice: {0}",
 "في تطبيق فواتيري:": "in Fawateeri:",
@@ -1867,6 +1968,7 @@ const EN_DICT = {
 "قيمة المخزون بالتكلفة": "Stock value at cost",
 "كرتون": "carton",
 "كل الصلاحيات ما عدا إدارة المستخدمين والاشتراك": "All permissions except managing users and the subscription",
+"كل شيء": "everything",
 "كل مزايا الباقة الأساسية": "All Basic plan features",
 "كل مزايا الباقة المجانية": "All Free plan features",
 "كمبيوتر": "Computer",
@@ -1874,8 +1976,11 @@ const EN_DICT = {
 "كود التفعيل غير صحيح. انسخه كاملاً كما وصلك.": "Invalid activation code. Copy it completely as you received it.",
 "كيس": "bag",
 "كيف أشترك؟": "How do I subscribe?",
+"كيف يعمل؟": "How does it work?",
 "كيلو": "kg",
+"لأول شهر": "for the first month",
 "لإرسال تذكيرات الدفع بالبريد (اختياري)": "To send payment reminders by email (optional)",
+"لا إعلانات في الرئيسية ولا في صفحة الفاتورة": "No ads on the home screen or the invoice page",
 "لا تطلب الرمز السري مرة أخرى على هذا الجهاز": "Don't ask for the PIN again on this device",
 "لا توجد": "None",
 "لا توجد أجهزة بلوتوث مقترنة.": "No paired Bluetooth devices.",
@@ -1930,16 +2035,21 @@ const EN_DICT = {
 "لمتابعة المخزون بدقة": "To track stock accurately",
 "لن تُحسب في المبيعات والمخزون والديون.": "It won't count in sales, stock and debts.",
 "له": "is owed",
+"مالك": "Owner",
 "مبيعات اليوم (": "Today's sales (",
 "مبيعات اليوم {0}": "Today's sales {0}",
 "مبيعات ومشتريات اليوم، وديونك عند العملاء وما عليك للموردين.": "Today's sales and purchases, what customers owe you and what you owe suppliers.",
+"مبيعاتك وأرباحك وضريبتك لأي فترة، والأصناف الأكثر مبيعاً.": "Your sales, profit and VAT for any period, plus your best-selling items.",
 "متابعة الحذف": "Continue deleting",
 "متابعة المخزون": "Track stock",
 "متابعة المخزون والديون تلقائياً": "Automatic stock & debt tracking",
 "متابعة ديون العملاء والموردين": "Track customer & supplier debts",
 "متاحة في": "Available in",
+"متاحة لك": "Included",
 "متر": "m",
 "متصل الآن": "Connected now",
+"متصل قبل {0} دقائق": "Online {0} min ago",
+"متصل قبل ساعة": "Online 1 hour ago",
 "متقدمة": "Advanced",
 "متوقف لهذا العميل": "Off for this customer",
 "مثال: أحمد": "e.g. Ahmed",
@@ -1975,6 +2085,7 @@ const EN_DICT = {
 "مرحباً بك في": "Welcome to",
 "مرحباً بك في {0}": "Welcome to {0}",
 "مزامنة الآن": "Sync now",
+"مساحة إعلانية في الباقة المجانية": "Ad space on the free plan",
 "مستحق اليوم": "Due today",
 "مستحق اليوم (": "Due today (",
 "مستحق اليوم {0}": "Due today {0}",
@@ -1996,6 +2107,10 @@ const EN_DICT = {
 "معاينة الإيصال": "Receipt preview",
 "معاينة الفاتورة": "Invoice preview",
 "معاينة الملصق": "Label preview",
+"معاينة ببيانات توضيحية — متاحة في": "Preview with sample data — available in the",
+"معاينة كل ميزة ببيانات توضيحية": "Preview each feature with sample data",
+"معاينة كل ميزة قبل الاشتراك": "Preview each feature before subscribing",
+"معاينة ميزات الباقة": "Preview this plan's features",
 "مفرد أو جملة": "Retail or wholesale",
 "مقاس آخر": "Other size",
 "مقاس الملصق (مم)": "Label size (mm)",
@@ -2039,6 +2154,7 @@ const EN_DICT = {
 "موعد التذكير": "Reminder date",
 "موعد تذكيرهم اليوم": "to remind today",
 "موعد تذكيرهم بالدفع اليوم": "due for a payment reminder today",
+"ميزات الباقات المدفوعة": "Paid plan features",
 "نسبة الضريبة %": "VAT rate %",
 "نسخ الآن": "Back up now",
 "نسخ الرابط": "Copy link",
@@ -2066,6 +2182,7 @@ const EN_DICT = {
 "هذا الباركود مستخدم للصنف «": "This barcode is used by the item “",
 "هذا الباركود مستخدم للصنف «{0}": "This barcode is used by the item {0}",
 "هذا الجهاز": "This device",
+"هذا الجهاز · متصل الآن": "This device · online now",
 "هذا الجهاز فيه بيانات محل بالفعل. لربطه بمتجر آخر امسح بياناته أولاً من {0}، أو افتح الرابط على جهاز جديد.": "This device already has shop data. To link it to another shop, erase its data first from {0}, or open the link on a new device.",
 "هذا الجهاز مرتبط بمتجر بالفعل.": "This device is already linked to a shop.",
 "هذا الجهاز مرتبط بمتجر ويأخذ بياناته من المزامنة.": "This device is linked to a shop and gets its data from sync.",
@@ -2077,15 +2194,21 @@ const EN_DICT = {
 "هذه السنة": "This year",
 "هذه العملية من صلاحية مالك المحل": "Only the shop owner can do this",
 "هذه الميزة": "This feature",
+"هذه الميزة غير متاحة في باقة المتجر الحالية.": "This feature isn't included in the store's current plan.",
+"هذه الميزة متاحة في باقتك": "This feature is included in your plan",
 "هذه نسخة عرض على الويب.": "This is a web demo.",
 "هكذا تظهر فاتورتك لعميلك. يمكنك تعديل بيانات محلك من {0}.": "This is how your customer sees your invoice. You can edit your shop details from {0}.",
+"هكذا يُطبع الإيصال على طابعة {0} مم مع شعار محلك": "This is how the receipt prints on a {0} mm printer with your logo",
 "هل تريد إلغاء هذه الفاتورة؟": "Void this invoice?",
 "و{0} مستخدمين": "and {0} users",
 "وإن وصلك كود تفعيل، الصقه في الخانة بالأسفل.": "If you received an activation code, paste it in the box below.",
 "واتساب": "WhatsApp",
 "واتساب {0}": "WhatsApp {0}",
+"واجهة نظيفة بلا إعلانات في الرئيسية وصفحة الفاتورة.": "A clean app with no ads on the home or invoice screens.",
 "واختر {0} واكتب الرمز:": "choose {0} and type the code:",
 "والمتقدمة": "and Advanced",
+"وصل المتجر إلى حد الباقة المجانية ({0} فاتورة هذا الشهر).": "The store has reached the free plan limit ({0} invoices this month).",
+"وصلت إلى حد الباقة المجانية": "You've reached the free plan limit",
 "وصلت إلى حد الباقة المجانية (": "You reached the Free plan limit (",
 "وصلت إلى حد الباقة المجانية {0} فاتورة هذا الشهر).": "You reached the Free plan limit ({0} invoices this month).",
 "وصلت لحد الباقة المجانية هذا الشهر": "You reached the Free plan limit this month",
@@ -2101,12 +2224,16 @@ const EN_DICT = {
 "يبقى الرمز السري مطلوباً لإلغاء الفواتير وتغيير إعدادات الحماية ومسح البيانات.": "The PIN is still required to void invoices, change security settings and erase data.",
 "يتجدد الاشتراك تلقائياً عبر Google Play في نهاية كل": "The subscription renews automatically via Google Play at the end of each",
 "يتجدد الاشتراك تلقائياً عبر Google Play في نهاية كل {0}، ويمكنك إلغاؤه في أي وقت من إعدادات Google Play.": "The subscription renews automatically via Google Play at the end of each {0}, and you can cancel it anytime from Google Play settings.",
+"يترجم التطبيق أسماء أصنافك إلى الإنجليزية تلقائياً لتظهر في الفاتورة.": "The app translates your item names into English automatically for your invoices.",
 "يتم عرض آخر {0} فاتورة — استخدم البحث للوصول للأقدم": "Showing the last {0} invoices — use search to find older ones",
 "يتوقف فوراً عن رؤية الجديد من بياناتك": "Immediately stops seeing your new data",
 "يجب فتح التطبيق عبر رابط آمن (https) أو من التطبيق المثبّت.": "The app must be opened from a secure link (https) or from the installed app.",
 "يحدد التطبيق موعد تذكير كل عميل متأخر وينبّهك به": "The app sets a reminder date for each late customer and alerts you",
+"يحدد التطبيق موعد تذكير كل عميل متأخر وينبّهك، فترسل له رسالة جاهزة بضغطة.": "The app schedules a reminder for each late customer and alerts you, so you send a ready message in one tap.",
+"يدعم طابعات الملصقات الحرارية بالبلوتوث": "Works with Bluetooth thermal label printers",
 "يصدر فواتير البيع ويسجّل الدفعات ويضيف العملاء، ولا يرى التكلفة والأرباح والتقارير والمشتريات": "Issues sales invoices, records payments and adds customers, but doesn't see costs, profits, reports or purchases",
 "يظهر اسمك على الفاتورة بجوار التاريخ والوقت ليُعرف من أصدرها. يمكنك تغييره لاحقاً من {0}.": "Your name appears on the invoice next to the date and time to show who issued it. You can change it later from {0}.",
+"يظهر شعار محلك أعلى كل فاتورة فتبدو احترافية.": "Your shop logo appears at the top of every invoice for a professional look.",
 "يظهر على الفواتير التي تصدرها من هذا الجهاز بجوار التاريخ والوقت. اتركه فارغاً لإخفائه.": "Shown on invoices you issue from this device, next to the date and time. Leave empty to hide it.",
 "يظهر في الفاتورة الإنجليزية وثنائية اللغة": "Shown on English and bilingual invoices",
 "يظهر في الفاتورة ثنائية اللغة": "Shown on bilingual invoices",
@@ -2120,6 +2247,7 @@ const EN_DICT = {
 "يمكنك فتح التطبيق بدون رمز من {0}": "You can open the app without a PIN from {0}",
 "ينتهي اشتراك الباقة": "Your plan ends",
 "ينتهي اشتراك الباقة {0} خلال {1} يوم": "Your {0} plan ends in {1} days",
+"ينتهي العرض خلال": "Offer ends in",
 "يوجد صنف بنفس الاسم": "An item with the same name exists",
 "يوم": "day",
 "يوماً": "days",
@@ -2134,6 +2262,7 @@ const EN_DICT = {
 "يُقفل التطبيق عند عدم الاستخدام أو الخروج منه": "The app locks when not in use or when you leave it",
 "يُلغي رمز الاستعادة القديم": "Cancels the old recovery code",
 "يُنشأ باركود خاص لهذا الصنف تلقائياً عند الحفظ": "A unique barcode is created for this item automatically on save",
+"يُنشئ التطبيق باركوداً لكل صنف تلقائياً": "The app creates a barcode for each item automatically",
 "— ألغِ قبل انتهائها ولن تدفع شيئاً": "— cancel before it ends and you won't pay anything",
 "— الكمية أكبر من المتوفر": "— quantity is more than available",
 "— المعاينة للصنف الأول": "— preview shows the first item"
@@ -2471,14 +2600,15 @@ async function invoiceCanvas(inv, opts = {}) {
   await fontsReady();
   const S = DB.settings, W = 1080, P = 60, R = W - P, L = P;
   let lang = opts.lang || (opts.bilingual != null ? (opts.bilingual ? 'bi' : 'ar') : invLangDefault());
-  if (lang === 'bi' && !Plan.can('bilingual')) lang = 'ar';
+  if (lang === 'bi' && !Plan.can('bilingual') && !opts.pv) lang = 'ar'; // opts.pv: نموذج للمعاينة
   const BI = lang === 'bi', EN = lang === 'en';
   const tx = (ar, en) => EN ? en : ar;
   const CUR = curFor(EN);
   const col = inv.type === 'sale' ? '#0E9F6E' : '#2563EB';
   const colL = inv.type === 'sale' ? '#E7F7F0' : '#EAF1FE';
   const c = calcInvoice(inv), st = statusOf(inv), paid = paidOf(inv), due = dueOf(inv);
-  const logo = (S.logo && Plan.can('logo')) ? await loadImg(S.logo) : null;
+  const logoSrc = opts.pv ? opts.pv.logo : (S.logo && Plan.can('logo') ? S.logo : null);
+  const logo = logoSrc ? await loadImg(logoSrc) : null;
   const rate = num(inv.vatRate);
   const isTax = inv.type === 'sale' && rate > 0;
   const WH = isWhole(inv); // فاتورة جملة: عمود السعر المقترح للبيع بالمفرد (بدون مجموعه أو الربح)
@@ -3138,10 +3268,11 @@ function ditherCanvas(cv) {
 async function receiptCanvas(inv, opts = {}) {
   await fontsReady();
   const C = Object.assign(receiptCfg(), opts), S = DB.settings, W = +C.pw === 576 ? 576 : 384, k = W / 384, m = Math.round(10 * k);
-  let lang = opts.lang || invLangDefault(); if (lang === 'bi' && !Plan.can('bilingual')) lang = 'ar';
+  let lang = opts.lang || invLangDefault(); if (lang === 'bi' && !Plan.can('bilingual') && !opts.pv) lang = 'ar';
   const EN = lang === 'en', BI = lang === 'bi', tx = (ar, en) => EN ? en : BI ? ar + ' / ' + en : ar;
   const c = calcInvoice(inv), st = statusOf(inv), paid = paidOf(inv), due = dueOf(inv), CUR = curFor(EN);
-  const logo = C.logo && S.logo && Plan.can('logo') ? await loadImg(S.logo) : null;
+  const logoSrc = !C.logo ? null : opts.pv ? opts.pv.logo : (S.logo && Plan.can('logo') ? S.logo : null);
+  const logo = logoSrc ? await loadImg(logoSrc) : null;
   const D0 = EN ? 'ltr' : 'rtl', START = EN ? 'left' : 'right', END = EN ? 'right' : 'left';
   const xs = EN ? m : W - m, xe = EN ? W - m : m;
   const pass = (ctx, draw) => {
@@ -4094,14 +4225,11 @@ function limitBlocked() { return Plan.limitLeft() <= 0; }
 ACT.needFeat = el => needPlan(el.dataset.f);
 async function needPlan(feat) {
   if (Plan.can(feat)) return true;
-  const p = PLANS[Plan.minFor(feat)];
   Cloud.ev('paywall', { f: feat });
-  const go = await Modal.open(`<div class="center"><div class="up-ic">${ic('star')}</div><h3 style="margin:6px 0">${esc(FEAT_TXT[feat] || 'هذه الميزة')}</h3>
-    <p class="muted" style="margin:0 0 14px">متاحة في <b>الباقة ${esc(p.name)}</b>${p.id === 'basic' ? ' والمتقدمة' : ''}. اشترك لتفعيلها فوراً.</p></div>
-    <button class="btn" data-r="1">${ic('star')} عرض الباقات</button><button class="btn ghost" data-r="0" style="width:100%">لاحقاً</button>`, {
-    type: 'dlg', onMount(el) { el.addEventListener('click', e => { const b = e.target.closest('[data-r]'); if (b) Modal.close(b.dataset.r === '1'); }); }
-  });
-  if (go) Nav.go('plans', { from: feat });
+  if (!can('plans')) { await alertDlg('هذه الميزة غير متاحة في باقة المتجر الحالية.<br><span class="small muted">اطلب من مالك المتجر ترقية الباقة.</span>'); return false; }
+  const r = await upsellDlg({ feat });
+  if (r === 'up') Nav.go('plans', { from: feat });
+  else if (r === 'pv') Nav.go('preview', { f: feat });
   return false;
 }
 function migrate(d) {
@@ -4117,8 +4245,9 @@ async function startInvoice(type, partyId) {
   if (type === 'purchase' && !can('purchase')) return denied();
   if (limitBlocked()) {
     Cloud.ev('limit_hit');
-    const go = await confirmDlg(`وصلت إلى حد الباقة المجانية (${PLANS.free.limit} فاتورة هذا الشهر).<br>اشترك في الباقة الأساسية لإصدار فواتير بلا حد، أو انتظر بداية الشهر القادم.`, { ok: 'عرض الباقات', cancel: 'لاحقاً' });
-    if (go) Nav.go('plans', { from: 'limit' });
+    if (!can('plans')) return alertDlg(`وصل المتجر إلى حد الباقة المجانية (${PLANS.free.limit} فاتورة هذا الشهر).<br><span class="small muted">اطلب من مالك المتجر ترقية الباقة.</span>`);
+    const r = await upsellDlg({ plan: 'basic', icon: 'receipt', from: 'limit', title: 'وصلت إلى حد الباقة المجانية', msg: `أصدرت ${PLANS.free.limit} فاتورة هذا الشهر. اشترك في الباقة الأساسية لإصدار فواتير بلا حد، أو انتظر بداية الشهر القادم.` });
+    if (r === 'up') Nav.go('plans', { from: 'limit' });
     return;
   }
   Draft = null;
@@ -4266,6 +4395,7 @@ Screens.home = {
     } else if (Plan.daysLeft() <= 5) {
       h += `<div class="banner warn">${ic('star')}<div class="grow">ينتهي اشتراك الباقة ${esc(Plan.cfg().name)} خلال ${Math.max(0, Plan.daysLeft())} يوم</div><button class="btn sm" data-act="go" data-to="plans">تجديد</button></div>`;
     }
+    h += Promo.card(true);
     const up = updateInfo();
     if (up) h += `<div class="banner info" id="upBanner">${ic('download')}<div class="grow">تحديث جديد متوفر (${esc(up.v)})${up.notes ? `<div class="small">${esc(up.notes)}</div>` : ''}</div><button class="btn sm" data-act="appUpdate">تحديث</button></div>`;
     const remN = Plan.can('remind') ? Remind.dueToday().length : 0;
@@ -4971,7 +5101,7 @@ async function choosePrinter(kind = 'label') {
   await Printers.set(kind, d); Cloud.ev('printer_set', { k: kind[0] }); toast('تم اختيار الطابعة ' + d.name + ' ✓');
   return d;
 }
-ACT.labelSet = async () => { if (await needPlan('barcode')) Nav.go('labelSet'); };
+ACT.labelSet = () => Plan.can('barcode') ? Nav.go('labelSet') : can('plans') ? Nav.go('preview', { f: 'barcode' }) : needPlan('barcode');
 Screens.labelSet = {
   noTabs: true, title: 'طابعة الملصقات',
   render() {
@@ -5109,9 +5239,7 @@ Screens.reports = {
   noTabs: true, title: 'التقارير',
   render() {
     if (!can('reports')) return `<div class="card">${emptyBox('lock', 'التقارير من صلاحية المدير')}</div>`;
-    if (!Plan.can('reports')) return `<div class="locked"><div class="locked-blur"><div class="stats">${['المبيعات', 'المشتريات', 'الربح التقديري', 'المبالغ المحصّلة'].map(l => `<div class="stat g"><div class="l">${l}</div><div class="v">000.000</div></div>`).join('')}</div></div>
-      <div class="card center locked-card"><div class="up-ic">${ic('chart')}</div><h3>التقارير والأرباح</h3><p class="muted" style="margin:0 0 12px">اعرف مبيعاتك وأرباحك وضريبتك لأي فترة، وصدّرها إلى Excel. متاحة في <b>الباقة المتقدمة</b>.</p>
-      <button class="btn" data-act="go" data-to="plans" data-p='{"from":"reports"}'>${ic('star')} عرض الباقات</button></div></div>`;
+    if (!Plan.can('reports')) return Screens.preview.render({ f: 'reports' });
     const [f, t] = periodRange(UI.rep, UI.repFrom, UI.repTo), r = report(f, t);
     const hasVat = r.salesVat > 0 || r.purVat > 0;
     return `<div class="chips" id="rpC">${[['today', 'اليوم'], ['week', 'هذا الأسبوع'], ['month', 'هذا الشهر'], ['last', 'الشهر الماضي'], ['year', 'هذه السنة'], ['custom', 'فترة محددة']].map(([k, l]) => `<button class="chip ${UI.rep === k ? 'on' : ''}" data-k="${k}">${l}</button>`).join('')}</div>
@@ -5133,7 +5261,7 @@ Screens.reports = {
   },
   mount() {
     if (!can('reports')) return;
-    if (!Plan.can('reports')) { Cloud.ev('paywall', { f: 'reports' }); return; }
+    if (!Plan.can('reports')) { Cloud.ev('paywall', { f: 'reports' }); return Screens.preview.mount(null, { f: 'reports' }); }
     Cloud.ev('report_view', { k: UI.rep });
     $('#rpC').onclick = e => { const b = e.target.closest('[data-k]'); if (!b) return; UI.rep = b.dataset.k; if (UI.rep === 'custom' && !UI.repFrom) { UI.repFrom = today().slice(0, 8) + '01'; UI.repTo = today(); } render(); };
     if ($('#rpF')) { $('#rpF').onchange = e => { UI.repFrom = e.target.value; render(); }; $('#rpT').onchange = e => { UI.repTo = e.target.value; render(); }; }
@@ -5173,6 +5301,7 @@ Screens.more = {
     </div><div class="list">
       ${moreRow(Vault.auto() ? 'unlock' : 'shield', 'الحماية والرمز السري', Vault.auto() ? 'يُفتح بدون رمز سري' : 'القفل التلقائي، تغيير الرمز', 'data-act="go" data-to="security"')}
       ${can('backup') ? moreRow('cloud', 'النسخ الاحتياطي والاستعادة', AutoBk.avail() && AutoBk.on && AutoBk.last ? 'نسخ تلقائي في الجوال · ' + fmtDate(ymd(new Date(AutoBk.last))) : DB.lastBackup ? 'آخر نسخة: ' + fmtDate(ymd(new Date(DB.lastBackup))) : 'لم تُؤخذ نسخة بعد', 'data-act="go" data-to="backup"') : ''}
+      ${can('plans') && Plan.id !== 'advanced' ? moreRow('eye', 'ميزات الباقات المدفوعة', 'معاينة كل ميزة قبل الاشتراك', 'data-act="go" data-to="feats" id="moreFeats"') : ''}
       ${can('plans') ? moreRow('star', 'الاشتراك والباقات', 'الباقة ' + Plan.cfg().name + (Plan.src ? ' — ' + Plan.srcTxt() : ''), 'data-act="go" data-to="plans" id="morePlans"') : ''}
     </div><div class="list">
       ${moreRow('headset', 'الدعم الفني والاقتراحات', 'واتساب ' + APP.contactLocal, 'data-act="support"')}
@@ -5359,6 +5488,12 @@ function planPrice(id, per = UI.planPer) {
   }
   return `${(per === 'y' ? P.priceY : P.price).toFixed(3)} ر.ع. / ${PERIOD_TXT[per]}`;
 }
+/* السعر في بطاقة الباقة مع العرض الترويجي (الشهري فقط) */
+function planPriceHtml(id, per = UI.planPer) {
+  const pr = per === 'm' && Promo.for(id);
+  if (!pr) return planPrice(id, per);
+  return `<s class="old-p">${PLANS[id].price.toFixed(3)}</s> ${Promo.priceTxt(pr.price)} <span class="small">لأول شهر</span>`;
+}
 function planSave(id) {
   const m = Billing.prod(id, 'm'), y = Billing.prod(id, 'y');
   if (FW_CHANNEL === 'play' && m && y && m.num && y.num) return Math.round((1 - y.num / (m.num * 12)) * 100);
@@ -5375,8 +5510,10 @@ function planCard(id) {
     ${trial ? `<div class="small muted center" style="margin-top:6px">بعد التجربة ${planPrice(id)} — ألغِ قبل انتهائها ولن تدفع شيئاً</div>` : ''}`;
   const sv = id !== 'free' && per === 'y' ? planSave(id) : 0;
   return `<div class="plan ${best ? 'best' : ''} ${cur ? 'cur' : ''}" id="plan-${id}">${best ? '<span class="plan-tag">الأكثر فائدة</span>' : ''}
-    <div class="plan-h"><b>الباقة ${P.name}</b><span class="plan-p">${planPrice(id)}${sv > 0 ? ` <span class="badge save">وفّر ${sv}%</span>` : ''}${trial ? ` <span class="badge save">${trial} أيام مجاناً</span>` : ''}</span></div>
-    <ul>${feats.map(([t, ok]) => `<li class="${ok ? '' : 'no'}">${ic(ok ? 'check' : 'x')} ${esc(t)}</li>`).join('')}</ul>${btn}</div>`;
+    <div class="plan-h"><b>الباقة ${P.name}</b><span class="plan-p">${planPriceHtml(id)}${sv > 0 ? ` <span class="badge save">وفّر ${sv}%</span>` : ''}${trial ? ` <span class="badge save">${trial} أيام مجاناً</span>` : ''}</span></div>
+    <ul>${feats.map(([t, ok]) => `<li class="${ok ? '' : 'no'}">${ic(ok ? 'check' : 'x')} ${esc(t)}</li>`).join('')}</ul>${btn}
+    ${id !== 'free' && !cur && PLAN_RANK[id] > PLAN_RANK[Plan.id] ? `<button class="link pv-link" data-act="go" data-to="feats">${ic('eye')} معاينة ميزات الباقة</button>` : ''}
+    ${id !== 'free' && per === 'm' && Promo.for(id) ? `<div class="small muted center">ثم ${planPrice(id, 'm')} — يمكنك الإلغاء قبل التجديد</div>` : ''}</div>`;
 }
 Screens.plans = {
   noTabs: true, title: 'الاشتراك والباقات',
@@ -5385,6 +5522,8 @@ Screens.plans = {
     let h = `<div class="card plan-now"><div class="muted small">باقتك الحالية</div><div class="b" style="font-size:22px">الباقة ${esc(Plan.cfg().name)}</div>
       <div class="small muted">${Plan.paid() ? (Plan.src ? Plan.srcTxt() : '') + (Plan.exp ? ' · صالحة حتى ' + fmtDate(Plan.exp) : Plan.src === 'code' ? ' · بدون تاريخ انتهاء' : ' · تتجدد تلقائياً') : `استخدمت ${Plan.monthCount()} من ${PLANS.free.limit} فاتورة هذا الشهر`}</div>
       ${Plan.codeExpired() ? '<div class="small" style="color:var(--danger);margin-top:4px">انتهت صلاحية كود التفعيل السابق</div>' : ''}</div>`;
+    h += Promo.card();
+    if (Plan.id !== 'advanced') h += `<button class="row list pv-entry" data-act="go" data-to="feats"><div class="ico">${ic('eye')}</div><div class="grow"><div class="t">جرّب الميزات قبل أن تشترك</div><div class="s">معاينة كل ميزة ببيانات توضيحية</div></div>${ic('chev', 'chev')}</button>`;
     h += `<div class="seg" id="perSeg"><button data-per="m" class="${UI.planPer === 'm' ? 'on' : ''}">شهري</button><button data-per="y" class="${UI.planPer === 'y' ? 'on' : ''}">سنوي <span class="badge save">وفّر حتى ${Math.max(planSave('basic'), planSave('advanced'))}%</span></button></div>`;
     h += ['free', 'basic', 'advanced'].map(planCard).join('');
     if (play) {
@@ -5435,8 +5574,10 @@ ACT.subscribe = async el => {
     return;
   }
   Cloud.ev('buy_start', { p: plan, s: 'wa', y: UI.planPer });
-  const S = DB.settings, yr = UI.planPer === 'y';
-  openExternal(waLink(APP.devWhatsApp, `السلام عليكم، أرغب بالاشتراك في الباقة ${PLANS[plan].name} (${yr ? 'سنوي' : 'شهري'} — ${planPrice(plan)}) لتطبيق ${APP.name}\nاسم النشاط: ${S.bizName}\nالهاتف: ${S.phone || ''}\nرمز الجهاز: ${License.deviceLabel()}`));
+  const S = DB.settings, yr = UI.planPer === 'y', pr = !yr && Promo.for(plan);
+  if (pr) Cloud.ev('promo_buy', { p: plan });
+  const what = pr ? `شهري — ${pr.title}: الشهر الأول بـ ${Promo.priceTxt(pr.price)} ثم ${planPrice(plan, 'm')}` : `${yr ? 'سنوي' : 'شهري'} — ${planPrice(plan)}`;
+  openExternal(waLink(APP.devWhatsApp, `السلام عليكم، أرغب بالاشتراك في الباقة ${PLANS[plan].name} (${what}) لتطبيق ${APP.name}\nاسم النشاط: ${S.bizName}\nالهاتف: ${S.phone || ''}\nرمز الجهاز: ${License.deviceLabel()}`));
 };
 ACT.playRestore = async () => { await Billing.restore(); render(); toast(Plan.src === 'play' ? 'تمت استعادة اشتراكك ✓' : 'لا يوجد اشتراك فعّال على حساب Google هذا'); };
 ACT.playManage = () => Billing.manage();
@@ -5632,7 +5773,7 @@ Screens.cloud = {
     if (!Sync.on()) {
       if (!Plan.can('cloud')) return `<div class="card center locked-card"><div class="up-ic">${ic('laptop')}</div><h3>أدر محلك من الكمبيوتر</h3>
         <p class="muted" style="margin:0 0 12px">افتح فواتيري من متصفح الكمبيوتر وتابع فواتيرك وأصنافك لحظة بلحظة، وأضف موظفين بصلاحيات محددة. متاحة في <b>الباقة الأساسية</b> (كمبيوتر واحد) و<b>المتقدمة</b> (حتى 3 أجهزة كمبيوتر و5 مستخدمين).</p>
-        <button class="btn" data-act="go" data-to="plans" data-p='{"from":"cloud"}'>${ic('star')} عرض الباقات</button></div>`;
+        <div class="up-btns"><button class="btn" data-act="go" data-to="plans" data-p='{"from":"cloud"}'>${ic('star')} الترقية الآن</button><button class="btn sec" data-act="pv" data-f="cloud">${ic('eye')} معاينة</button></div></div>`;
       if (Sync.linked()) return '';
       return `<div class="card"><h3>${ic('cloud')} المزامنة السحابية المشفّرة</h3>
         <div class="stack" style="font-size:16px"><div>${ic('laptop')} افتح محلك من متصفح أي كمبيوتر</div><div>${ic('users')} أضف موظفين بصلاحيات (الباقة المتقدمة)</div><div>${ic('shield')} تشفير من طرف إلى طرف: لا أحد غيرك يقرأ بياناتك، حتى نحن</div><div>${ic('upload')} استعادة كل بياناتك إذا فقدت جوالك</div></div></div>
@@ -5768,7 +5909,7 @@ async function pairFlow(kind) {
 }
 
 /* ---------- تذكير العملاء المتأخرين ---------- */
-ACT.remind = async () => { if (await needPlan('remind')) Nav.go('remind'); };
+ACT.remind = () => Plan.can('remind') ? Nav.go('remind') : can('plans') ? Nav.go('preview', { f: 'remind' }) : needPlan('remind');
 Screens.remind = {
   noTabs: true, title: 'تذكير العملاء بالدفع',
   actions: () => can('remindSet') ? `<button class="tb-btn" data-act="go" data-to="remindSet" aria-label="الإعدادات">${ic('sliders')}</button>` : '',
@@ -5891,7 +6032,7 @@ async function printReceipt(inv) {
     }
   });
 }
-ACT.receiptSet = async () => { if (await needPlan('receipt')) Nav.go('receiptSet'); };
+ACT.receiptSet = () => Plan.can('receipt') ? Nav.go('receiptSet') : can('plans') ? Nav.go('preview', { f: 'receipt' }) : needPlan('receipt');
 Screens.receiptSet = {
   noTabs: true, title: 'طابعة الإيصالات',
   render() {
@@ -5919,6 +6060,266 @@ Screens.receiptSet = {
 /* ---------- واجهة الكمبيوتر: قائمة جانبية ---------- */
 function desktopCls() { document.documentElement.classList.toggle('desk', !isNative() && innerWidth >= 1000); }
 addEventListener('resize', () => desktopCls());
+
+'use strict';
+/* =====================================================================
+   معاينة ميزات الباقات المدفوعة، ونافذة الترقية، والعرض الترويجي
+   المعاينة ببيانات توضيحية وعلامة «نموذج للمعاينة» — لا تتيح استخدام الميزة
+   ===================================================================== */
+Object.assign(IC, {
+  eye: '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  gift: '<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M5 12v9h14v-9"/><path d="M12 8c-2-3.5-6-3.5-6-1 0 1.6 2.6 1 6 1zM12 8c2-3.5 6-3.5 6-1 0 1.6-2.6 1-6 1z"/>',
+  percent: '<path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/>'
+});
+
+/* ---------- العرض الترويجي (يُضبط من لوحة التحكم: config «promo») ----------
+   { on, from, until (تاريخ ISO), price (ر.ع. للشهر الأول), plans: ['basic','advanced'], title }
+   للنسخة المباشرة والويب فقط؛ نسخة Google Play تستخدم عروض Play Console */
+const Promo = {
+  cur() {
+    if (FW_CHANNEL === 'play') return null;
+    const p = Cloud.cfg && Cloud.cfg.promo;
+    if (!p || typeof p !== 'object' || p.on === false) return null;
+    const t = Plan.now(), a = Date.parse(p.from || '') || 0, b = Date.parse(p.until || '');
+    if (!b || t < a || t > b) return null;
+    const price = Number(p.price);
+    if (!isFinite(price) || price < 0 || price > 100) return null;
+    const plans = (Array.isArray(p.plans) && p.plans.length ? p.plans : ['basic', 'advanced']).filter(x => x === 'basic' || x === 'advanced');
+    return plans.length ? { price, until: b, plans, title: String(p.title || 'عرض الإطلاق').slice(0, 40) } : null;
+  },
+  /* العرض يخص الاشتراك الشهري، ولمن يرقّي إلى باقة أعلى من باقته */
+  for(id) { const p = this.cur(); return p && p.plans.includes(id) && PLAN_RANK[id] > PLAN_RANK[Plan.id] ? p : null; },
+  any() { return !!(this.for('basic') || this.for('advanced')); },
+  priceTxt(v) { return v > 0 && v < 1 ? `${Math.round(v * 1000)} بيسة` : v === 0 ? 'مجاناً' : `${v.toFixed(3)} ر.ع.`; },
+  plansTxt(p) { return p.plans.length === 2 ? 'أي باقة' : 'الباقة ' + PLANS[p.plans[0]].name; },
+  /* المدة المتبقية بلغة الواجهة (الأرقام لا تُترجم آلياً) */
+  leftTxt() {
+    const p = this.cur(); if (!p) return '';
+    const ms = Math.max(0, p.until - Plan.now()), mins = Math.ceil(ms / 6e4), h = Math.floor(mins / 60), d = Math.floor(h / 24), hh = h % 24;
+    if (I18N.lang === 'en') return d ? `${d} day${d > 1 ? 's' : ''}${hh ? ` ${hh} h` : ''}` : h ? `${h} h ${mins % 60} min` : `${mins} min`;
+    const ar = (n, one, two, few, many) => n === 1 ? one : n === 2 ? two : n <= 10 ? `${n} ${few}` : `${n} ${many}`;
+    if (d) return ar(d, 'يوم واحد', 'يومين', 'أيام', 'يوماً') + (hh ? ' و' + ar(hh, 'ساعة', 'ساعتين', 'ساعات', 'ساعة') : '');
+    if (h) return ar(h, 'ساعة', 'ساعتين', 'ساعات', 'ساعة') + (mins % 60 ? ' و' + ar(mins % 60, 'دقيقة', 'دقيقتين', 'دقائق', 'دقيقة') : '');
+    return ar(Math.max(1, mins), 'دقيقة', 'دقيقتين', 'دقائق', 'دقيقة');
+  },
+  /* بطاقة العرض: في الرئيسية (شريط) وفي الباقات والمعاينة (بطاقة) */
+  card(compact) {
+    const p = this.cur(); if (!p || !this.any() || !can('plans')) return '';
+    const left = `<span translate="no">${esc(this.leftTxt())}</span>`;
+    if (compact) return `<div class="banner promo" id="promoBanner">${ic('gift')}<div class="grow"><b>${esc(p.title)}</b><div class="small"><span>اشترك في ${this.plansTxt(p)} بـ</span> <b>${this.priceTxt(p.price)}</b> <span>لأول شهر</span> · <span>ينتهي العرض خلال</span> ${left}</div></div><button class="btn sm" data-act="go" data-to="plans" data-p='{"from":"promo"}'>اشترك</button></div>`;
+    return `<div class="promo-card"><div class="pc-ic">${ic('gift')}</div><div class="grow"><div class="b">${esc(p.title)}</div>
+      <div><span>اشترك في ${this.plansTxt(p)} بـ</span> <b class="pc-price">${this.priceTxt(p.price)}</b> <span>لأول شهر</span></div>
+      <div class="small"><span>ينتهي العرض خلال</span> ${left}${UI.planPer === 'y' ? ' · <span>العرض على الاشتراك الشهري</span>' : ''}</div></div></div>`;
+  }
+};
+
+/* ---------- وصف الميزات ومجموعات المعاينة ---------- */
+const FEAT_DESC = {
+  unlimited: 'أصدر ما تشاء من الفواتير كل شهر دون التوقف عند حد الباقة المجانية.',
+  noads: 'واجهة نظيفة بلا إعلانات في الرئيسية وصفحة الفاتورة.',
+  wholesale: 'فاتورة بيع بالجملة فيها السعر المقترح لبيع كل صنف بالمفرد.',
+  pdf: 'أرسل الفاتورة ملف PDF لعميلك أو احفظها للطباعة والبريد.',
+  print: 'اطبع الفاتورة على أي طابعة متصلة بجوالك أو بالكمبيوتر.',
+  logo: 'يظهر شعار محلك أعلى كل فاتورة فتبدو احترافية.',
+  cloud: 'افتح محلك من متصفح الكمبيوتر وتابع كل فاتورة لحظة بلحظة، بتشفير كامل.',
+  reports: 'مبيعاتك وأرباحك وضريبتك لأي فترة، والأصناف الأكثر مبيعاً.',
+  export: 'صدّر الفواتير والمخزون إلى ملف Excel لمحاسبك.',
+  vat: 'فاتورة ضريبية تحسب ضريبة القيمة المضافة وتُظهرها لعميلك.',
+  bilingual: 'فاتورة واحدة بالعربية والإنجليزية لعملائك من غير العرب.',
+  autotr: 'يترجم التطبيق أسماء أصنافك إلى الإنجليزية تلقائياً لتظهر في الفاتورة.',
+  barcode: 'باركود لكل صنف، وطباعة ملصقات الأسعار على طابعة الملصقات بالبلوتوث.',
+  remind: 'يحدد التطبيق موعد تذكير كل عميل متأخر وينبّهك، فترسل له رسالة جاهزة بضغطة.',
+  users: 'أضف حتى 5 موظفين على جوالاتهم بصلاحية مدير أو بائع.',
+  receipt: 'اطبع الفاتورة إيصالاً على طابعة حرارية 58 أو 80 مم بالبلوتوث.'
+};
+const FEAT_ICON = { unlimited: 'receipt', noads: 'x', wholesale: 'truck', pdf: 'file', print: 'print', logo: 'image', cloud: 'laptop', reports: 'chart', export: 'download', vat: 'percent', bilingual: 'lang', autotr: 'globe', barcode: 'barcode', remind: 'bell', users: 'users', receipt: 'receipt2' };
+const FEAT_PV = { unlimited: 'limit', noads: 'noads', wholesale: 'inv', pdf: 'inv', print: 'inv', logo: 'inv', vat: 'inv', bilingual: 'inv', reports: 'reports', export: 'reports', remind: 'remind', receipt: 'receipt', barcode: 'barcode', autotr: 'autotr', cloud: 'cloud', users: 'cloud' };
+const PV_TAB = { wholesale: 'whole', vat: 'vat', bilingual: 'bi' };
+
+/* ---------- نافذة الترقية: «الترقية الآن» بجوار «سأشترك لاحقاً» ----------
+   ترجع: 'up' | 'later' | 'pv' */
+async function upsellDlg({ feat = '', title, msg, plan, icon, from }) {
+  const P = PLANS[plan || (feat ? Plan.minFor(feat) : 'basic')], pv = feat && FEAT_PV[feat], pr = Promo.for(P.id);
+  const priceTxt = FW_CHANNEL === 'play' ? planPrice(P.id, 'm') : `${P.price.toFixed(3)} ر.ع. / ${PERIOD_TXT.m}`;
+  Cloud.ev('upsell', { f: feat || from || '' });
+  const r = await Modal.open(`<div class="center up-dlg"><div class="up-ic">${ic(icon || FEAT_ICON[feat] || 'star')}</div>
+      <h3 style="margin:8px 0 4px">${esc(title || FEAT_TXT[feat] || 'هذه الميزة')}</h3>
+      <p class="muted" style="margin:0 0 10px;font-size:16px">${msg || esc(FEAT_DESC[feat] || '')}</p>
+      <div class="up-plan"><span class="badge pro">الباقة ${esc(P.name)}${P.id === 'basic' ? ' والمتقدمة' : ''}</span> <span class="small muted">${priceTxt}</span></div>
+      ${pr ? `<div class="up-promo">${ic('gift')} <span>${esc(pr.title)}: أول شهر بـ</span> <b>${Promo.priceTxt(pr.price)}</b></div>` : ''}</div>
+    <div class="up-btns"><button class="btn" data-r="up">${ic('star')} الترقية الآن</button><button class="btn sec" data-r="later">سأشترك لاحقاً</button></div>
+    ${pv && !Plan.can(feat) ? `<button class="link up-pv" data-r="pv">${ic('eye')} شاهد معاينة الميزة</button>` : ''}`, {
+    type: 'dlg', onMount(el) { el.addEventListener('click', e => { const b = e.target.closest('[data-r]'); if (b) Modal.close(b.dataset.r); }); }
+  });
+  const res = r || 'later';
+  Cloud.ev('upsell_' + res, { f: feat || from || '' });
+  return res;
+}
+
+/* ---------- بيانات توضيحية ---------- */
+function pvMark(cv) {
+  const ctx = cv.getContext('2d'), W = cv.width, H = cv.height, s = Math.max(16, Math.round(W / 13));
+  const txt = I18N.lang === 'en' ? 'SAMPLE · PREVIEW' : 'نموذج للمعاينة';
+  ctx.save(); ctx.globalAlpha = .16; ctx.fillStyle = '#DC2626'; ctx.font = `800 ${s}px ${FONT}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.direction = I18N.lang === 'en' ? 'ltr' : 'rtl';
+  ctx.translate(W / 2, H / 2); ctx.rotate(-0.5);
+  const R = Math.hypot(W, H) / 2 + s * 4, sx = ctx.measureText(txt).width + s * 2.5, sy = s * 3.6;
+  let row = 0;
+  for (let y = -R; y <= R; y += sy, row++) for (let x = -R - (row % 2 ? sx / 2 : 0); x <= R; x += sx) ctx.fillText(txt, x, y);
+  ctx.restore(); return cv;
+}
+function demoLogo() {
+  const c = document.createElement('canvas'); c.width = c.height = 240; const x = c.getContext('2d');
+  x.fillStyle = '#0F766E'; x.beginPath(); x.arc(120, 120, 116, 0, Math.PI * 2); x.fill();
+  x.strokeStyle = 'rgba(255,255,255,.55)'; x.lineWidth = 8; x.beginPath(); x.arc(120, 120, 96, 0, Math.PI * 2); x.stroke();
+  const n = [...String((DB && DB.settings.bizName) || 'م').trim()][0] || 'م';
+  x.fillStyle = '#fff'; x.font = `800 112px ${FONT}`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(n, 120, 128);
+  return c.toDataURL('image/png');
+}
+function demoInv(kind) {
+  const whole = kind === 'whole';
+  const lines = whole ? [
+    { name: 'أرز بسمتي 5 كيلو', nameEn: 'Basmati rice 5 kg', qty: 10, unit: 'كيس', price: 3.900, sug: 4.500 },
+    { name: 'زيت دوار الشمس 1.8 لتر', nameEn: 'Sunflower oil 1.8 L', qty: 12, unit: 'حبة', price: 1.450, sug: 1.750 },
+    { name: 'سكر أبيض 2 كيلو', nameEn: 'White sugar 2 kg', qty: 20, unit: 'كيس', price: 0.780, sug: 0.950 }
+  ] : [
+    { name: 'أرز بسمتي 5 كيلو', nameEn: 'Basmati rice 5 kg', qty: 2, unit: 'كيس', price: 4.500 },
+    { name: 'زيت دوار الشمس 1.8 لتر', nameEn: 'Sunflower oil 1.8 L', qty: 1, unit: 'حبة', price: 1.750 },
+    { name: 'حليب طازج', nameEn: 'Fresh milk', qty: 3, unit: 'لتر', price: 0.650 }
+  ];
+  const inv = { id: 'pv', type: 'sale', mode: whole ? 'whole' : 'retail', no: 'S-0128', date: today(), created: Date.now(), partyName: whole ? dn('بقالة النور', 'Al Noor Grocery') : dn('سالم الحارثي', 'Salem Al Harthi'), partyPhone: '91234567',
+    by: Me.name || '', lines, discount: 0, vatRate: kind === 'vat' ? 5 : 0, vatInclusive: false, payments: [], note: '' };
+  inv.total = calcInvoice(inv).total;
+  inv.payments = [{ d: today(), a: whole ? round(inv.total / 2) : inv.total, m: 'cash' }];
+  return inv;
+}
+const dn = (ar, en) => I18N.lang === 'en' ? en : ar; // اسم توضيحي بلغة الواجهة
+const imgOf = (cv, cls = '') => `<img class="${cls}" src="${cv.toDataURL('image/png')}" alt="" draggable="false">`;
+const pvDis = (html, cls = 'btn sec') => `<button class="${cls}" disabled tabindex="-1">${html}</button>`;
+
+/* ---------- محتوى المعاينة لكل مجموعة ---------- */
+const PV_BODY = {
+  inv(p) {
+    const tab = p.tab || PV_TAB[p.f] || 'logo';
+    return `<div class="seg pv-tabs" id="pvTabs">${[['logo', 'بشعار محلك'], ['vat', 'ضريبية'], ['bi', 'عربي + English'], ['whole', 'جملة']].map(([k, l]) => `<button data-t="${k}" class="${tab === k ? 'on' : ''}">${l}</button>`).join('')}</div>
+      <div class="pv-img" id="pvImg"><div class="center muted" style="padding:40px 0">جاري تجهيز النموذج…</div></div>
+      <div class="two pv-dis">${pvDis(`${ic('file')} ملف PDF`)}${pvDis(`${ic('print')} طباعة`)}</div>`;
+  },
+  async invMount(p) {
+    const draw = async t => {
+      const box = $('#pvImg'); if (!box) return;
+      const cv = await invoiceCanvas(demoInv(t), { lang: t === 'bi' ? 'bi' : invLangDefault() === 'en' ? 'en' : 'ar', pv: { logo: demoLogo() } });
+      if ($('#pvImg')) $('#pvImg').innerHTML = imgOf(pvMark(cv));
+    };
+    $('#pvTabs').onclick = e => { const b = e.target.closest('[data-t]'); if (!b) return; $$('#pvTabs button').forEach(x => x.classList.toggle('on', x === b)); Cloud.ev('pv_tab', { t: b.dataset.t }); draw(b.dataset.t); };
+    await draw(p.tab || PV_TAB[p.f] || 'logo');
+  },
+  reports() {
+    const st = [['المبيعات (38 فاتورة)', 1245.5, 'g'], ['المشتريات (12 فاتورة)', 812.25, 'bl'], ['الربح التقديري', 386.75, 'g'], ['تكلفة البضاعة المباعة', 798, ''], ['المبالغ المحصّلة', 1104, 'g'], ['المبالغ المدفوعة للموردين', 700, 'o'], ['ديون العملاء من الفترة', 141.5, 'r'], ['ديون الموردين من الفترة', 112.25, 'o']];
+    const top = [[dn('أرز بسمتي 5 كيلو', 'Basmati rice 5 kg'), 46, 207], [dn('زيت دوار الشمس 1.8 لتر', 'Sunflower oil 1.8 L'), 58, 101.5], [dn('حليب طازج', 'Fresh milk'), 120, 78], [dn('سكر أبيض 2 كيلو', 'White sugar 2 kg'), 64, 60.8]];
+    const bars = [42, 65, 38, 80, 56, 92, 70];
+    return `<div class="chips">${['اليوم', 'هذا الأسبوع', 'هذا الشهر', 'الشهر الماضي'].map((l, i) => `<span class="chip ${i === 2 ? 'on' : ''}">${l}</span>`).join('')}</div>
+      <div class="stats">${st.map(([l, v, c]) => `<div class="stat ${c}"><div class="l">${l}</div><div class="v">${money(v)}</div></div>`).join('')}</div>
+      <div class="card"><h3>المبيعات اليومية</h3><div class="pv-bars">${bars.map(v => `<i style="height:${v}%"></i>`).join('')}</div></div>
+      <div class="card"><h3>الأصناف الأكثر مبيعاً</h3>${top.map(([n, q, a], i) => `<div class="tr" style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line)"><span>${i + 1}. <span translate="no">${n}</span> <span class="muted small">(${q})</span></span><span class="amt">${money(a)}</span></div>`).join('')}</div>
+      <div class="btns pv-dis">${pvDis(`${ic('download')} تصدير الفواتير<span class="small muted" style="font-weight:400">ملف Excel (CSV)</span>`)}${pvDis(`${ic('download')} تصدير المخزون<span class="small muted" style="font-weight:400">ملف Excel (CSV)</span>`)}</div>`;
+  },
+  remind() {
+    const S = DB.settings, msg = REM_MSG[I18N.lang === 'en' ? 'en' : 'ar'].replace(/\{(\w+)\}/g, (_, k) => ({ name: dn('سالم الحارثي', 'Salem'), amount: money(45) + ' ' + curFor(I18N.lang === 'en'), since: I18N.lang === 'en' ? ' (overdue 12 days)' : ' (متأخر 12 يوماً)', invoices: 'S-0097، S-0112', biz: S.bizName || '', phone: S.phone || '' })[k] || '');
+    const cust = [[dn('سالم الحارثي', 'Salem Al Harthi'), 45, 12, 1], [dn('محمد البلوشي', 'Mohammed Al Balushi'), 18.5, 9, 1], [dn('خالد الشحي', 'Khalid Al Shehhi'), 27.25, 3, 0]];
+    return `<div class="pv-notif">${ic('bell')}<div class="grow"><b>${esc(APP.name)}</b><div class="small">عميلان موعد تذكيرهم بالدفع اليوم</div></div><span class="small muted">9:00</span></div>
+      <div class="card"><div class="row-line"><div class="grow"><div class="b">${ic('clock')} الجدولة التلقائية مفعّلة</div><div class="small muted">أول تذكير بعد 3 أيام من الاستحقاق، ثم كل 7 أيام · عبر واتساب</div></div></div></div>
+      <div class="sec-title">مستحق اليوم (2)</div>
+      <div class="list">${cust.map(([n, a, d, now]) => `<div class="row rem-row" style="cursor:default"><div class="ico">${ic('user')}</div><div class="grow"><div class="t" translate="no">${n}</div><div class="s"><span class="amt" style="color:var(--danger)">${money(a)}</span> · متأخر ${d} يوماً${now ? '' : ' · الموعد بعد 4 أيام'}</div></div><div class="rem-acts"><button class="mini wa" disabled tabindex="-1">${ic('wa')}</button></div></div>`).join('')}</div>
+      <div class="sec-title">الرسالة التي تصل لعميلك</div>
+      <div class="pv-bubble" translate="no">${esc(msg).replace(/\n/g, '<br>')}</div>
+      ${pvDis(`${ic('wa')} إرسال الكل عبر واتساب (2)`, 'btn wa')}`;
+  },
+  receipt() { return `<div class="pv-img paper" id="pvImg"><div class="center muted" style="padding:40px 0">جاري تجهيز النموذج…</div></div><div class="small muted center" style="margin:8px">هكذا يُطبع الإيصال على طابعة 58 مم مع شعار محلك</div>`; },
+  async receiptMount() {
+    const cv = await receiptCanvas(demoInv('logo'), { pw: 384, logo: true, pv: { logo: demoLogo() }, lang: I18N.lang === 'en' ? 'en' : 'ar' });
+    if ($('#pvImg')) $('#pvImg').innerHTML = imgOf(pvMark(cv));
+  },
+  barcode() {
+    return `<div class="pv-img label" id="pvImg"><div class="center muted" style="padding:40px 0">جاري تجهيز النموذج…</div></div>
+      <div class="card"><div class="stack" style="font-size:15px"><div>${ic('check')} يُنشئ التطبيق باركوداً لكل صنف تلقائياً</div><div>${ic('check')} اطبع ملصقات الأسعار لأصناف كثيرة دفعة واحدة</div><div>${ic('check')} يدعم طابعات الملصقات الحرارية بالبلوتوث</div></div></div>`;
+  },
+  async barcodeMount() {
+    const d12 = '628123456789', it = { name: 'أرز بسمتي 5 كيلو', nameEn: 'Basmati rice 5 kg', sale: 4.5, barcode: d12 + ean13Check(d12) };
+    const cv = await labelCanvas(it, Object.assign(labelCfg(), { w: 50, h: 30, shop: true, price: true, en: true }));
+    if ($('#pvImg')) $('#pvImg').innerHTML = imgOf(pvMark(cv));
+  },
+  autotr() {
+    const rows = [['أرز بسمتي', 'Basmati rice'], ['زيت زيتون', 'Olive oil'], ['حليب طازج', 'Fresh milk'], ['سكر أبيض', 'White sugar'], ['هيل أخضر', 'Green cardamom']];
+    return `<div class="card"><h3>${ic('globe')} تكتب اسم الصنف بالعربية… ويُترجم تلقائياً</h3>${rows.map(([a, e]) => `<div class="pv-tr"><span translate="no">${a}</span>${ic('chev')}<span class="ltr" translate="no">${e}</span></div>`).join('')}</div>
+      <div class="small muted" style="margin:0 4px 12px">تظهر الأسماء الإنجليزية في الفاتورة الإنجليزية أو ثنائية اللغة، ويمكنك تعديل أي ترجمة.</div>`;
+  },
+  cloud() {
+    const devs = [['phone', 'جوال المالك', 'هذا الجهاز · متصل الآن', 'مالك'], ['laptop', 'كمبيوتر المحل', 'متصل قبل 3 دقائق', 'مدير'], ['phone', 'جوال أحمد', 'متصل قبل ساعة', 'بائع']];
+    return `<div class="sec-title">الأجهزة المرتبطة</div><div class="list">${devs.map(([i, n, s, r]) => `<div class="row" style="cursor:default"><div class="ico">${ic(i)}</div><div class="grow"><div class="t">${n}</div><div class="s">${s}</div></div><span class="badge ok">${r}</span></div>`).join('')}</div>
+      <div class="card"><h3>الصلاحيات</h3><div class="stack" style="font-size:15px"><div><b>المالك:</b> كل شيء</div><div><b>المدير:</b> الفواتير والأصناف والتقارير والإعدادات</div><div><b>البائع:</b> فواتير البيع والعملاء فقط، ولا يرى التكلفة والأرباح والمشتريات</div></div></div>
+      <div class="card"><h3>كيف يعمل؟</h3><ol class="steps-ol"><li>فعّل المزامنة من جوالك.</li><li>افتح رابط فواتيري في متصفح الكمبيوتر.</li><li>امسح الرمز الظاهر على الشاشة بجوالك.</li></ol>
+      <div class="small muted">الأساسية: كمبيوتر واحد · المتقدمة: 3 أجهزة كمبيوتر و5 مستخدمين. البيانات مشفّرة على جهازك قبل رفعها.</div></div>
+      <div class="two pv-dis">${pvDis(`${ic('laptop')} ربط كمبيوتر`, 'btn')}${pvDis(`${ic('users')} إضافة مستخدم`)}</div>`;
+  },
+  limit() {
+    const used = Plan.monthCount(), lim = PLANS.free.limit;
+    return `<div class="card center"><div class="pv-big">${used} / ${lim}</div><div class="muted">فاتورة هذا الشهر في الباقة المجانية</div>
+      <div class="pv-meter"><i style="width:${Math.min(100, Math.round(used / lim * 100))}%"></i></div>
+      <div style="margin-top:12px;font-size:17px">${ic('check')} في الباقات المدفوعة: <b>فواتير بلا حد</b></div></div>`;
+  },
+  noads() {
+    return `<div class="card"><div class="pv-ad-x"><div class="ad-card" style="background:#7C2D12;color:#fff;pointer-events:none"><div class="grow"><div class="ad-t">إعلان</div><div class="ad-b">مساحة إعلانية في الباقة المجانية</div></div></div><div class="pv-x">${ic('x')}</div></div>
+      <div class="center" style="margin-top:12px;font-size:17px">${ic('check')} لا إعلانات في الرئيسية ولا في صفحة الفاتورة</div></div>`;
+  }
+};
+
+/* ---------- شاشة استعراض الميزات ---------- */
+ACT.pv = el => Nav.go('preview', { f: el.dataset.f });
+Screens.feats = {
+  noTabs: true, title: 'ميزات الباقات المدفوعة',
+  render() {
+    let h = Promo.card();
+    h += `<div class="banner info">${ic('eye')}<div class="grow small">اضغط أي ميزة لترى كيف تعمل قبل أن تشترك. المعاينة ببيانات توضيحية ولا تتيح استخدام الميزة.</div></div>`;
+    for (const id of ['basic', 'advanced']) {
+      const P = PLANS[id], list = P.feats.filter(f => id === 'basic' || !PLANS.basic.feats.includes(f));
+      h += `<div class="sec-title">الباقة ${P.name}${id === 'advanced' ? ' (تشمل ميزات الأساسية)' : ''}</div><div class="list">${list.map(f => `<button class="row" data-act="pv" data-f="${f}"><div class="ico">${ic(FEAT_ICON[f] || 'star')}</div><div class="grow"><div class="t">${esc(FEAT_TXT[f])}</div><div class="s">${esc(FEAT_DESC[f] || '')}</div></div>${Plan.can(f) ? '<span class="badge paid">متاحة لك</span>' : `<span class="pv-chip">${ic('eye')} معاينة</span>`}</button>`).join('')}</div>`;
+    }
+    if (!Plan.paid() || Plan.id === 'basic') h += `<button class="btn" style="margin-top:14px" data-act="go" data-to="plans" data-p='{"from":"feats"}'>${ic('star')} الترقية الآن</button>`;
+    return h;
+  },
+  mount() { Cloud.ev('feats_open'); }
+};
+
+/* ---------- شاشة معاينة ميزة ---------- */
+Screens.preview = {
+  noTabs: true, title: p => FEAT_TXT[p.f] || 'معاينة',
+  render(p) {
+    const f = FEAT_TXT[p.f] ? p.f : 'reports', g = FEAT_PV[f] || 'limit', own = Plan.can(f), P = PLANS[Plan.minFor(f)];
+    return `<div class="card pv-head"><div class="up-ic">${ic(FEAT_ICON[f] || 'star')}</div><div class="grow"><div class="b">${esc(FEAT_TXT[f])}</div><div class="small muted">${esc(FEAT_DESC[f] || '')}</div></div></div>
+      <div class="pv-note">${ic('eye')}<div class="grow">${own ? 'هذه الميزة متاحة في باقتك' : `<span>معاينة ببيانات توضيحية — متاحة في</span> <b>الباقة ${esc(P.name)}</b>`}</div></div>
+      <div class="pv-body">${PV_BODY[g](Object.assign({}, p, { f }))}</div>
+      ${own ? '' : pvBar(f)}`;
+  },
+  async mount(v, p = {}) {
+    const f = FEAT_TXT[p.f] ? p.f : 'reports', g = FEAT_PV[f] || 'limit';
+    Cloud.ev('pv_open', { f });
+    pvBarMount(f);
+    try { if (PV_BODY[g + 'Mount']) await PV_BODY[g + 'Mount'](Object.assign({}, p, { f })); }
+    catch (e) { console.warn('preview', e); const b = $('#pvImg'); if (b) b.innerHTML = '<div class="center muted" style="padding:30px 0">تعذّر تجهيز النموذج</div>'; }
+  }
+};
+function pvBar(f) {
+  if (!can('plans')) return `<div class="pv-bar"><div class="small muted center">اطلب من مالك المتجر ترقية الباقة لتفعيل هذه الميزة</div></div>`;
+  const pr = Promo.for(Plan.minFor(f));
+  return `<div class="pv-bar">${pr ? `<div class="up-promo">${ic('gift')} <span>${esc(pr.title)}: أول شهر بـ</span> <b>${Promo.priceTxt(pr.price)}</b> · <span>ينتهي العرض خلال</span> <span translate="no">${esc(Promo.leftTxt())}</span></div>` : ''}
+    <div class="up-btns"><button class="btn" id="pvUp">${ic('star')} الترقية الآن</button><button class="btn sec" id="pvLater">سأشترك لاحقاً</button></div></div>`;
+}
+function pvBarMount(f) {
+  const u = $('#pvUp'), l = $('#pvLater');
+  if (u) u.onclick = () => { Cloud.ev('pv_up', { f }); Nav.go('plans', { from: 'pv_' + f }); };
+  if (l) l.onclick = () => { Cloud.ev('pv_later', { f }); Nav.back(); };
+}
 
 'use strict';
 /* =====================================================================
